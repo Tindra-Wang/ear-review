@@ -1,8 +1,7 @@
 node_modules/
 dist/
 data/runtime/
-output/playwright/
-output/unit/
+output/
 test-results/
 playwright-report/
 .env

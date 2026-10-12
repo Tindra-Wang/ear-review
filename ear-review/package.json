@@ -2,6 +2,8 @@
   "name": "ear-review", "private": true, "version": "1.0.0", "type": "module",
   "engines": { "node": ">=24.14.0" },
   "scripts": {
+    "setup": "node scripts/setup.mjs",
+    "setup:tests": "node scripts/setup.mjs --with-browser",
     "dev": "concurrently -k -n api,web \"npm:dev:api\" \"npm:dev:web\"",
     "dev:api": "tsx watch apps/api/src/main.ts",
     "dev:web": "vite --host 127.0.0.1",

@@ -1,0 +1,35 @@
+# Environment requirements for this Node.js / TypeScript project.
+# This is NOT a Python pip requirements file. Do not use pip install -r.
+# Install automatically: double-click 安装环境.bat or 启动系统.bat.
+# With Node.js already installed: npm run setup
+# package.json + package-lock.json are the authoritative dependency manifests.
+# Exact npm package versions below are generated from package-lock.json.
+Node.js >=24.14.0 (LTS recommended)
+npm (included with Node.js)
+SQLite (built into Node.js; no separate server installation)
+
+# Application dependencies
+@nestjs/common@11.2.7
+@nestjs/core@11.2.7
+@nestjs/platform-express@11.2.7
+csv-parse@6.2.1
+lucide-vue-next@0.468.0
+reflect-metadata@0.2.2
+rxjs@7.8.2
+vue@3.5.43
+vue-router@4.6.4
+
+# Build and test dependencies
+@playwright/test@1.64.0
+@types/express@5.0.6
+@types/node@24.19.2
+@vitejs/plugin-vue@6.0.10
+concurrently@9.2.5
+tsx@4.23.15
+typescript@5.9.3
+vite@7.3.7
+vitest@3.2.7
+vue-tsc@3.3.13
+
+# Optional for browser tests: Chromium via npm run setup:tests
+# No Python, GPU driver, CUDA or online model API is required.
