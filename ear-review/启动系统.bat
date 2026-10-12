@@ -1,10 +1,6 @@
 @echo off
 setlocal
-chcp 65001 >nul
-title Ear Review Launcher
 cd /d "%~dp0"
-echo Starting Ear Review...
-echo Project: %cd%
 where node >nul 2>nul
 if errorlevel 1 (
   echo Node.js was not found. Please install Node.js 24.14 or later.
@@ -37,7 +33,4 @@ if errorlevel 1 (
   pause
   exit /b 1
 )
-echo.
-echo The service URL is shown above. Press any key to close this launcher.
-pause >nul
 endlocal
