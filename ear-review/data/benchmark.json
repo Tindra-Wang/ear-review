@@ -1,0 +1,26 @@
+{
+  "createdAt": "2026-10-12T10:22:59.706Z",
+  "version": "mnb-8a862b69",
+  "environment": {
+    "node": "v24.14.0",
+    "platform": "win32",
+    "cpu": "Intel(R) Core(TM) Ultra 9 275HX",
+    "memoryGB": 31
+  },
+  "query": {
+    "endpoint": "/api/products/:id/stats",
+    "dataReviews": 12,
+    "totalDatabaseReviews": 36,
+    "requests": 100,
+    "concurrency": 10,
+    "p95Ms": 7.027799999999985,
+    "failures": 0,
+    "warmup": true
+  },
+  "nlpDirect": {
+    "syntheticTexts": 1000,
+    "totalMs": 111.31090000000003,
+    "description": "进程内连续 NLP 调用，不含 HTTP、数据库和 Worker 调度；不是完整批次性能。"
+  },
+  "limitations": "小规模教学数据库冒烟测试；未验证 5000 条规模下的性能。"
+}

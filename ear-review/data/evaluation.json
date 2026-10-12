@@ -1,0 +1,147 @@
+{
+  "dataset": "独立人工编写教学检查集，非真实消费者数据",
+  "count": 24,
+  "version": "mnb-8a862b69",
+  "createdAt": "2026-10-12T10:21:51.932Z",
+  "environment": {
+    "node": "v24.14.0",
+    "platform": "win32",
+    "cpu": "Intel(R) Core(TM) Ultra 9 275HX",
+    "memoryGB": 31
+  },
+  "hybrid": {
+    "aspectMicroF1": 1,
+    "pairMicroF1": 0.9830508474576272,
+    "pairCounts": {
+      "tp": 29,
+      "fp": 0,
+      "fn": 1
+    },
+    "perLabel": {
+      "positive": {
+        "tp": 12,
+        "fp": 0,
+        "fn": 0,
+        "support": 12,
+        "f1": 1
+      },
+      "negative": {
+        "tp": 8,
+        "fp": 0,
+        "fn": 1,
+        "support": 9,
+        "f1": 0.9411764705882353
+      },
+      "neutral": {
+        "tp": 7,
+        "fp": 0,
+        "fn": 0,
+        "support": 7,
+        "f1": 1
+      },
+      "mixed": {
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "support": 2,
+        "f1": 1
+      }
+    },
+    "latencyP95Ms": 0.5815000000000055,
+    "errors": [
+      {
+        "text": "充电太慢，但音质很好听。",
+        "expected": [
+          [
+            "battery",
+            "negative"
+          ],
+          [
+            "sound",
+            "positive"
+          ]
+        ],
+        "actual": [
+          [
+            "battery",
+            "negative",
+            "review"
+          ],
+          [
+            "sound",
+            "positive",
+            "classified"
+          ]
+        ]
+      }
+    ]
+  },
+  "rules": {
+    "aspectMicroF1": 1,
+    "pairMicroF1": 0.9830508474576272,
+    "pairCounts": {
+      "tp": 29,
+      "fp": 0,
+      "fn": 1
+    },
+    "perLabel": {
+      "positive": {
+        "tp": 12,
+        "fp": 0,
+        "fn": 0,
+        "support": 12,
+        "f1": 1
+      },
+      "negative": {
+        "tp": 8,
+        "fp": 0,
+        "fn": 1,
+        "support": 9,
+        "f1": 0.9411764705882353
+      },
+      "neutral": {
+        "tp": 7,
+        "fp": 0,
+        "fn": 0,
+        "support": 7,
+        "f1": 1
+      },
+      "mixed": {
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "support": 2,
+        "f1": 1
+      }
+    },
+    "latencyP95Ms": 0.12850000000003092,
+    "errors": [
+      {
+        "text": "充电太慢，但音质很好听。",
+        "expected": [
+          [
+            "battery",
+            "negative"
+          ],
+          [
+            "sound",
+            "positive"
+          ]
+        ],
+        "actual": [
+          [
+            "battery",
+            "negative",
+            "review"
+          ],
+          [
+            "sound",
+            "positive",
+            "classified"
+          ]
+        ]
+      }
+    ]
+  },
+  "limitations": "未获得真实耳机领域独立标注集；不得把教学检查集指标视作商业或领域泛化成绩。"
+}

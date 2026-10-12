@@ -1,0 +1,8 @@
+node_modules/
+dist/
+data/runtime/
+output/playwright/
+output/unit/
+test-results/
+playwright-report/
+.env
