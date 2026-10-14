@@ -1,0 +1,10 @@
+{
+  "checkedAt": "2026-10-14T11:46:01.034Z",
+  "jobId": 19,
+  "itemId": "100130785706",
+  "status": "completed",
+  "total": 50,
+  "requested": 50,
+  "error": null,
+  "method": "从 HTTP 创建任务，经真实 Chrome 自动滚动读取，再由服务回写 CSV；无人手动翻页"
+}

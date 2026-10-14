@@ -1,0 +1,128 @@
+{
+  "checkedAt": "2026-10-14",
+  "verification": "自动化源码/文件/截图核对；课程作者最终复核尚未记录",
+  "reportCharacters": 18697,
+  "figures": 5,
+  "sources": [
+    {
+      "id": "E1",
+      "path": "docs/课程报告.md",
+      "sha256": "933804684daa9e5a6d8024c32b240041e59e8a1f97d4ce7e942e22ed9595596a"
+    },
+    {
+      "id": "E2",
+      "path": "data/demo.ts",
+      "sha256": "586443822a6d4a09c21b18251b474944d547c54ee42264ff4b91e2ecc46c68f9"
+    },
+    {
+      "id": "E3",
+      "path": "packages/nlp/model.ts",
+      "sha256": "134fc88d238e26cfff1a01373f3f81ea3a29e0ab8906723117fb801b8a3a2741"
+    },
+    {
+      "id": "E4",
+      "path": "packages/nlp/index.ts",
+      "sha256": "23535df64dda9931ab0cc19908af80940339e70a184efd98b4b09e13de37e1a0"
+    },
+    {
+      "id": "E5",
+      "path": "packages/nlp/semantic.ts",
+      "sha256": "76daa21686d8080d8b4d2b1382fc2ee51378a9bed6b76e0bd3dcf50d8648f34a"
+    },
+    {
+      "id": "E6",
+      "path": "packages/nlp/comparison-metrics.ts",
+      "sha256": "888366e9d884f43df2b0791663a7bf514e22d6cad59b3d7b90841ed9405cf2ec"
+    },
+    {
+      "id": "E7",
+      "path": "docs/实验结果/模型对照结果.json",
+      "sha256": "b36e28c5b7f2a1164b70de5e7f1e03ca2f7c9933aef9be8e7318146737d2e131"
+    },
+    {
+      "id": "E8",
+      "path": "docs/架构图/查询性能验证.json",
+      "sha256": "4c79eec8788611b1f508870e9c722314afb2753b74be596e4dd80e7c2a587b8a"
+    },
+    {
+      "id": "E9",
+      "path": "docs/架构图/重构数据一致性验证.json",
+      "sha256": "dcb1a56f8b4346c1e50056bb623abdc07d5a69d550e9279faea13836808e0bf7"
+    },
+    {
+      "id": "E10",
+      "path": "docs/架构图/架构检查指标.json",
+      "sha256": "470a5e701bd7c77de096dc90951b56802b92f9ecb9320cae7806b01e59dde286"
+    },
+    {
+      "id": "E11",
+      "path": "docs/实验结果/FreeBuds6i自动采集修复实测.json",
+      "sha256": "04655a0e0c067ae57001e9c44f42b326d17fb21a157d50998732323f5cc29da4"
+    },
+    {
+      "id": "E12",
+      "path": "docs/系统截图/截图说明.json",
+      "sha256": "3d939fed6489118dd42236b79cf0e451ee74e6a73433ba32592c9beef82272e7"
+    },
+    {
+      "id": "E13",
+      "path": "data/raw/jd-100130785706-automatic-50.csv",
+      "sha256": "f9b2ecf5c618f11c1ad5ef67d1b2cced24afc1c0c75819d4b379bf235bea64b1"
+    },
+    {
+      "id": "E14",
+      "path": "packages/nlp/training-data.ts",
+      "sha256": "acb9d3cd12c44261ad8b4b64d47705e8929f25574c734527fd1f021b078ca110"
+    },
+    {
+      "id": "E15",
+      "path": "packages/contracts/index.ts",
+      "sha256": "d939780bd18fce7411b65e4571035c78c4f88733b9118fc80daae4d450a21deb"
+    },
+    {
+      "id": "E16",
+      "path": "data/comparison-cases.ts",
+      "sha256": "39da694b4062610b26ccbdc94a4bea95a64efcbe968d1f7db82a39be4f88179e"
+    },
+    {
+      "id": "E17",
+      "path": "docs/实验结果/系统功能验证汇总.json",
+      "sha256": "109cdf648aa09800667800953c6ff782a89764d45d917e7915d1040b14d8ab04"
+    },
+    {
+      "id": "E18",
+      "path": "docs/架构图/NLP核心功能与双模型流程.drawio",
+      "sha256": "f06ef513d25f30e0c1bd21e0f26cb462fe77003079dcaa3f4e2ebf09fa97d809"
+    },
+    {
+      "id": "E19",
+      "path": "docs/架构图/Web系统设计与使用流程.drawio",
+      "sha256": "59b44c6d88a430668c36bf2e84f6dfa8e2e481b0b2e97152029c41c71634c20b"
+    },
+    {
+      "id": "E20",
+      "path": "docs/架构图/NLP-01-在线分析流程.png",
+      "sha256": "2838180f82c5defc00d714fb31e161c2f5dfaf4f73fe6f0fb4a363b5ef46c9a5"
+    },
+    {
+      "id": "E21",
+      "path": "docs/架构图/Web-01-前后端与API.png",
+      "sha256": "2b54fe74d7d3cb1bff0b5f6deba416bc22c015a0f2c4f276c64d1a6e70aa07cb"
+    },
+    {
+      "id": "E22",
+      "path": "docs/系统截图/01评价总览.png",
+      "sha256": "9e31a240c9a4892d9dd37cd328cc339d6acf6717fa834e8b8302589310d0477b"
+    },
+    {
+      "id": "E23",
+      "path": "docs/系统截图/05真实CSV上传与列映射.png",
+      "sha256": "ef3ef294313958f3b5872f163ea9e4c118efe3eb311f35a43e3f5cf9d6325770"
+    },
+    {
+      "id": "E24",
+      "path": "docs/系统截图/08自动采集完成记录.png",
+      "sha256": "1fea0714b4d564154624bd54f8d09918140b4e9762907cc5fa36546a85510a9e"
+    }
+  ]
+}

@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-14T10:06:52.449Z",
+  "generatedAt": "2026-10-14T11:46:27.188Z",
   "scope": "生产 apps/packages/scripts 的 TypeScript/Vue script；排除测试、构建输出与 data 语料文件",
   "limitations": "fan-in/fan-out 为本地源文件直接运行时依赖数量；不计外部包，type-only 单列；补入 Worker URL。不是完整调用图、圈复杂度或 LCOM。行数仅为物理行数，压缩模板不能由行数衡量复杂度。",
-  "fileCount": 58,
-  "runtimeEdgeCount": 97,
+  "fileCount": 59,
+  "runtimeEdgeCount": 98,
   "runtimeCycles": [],
   "controllerEndpoints": 30,
   "controllerSqlCalls": 0,
@@ -166,14 +166,19 @@
     },
     {
       "file": "apps/api/src/browser-collector.ts",
-      "physicalLines": 52,
-      "bytes": 10710,
-      "sha256": "c85f7c1c65fcacb590c3476c280a62fb886f3346183ce57d17a30ba825f1707a",
-      "functions": 34,
+      "physicalLines": 68,
+      "bytes": 10358,
+      "sha256": "d90855eec4c6d24c21299282d19b98f88e3b3b66bdacbb34e7971fa32b5ae60c",
+      "functions": 40,
       "methods": 6,
       "sqlCalls": 0,
       "refs": 0,
       "imports": [
+        {
+          "specifier": "./browser-review-navigation.js",
+          "target": "apps/api/src/browser-review-navigation.ts",
+          "typeOnly": false
+        },
         {
           "specifier": "node:crypto",
           "target": null,
@@ -210,7 +215,31 @@
           "typeOnly": false
         }
       ],
-      "fanOut": 1,
+      "fanOut": 2,
+      "fanIn": 1
+    },
+    {
+      "file": "apps/api/src/browser-review-navigation.ts",
+      "physicalLines": 43,
+      "bytes": 2699,
+      "sha256": "de2bece0bb5672347bf05a3d7ba25073b38b60520f250e29d88b5df9f4d29a80",
+      "functions": 6,
+      "methods": 0,
+      "sqlCalls": 0,
+      "refs": 0,
+      "imports": [
+        {
+          "specifier": "playwright",
+          "target": null,
+          "typeOnly": true
+        },
+        {
+          "specifier": "./collector.js",
+          "target": "apps/api/src/collector.ts",
+          "typeOnly": true
+        }
+      ],
+      "fanOut": 0,
       "fanIn": 1
     },
     {

@@ -21,3 +21,20 @@ it('新版全部评价弹窗优先读取完整正文，自动滚动加载后继�
  mkdirSync('data/runtime',{recursive:true});const profile=mkdtempSync(resolve('data/runtime/chrome-modal-test-'));const browser=await launchChromeBrowser('about:blank',profile,true);const service=new BrowserCollector(async()=>browser);
  try{const context=browser.contexts()[0]!;await context.route('https://item.jd.com/**',route=>route.fulfill({contentType:'text/html; charset=utf-8',body:`<div class="comment-root"><div class="list"><div class="item"><div class="info">音质好...</div></div></div></div><button style="display:none">全部评价</button><button id="all" style="display:none" onclick="document.querySelector('#modal').style.display='block'">全部评价</button><div id="modal" style="display:none;height:80px;overflow-y:auto"><div class="jdc-pc-rate-card-main" style="height:300px">音质好，听歌清晰</div></div><script>setTimeout(()=>document.querySelector('#all').style.display='block',800);document.querySelector("#modal").onscroll=function(){if(!this.dataset.loaded){this.dataset.loaded="yes";const node=document.createElement("div");node.className="jdc-pc-rate-card-main";node.textContent="续航不足";this.append(node)}}</script>`}));await context.pages()[0]!.goto('https://item.jd.com/123456.html');await service.open(1,collectionTarget('jd','123456'),2,()=>{});const result=await service.automate(1,()=>{});expect(result.rows.map(r=>r.text)).toEqual(['音质好，听歌清晰','续航不足']);}finally{await service.closeAll();}
 },20000);
+
+it('虚拟列表逐段滚动采集：中间多次无新增也不提前停止，不漏掉被卸载的评论',async()=>{
+ const browser=await launchChromeBrowser('about:blank',mkdtempSync(resolve('data/runtime/chrome-virtual-test-')),true);
+ const service=new BrowserCollector(async()=>browser);
+ try {
+  const context=browser.contexts()[0]!;
+  await context.route('https://item.jd.com/**',route=>route.fulfill({contentType:'text/html; charset=utf-8',body:`
+  <div id="modal" style="height:160px;overflow-y:auto"><div id="rows" style="height:12000px;position:relative"></div></div>
+  <script>const modal=document.querySelector('#modal'),rows=document.querySelector('#rows');
+  function render(){const first=Math.floor(modal.scrollTop/600);rows.innerHTML='';for(let i=first;i<Math.min(first+3,20);i++){const node=document.createElement('div');node.className='jdc-pc-rate-card-main';node.style='position:absolute;height:600px;top:'+i*600+'px';node.textContent='真实夹具评论 '+i;rows.append(node)}}modal.addEventListener('scroll',render);render();</script>`}));
+  await context.pages()[0]!.goto('https://item.jd.com/123456.html');
+  await service.open(1,collectionTarget('jd','123456'),7,()=>{});
+  const result=await service.automate(1,()=>{});
+  expect(result.rows.map(r=>r.text)).toEqual(Array.from({length:7},(_,i)=>'真实夹具评论 '+i));
+  expect(result.reason).toBe('已达到设定条数');
+ } finally {await service.closeAll();}
+},30000);

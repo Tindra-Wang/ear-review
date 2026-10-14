@@ -1,0 +1,15 @@
+{
+  "checkedAt": "2026-10-14",
+  "pages": 18,
+  "drawioFigures": 2,
+  "webScreenshots": 3,
+  "imagesInPdf": 5,
+  "outOfPageTextBlocks": [],
+  "localLinksChecked": true,
+  "visualReview": "原18页已逐页检查；本次调整两张架构图连线，重新检查图源PNG和报告对应页面",
+  "artifacts": {
+    "docs/课程报告.md": "933804684daa9e5a6d8024c32b240041e59e8a1f97d4ce7e942e22ed9595596a",
+    "docs/实验技术报告.pdf": "a1f1a564efddf54e225b0218f9c756a3c5d465c17d328aca12aa283c14134e8e",
+    "docs/实验技术报告.html": "e147228800e0dfaf4d931a9f6187f4683584a75f810edb1fecb15c85958892af"
+  }
+}
