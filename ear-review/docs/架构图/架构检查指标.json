@@ -1,18 +1,18 @@
 {
-  "generatedAt": "2026-10-14T05:42:59.168Z",
+  "generatedAt": "2026-10-14T10:06:52.449Z",
   "scope": "生产 apps/packages/scripts 的 TypeScript/Vue script；排除测试、构建输出与 data 语料文件",
   "limitations": "fan-in/fan-out 为本地源文件直接运行时依赖数量；不计外部包，type-only 单列；补入 Worker URL。不是完整调用图、圈复杂度或 LCOM。行数仅为物理行数，压缩模板不能由行数衡量复杂度。",
-  "fileCount": 32,
-  "runtimeEdgeCount": 52,
+  "fileCount": 58,
+  "runtimeEdgeCount": 97,
   "runtimeCycles": [],
   "controllerEndpoints": 30,
-  "controllerSqlCalls": 39,
+  "controllerSqlCalls": 0,
   "files": [
     {
       "file": "apps/api/src/analysis-worker.ts",
       "physicalLines": 14,
-      "bytes": 958,
-      "sha256": "12b6b66e6642d2e7991896752b7ce38ed9588206045863cb1ae90d6b4c5a99e0",
+      "bytes": 911,
+      "sha256": "54344c17a6f9e40bd0becf261f8670fe4fa308b120146dc916c047f4de1b04fc",
       "functions": 0,
       "methods": 0,
       "sqlCalls": 0,
@@ -24,27 +24,105 @@
           "typeOnly": false
         },
         {
+          "specifier": "../../../packages/nlp/engines.js",
+          "target": "packages/nlp/engines.ts",
+          "typeOnly": false
+        }
+      ],
+      "fanOut": 1,
+      "fanIn": 1
+    },
+    {
+      "file": "apps/api/src/application-bootstrap.ts",
+      "physicalLines": 22,
+      "bytes": 1347,
+      "sha256": "95a72e891ae82dcc6d0535f3db4c73e503a01837fb58073398b771dc75b6f0c4",
+      "functions": 2,
+      "methods": 0,
+      "sqlCalls": 3,
+      "refs": 0,
+      "imports": [
+        {
+          "specifier": "./store.js",
+          "target": "apps/api/src/store.ts",
+          "typeOnly": false
+        },
+        {
           "specifier": "../../../packages/nlp/index.js",
           "target": "packages/nlp/index.ts",
           "typeOnly": false
         },
         {
-          "specifier": "../../../packages/nlp/semantic.js",
-          "target": "packages/nlp/semantic.ts",
+          "specifier": "../../../data/demo.js",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "./fingerprint.js",
+          "target": "apps/api/src/fingerprint.ts",
           "typeOnly": false
         }
       ],
-      "fanOut": 2,
+      "fanOut": 3,
+      "fanIn": 2
+    },
+    {
+      "file": "apps/api/src/application-services.ts",
+      "physicalLines": 19,
+      "bytes": 957,
+      "sha256": "bef57eda1e387a48cabe1ce43f44be6fb783a6f16906af747d61fba10d93e5af",
+      "functions": 1,
+      "methods": 0,
+      "sqlCalls": 0,
+      "refs": 0,
+      "imports": [
+        {
+          "specifier": "./store.js",
+          "target": "apps/api/src/store.ts",
+          "typeOnly": true
+        },
+        {
+          "specifier": "../../../packages/nlp/index.js",
+          "target": "packages/nlp/index.ts",
+          "typeOnly": false
+        },
+        {
+          "specifier": "./services/collection-service.js",
+          "target": "apps/api/src/services/collection-service.ts",
+          "typeOnly": false
+        },
+        {
+          "specifier": "./services/import-service.js",
+          "target": "apps/api/src/services/import-service.ts",
+          "typeOnly": false
+        },
+        {
+          "specifier": "./services/product-service.js",
+          "target": "apps/api/src/services/product-service.ts",
+          "typeOnly": false
+        },
+        {
+          "specifier": "./services/analysis-job-service.js",
+          "target": "apps/api/src/services/analysis-job-service.ts",
+          "typeOnly": false
+        },
+        {
+          "specifier": "./services/model-service.js",
+          "target": "apps/api/src/services/model-service.ts",
+          "typeOnly": false
+        }
+      ],
+      "fanOut": 6,
       "fanIn": 1
     },
     {
       "file": "apps/api/src/auth.ts",
-      "physicalLines": 30,
-      "bytes": 2419,
-      "sha256": "abc765410e59b95347f8363fadfa1ae34bf7800356cb66588713e9f34d4e670d",
+      "physicalLines": 31,
+      "bytes": 2406,
+      "sha256": "0b661f9aabbf05aead75f583a4605f3686922526b64b4738b497684cf75a3bd3",
       "functions": 0,
       "methods": 3,
-      "sqlCalls": 3,
+      "sqlCalls": 0,
       "refs": 0,
       "imports": [
         {
@@ -73,9 +151,14 @@
           "typeOnly": true
         },
         {
-          "specifier": "./store.js",
-          "target": "apps/api/src/store.ts",
+          "specifier": "./sqlite-database.js",
+          "target": "apps/api/src/sqlite-database.ts",
           "typeOnly": false
+        },
+        {
+          "specifier": "./repositories/admin-repository.js",
+          "target": "apps/api/src/repositories/admin-repository.ts",
+          "typeOnly": true
         }
       ],
       "fanOut": 2,
@@ -151,12 +234,12 @@
     },
     {
       "file": "apps/api/src/controller.ts",
-      "physicalLines": 231,
-      "bytes": 27627,
-      "sha256": "cfd1f7829491a6b5762bfa9fbbb2ad0ec28dc21adb15c5a54c22e9b4693ee705",
-      "functions": 57,
-      "methods": 33,
-      "sqlCalls": 39,
+      "physicalLines": 188,
+      "bytes": 7118,
+      "sha256": "2e40a24b67d4d898ccc6a09fb962f16239eae39eece3000bee9b3a1b7d1376c0",
+      "functions": 0,
+      "methods": 31,
+      "sqlCalls": 0,
       "refs": 0,
       "imports": [
         {
@@ -170,67 +253,56 @@
           "typeOnly": true
         },
         {
-          "specifier": "node:crypto",
-          "target": null,
-          "typeOnly": false
-        },
-        {
-          "specifier": "node:fs",
-          "target": null,
-          "typeOnly": false
-        },
-        {
-          "specifier": "node:path",
-          "target": null,
-          "typeOnly": false
-        },
-        {
-          "specifier": "node:worker_threads",
-          "target": null,
-          "typeOnly": false
-        },
-        {
-          "specifier": "../../../packages/contracts/index.js",
-          "target": "packages/contracts/index.ts",
-          "typeOnly": false
-        },
-        {
-          "specifier": "./collector.js",
-          "target": "apps/api/src/collector.ts",
-          "typeOnly": false
-        },
-        {
-          "specifier": "./browser-collector.js",
-          "target": "apps/api/src/browser-collector.ts",
-          "typeOnly": false
-        },
-        {
-          "specifier": "../../../packages/nlp/index.js",
-          "target": "packages/nlp/index.ts",
-          "typeOnly": false
-        },
-        {
-          "specifier": "../../../packages/nlp/semantic.js",
-          "target": "packages/nlp/semantic.ts",
-          "typeOnly": false
-        },
-        {
-          "specifier": "./importer.js",
-          "target": "apps/api/src/importer.ts",
-          "typeOnly": false
-        },
-        {
           "specifier": "./store.js",
           "target": "apps/api/src/store.ts",
-          "typeOnly": false
+          "typeOnly": true
         },
         {
           "specifier": "./auth.js",
           "target": "apps/api/src/auth.ts",
           "typeOnly": false
+        },
+        {
+          "specifier": "./request-validation.js",
+          "target": "apps/api/src/request-validation.ts",
+          "typeOnly": false
+        },
+        {
+          "specifier": "../../../packages/contracts/index.js",
+          "target": "packages/contracts/index.ts",
+          "typeOnly": true
+        },
+        {
+          "specifier": "./application-services.js",
+          "target": "apps/api/src/application-services.ts",
+          "typeOnly": true
+        },
+        {
+          "specifier": "./request-validation.js",
+          "target": "apps/api/src/request-validation.ts",
+          "typeOnly": false
         }
       ],
-      "fanOut": 9,
+      "fanOut": 2,
+      "fanIn": 1
+    },
+    {
+      "file": "apps/api/src/database-bootstrap.ts",
+      "physicalLines": 31,
+      "bytes": 3276,
+      "sha256": "00ff6c19ede24e6d8204b97e0d4fb2d17894f9961f27ea1cef78e6c7b0291471",
+      "functions": 4,
+      "methods": 0,
+      "sqlCalls": 0,
+      "refs": 0,
+      "imports": [
+        {
+          "specifier": "./sqlite-database.js",
+          "target": "apps/api/src/sqlite-database.ts",
+          "typeOnly": true
+        }
+      ],
+      "fanOut": 0,
       "fanIn": 1
     },
     {
@@ -256,6 +328,25 @@
       ],
       "fanOut": 0,
       "fanIn": 1
+    },
+    {
+      "file": "apps/api/src/fingerprint.ts",
+      "physicalLines": 3,
+      "bytes": 188,
+      "sha256": "662e3196a2c97fb70753c152795a27a2853bfbdad31e315483d530e26549fcd9",
+      "functions": 1,
+      "methods": 0,
+      "sqlCalls": 0,
+      "refs": 0,
+      "imports": [
+        {
+          "specifier": "node:crypto",
+          "target": null,
+          "typeOnly": false
+        }
+      ],
+      "fanOut": 0,
+      "fanIn": 4
     },
     {
       "file": "apps/api/src/importer.ts",
@@ -288,9 +379,9 @@
     },
     {
       "file": "apps/api/src/main.ts",
-      "physicalLines": 26,
-      "bytes": 2188,
-      "sha256": "22532e08f8d934239a66116f9fc7c63efd23b47383ba1c4f1d143b4d623fd30c",
+      "physicalLines": 27,
+      "bytes": 2414,
+      "sha256": "6c85dc2cff9faf1673838b41a8c1b3ff950cfb405465089f978e41cb471fb13d",
       "functions": 1,
       "methods": 0,
       "sqlCalls": 0,
@@ -332,8 +423,8 @@
           "typeOnly": false
         },
         {
-          "specifier": "./store.js",
-          "target": "apps/api/src/store.ts",
+          "specifier": "./application-bootstrap.js",
+          "target": "apps/api/src/application-bootstrap.ts",
           "typeOnly": false,
           "dynamic": true
         },
@@ -348,10 +439,462 @@
           "target": "apps/api/src/controller.ts",
           "typeOnly": false,
           "dynamic": true
+        },
+        {
+          "specifier": "./application-services.js",
+          "target": "apps/api/src/application-services.ts",
+          "typeOnly": false,
+          "dynamic": true
+        }
+      ],
+      "fanOut": 5,
+      "fanIn": 0
+    },
+    {
+      "file": "apps/api/src/repositories/admin-repository.ts",
+      "physicalLines": 9,
+      "bytes": 412,
+      "sha256": "d205273c3ea6c646df791bc7a474d39fd09a9203cc84f3b494f77242debdd996",
+      "functions": 0,
+      "methods": 2,
+      "sqlCalls": 2,
+      "refs": 0,
+      "imports": [
+        {
+          "specifier": "../sqlite-database.js",
+          "target": "apps/api/src/sqlite-database.ts",
+          "typeOnly": true
+        }
+      ],
+      "fanOut": 0,
+      "fanIn": 1
+    },
+    {
+      "file": "apps/api/src/repositories/batch-repository.ts",
+      "physicalLines": 50,
+      "bytes": 2808,
+      "sha256": "24a6025927a046714f2f186a190bbcbf7cb5ba7640e0675ec0f6bd96ace84eb3",
+      "functions": 9,
+      "methods": 2,
+      "sqlCalls": 5,
+      "refs": 0,
+      "imports": [
+        {
+          "specifier": "../sqlite-database.js",
+          "target": "apps/api/src/sqlite-database.ts",
+          "typeOnly": true
+        },
+        {
+          "specifier": "../fingerprint.js",
+          "target": "apps/api/src/fingerprint.ts",
+          "typeOnly": false
+        },
+        {
+          "specifier": "../../../../packages/contracts/index.js",
+          "target": "packages/contracts/index.ts",
+          "typeOnly": true
+        }
+      ],
+      "fanOut": 1,
+      "fanIn": 1
+    },
+    {
+      "file": "apps/api/src/repositories/collection-repository.ts",
+      "physicalLines": 33,
+      "bytes": 3183,
+      "sha256": "f2f9c82aaf50330ecbd9f99fc21bdcec0d041ecf183b737bcaf0ebbf130e8fd0",
+      "functions": 1,
+      "methods": 10,
+      "sqlCalls": 11,
+      "refs": 0,
+      "imports": [
+        {
+          "specifier": "../../../../packages/contracts/index.js",
+          "target": "packages/contracts/index.ts",
+          "typeOnly": true
+        },
+        {
+          "specifier": "../sqlite-database.js",
+          "target": "apps/api/src/sqlite-database.ts",
+          "typeOnly": true
+        },
+        {
+          "specifier": "./product-repository.js",
+          "target": "apps/api/src/repositories/product-repository.ts",
+          "typeOnly": true
+        }
+      ],
+      "fanOut": 0,
+      "fanIn": 1
+    },
+    {
+      "file": "apps/api/src/repositories/job-repository.ts",
+      "physicalLines": 29,
+      "bytes": 2575,
+      "sha256": "271de46783c9dac3cde2ce07756c93fdef5b72071c7dfcb238100b8225c3833c",
+      "functions": 2,
+      "methods": 12,
+      "sqlCalls": 13,
+      "refs": 0,
+      "imports": [
+        {
+          "specifier": "../../../../packages/contracts/index.js",
+          "target": "packages/contracts/index.ts",
+          "typeOnly": true
+        },
+        {
+          "specifier": "../sqlite-database.js",
+          "target": "apps/api/src/sqlite-database.ts",
+          "typeOnly": true
+        },
+        {
+          "specifier": "./review-repository.js",
+          "target": "apps/api/src/repositories/review-repository.ts",
+          "typeOnly": true
+        }
+      ],
+      "fanOut": 0,
+      "fanIn": 1
+    },
+    {
+      "file": "apps/api/src/repositories/product-repository.ts",
+      "physicalLines": 9,
+      "bytes": 750,
+      "sha256": "79b547df52f66afaca2e173b9bb5f9fe09c25433e3b376bf0e1c0ffe2a48c271",
+      "functions": 0,
+      "methods": 3,
+      "sqlCalls": 3,
+      "refs": 0,
+      "imports": [
+        {
+          "specifier": "../../../../packages/contracts/index.js",
+          "target": "packages/contracts/index.ts",
+          "typeOnly": true
+        },
+        {
+          "specifier": "../sqlite-database.js",
+          "target": "apps/api/src/sqlite-database.ts",
+          "typeOnly": true
+        }
+      ],
+      "fanOut": 0,
+      "fanIn": 1
+    },
+    {
+      "file": "apps/api/src/repositories/review-repository.ts",
+      "physicalLines": 56,
+      "bytes": 3678,
+      "sha256": "41bb42aef33712d7ad26e2eab1d152956f95bd85756332c978dbb00d1f4aa195",
+      "functions": 3,
+      "methods": 6,
+      "sqlCalls": 6,
+      "refs": 0,
+      "imports": [
+        {
+          "specifier": "../../../../packages/contracts/index.js",
+          "target": "packages/contracts/index.ts",
+          "typeOnly": true
+        },
+        {
+          "specifier": "../sqlite-database.js",
+          "target": "apps/api/src/sqlite-database.ts",
+          "typeOnly": true
+        }
+      ],
+      "fanOut": 0,
+      "fanIn": 1
+    },
+    {
+      "file": "apps/api/src/request-validation.ts",
+      "physicalLines": 10,
+      "bytes": 900,
+      "sha256": "d07fcb2d9d772feeaa366125e62a84f1c6c8729a66e3d0f1e339396164eee745",
+      "functions": 4,
+      "methods": 0,
+      "sqlCalls": 0,
+      "refs": 0,
+      "imports": [
+        {
+          "specifier": "@nestjs/common",
+          "target": null,
+          "typeOnly": false
+        }
+      ],
+      "fanOut": 0,
+      "fanIn": 6
+    },
+    {
+      "file": "apps/api/src/services/analysis-job-service.ts",
+      "physicalLines": 80,
+      "bytes": 3796,
+      "sha256": "b0339d57eb1f6a855083b75d6d51350fd65482de9f2d317ebe25151196cbb6fd",
+      "functions": 5,
+      "methods": 5,
+      "sqlCalls": 0,
+      "refs": 0,
+      "imports": [
+        {
+          "specifier": "@nestjs/common",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "../store.js",
+          "target": "apps/api/src/store.ts",
+          "typeOnly": true
+        },
+        {
+          "specifier": "../request-validation.js",
+          "target": "apps/api/src/request-validation.ts",
+          "typeOnly": false
+        },
+        {
+          "specifier": "node:worker_threads",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "../../../../packages/contracts/index.js",
+          "target": "packages/contracts/index.ts",
+          "typeOnly": true
+        },
+        {
+          "specifier": "../../../../packages/nlp/engines.js",
+          "target": "packages/nlp/engines.ts",
+          "typeOnly": false
+        }
+      ],
+      "fanOut": 3,
+      "fanIn": 1
+    },
+    {
+      "file": "apps/api/src/services/collection-service.ts",
+      "physicalLines": 121,
+      "bytes": 7744,
+      "sha256": "e4f218f0a906aa52565a3442ab1dcba49a0c37ea93d99947237463faab1bd143",
+      "functions": 20,
+      "methods": 9,
+      "sqlCalls": 0,
+      "refs": 0,
+      "imports": [
+        {
+          "specifier": "@nestjs/common",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "../store.js",
+          "target": "apps/api/src/store.ts",
+          "typeOnly": true
+        },
+        {
+          "specifier": "../request-validation.js",
+          "target": "apps/api/src/request-validation.ts",
+          "typeOnly": false
+        },
+        {
+          "specifier": "../collector.js",
+          "target": "apps/api/src/collector.ts",
+          "typeOnly": false
+        },
+        {
+          "specifier": "../browser-collector.js",
+          "target": "apps/api/src/browser-collector.ts",
+          "typeOnly": false
+        }
+      ],
+      "fanOut": 3,
+      "fanIn": 1
+    },
+    {
+      "file": "apps/api/src/services/import-service.ts",
+      "physicalLines": 85,
+      "bytes": 4286,
+      "sha256": "4d301a15ed9c8e81b77559d89f38e613cd6b87cbb861d723dc3bf044bd8756d5",
+      "functions": 6,
+      "methods": 4,
+      "sqlCalls": 0,
+      "refs": 0,
+      "imports": [
+        {
+          "specifier": "@nestjs/common",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "../store.js",
+          "target": "apps/api/src/store.ts",
+          "typeOnly": true
+        },
+        {
+          "specifier": "../request-validation.js",
+          "target": "apps/api/src/request-validation.ts",
+          "typeOnly": false
+        },
+        {
+          "specifier": "node:crypto",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "../../../../packages/contracts/index.js",
+          "target": "packages/contracts/index.ts",
+          "typeOnly": true
+        },
+        {
+          "specifier": "../importer.js",
+          "target": "apps/api/src/importer.ts",
+          "typeOnly": false
+        },
+        {
+          "specifier": "../fingerprint.js",
+          "target": "apps/api/src/fingerprint.ts",
+          "typeOnly": false
+        }
+      ],
+      "fanOut": 3,
+      "fanIn": 1
+    },
+    {
+      "file": "apps/api/src/services/model-service.ts",
+      "physicalLines": 40,
+      "bytes": 2272,
+      "sha256": "34e8348005f642a08168ed00d45b303bd2b4ef73a443556d6a5d63f85b17a4b3",
+      "functions": 0,
+      "methods": 3,
+      "sqlCalls": 0,
+      "refs": 0,
+      "imports": [
+        {
+          "specifier": "@nestjs/common",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "../request-validation.js",
+          "target": "apps/api/src/request-validation.ts",
+          "typeOnly": false
+        },
+        {
+          "specifier": "node:fs",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "node:path",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "../../../../packages/nlp/index.js",
+          "target": "packages/nlp/index.ts",
+          "typeOnly": false
+        },
+        {
+          "specifier": "../../../../packages/nlp/semantic.js",
+          "target": "packages/nlp/semantic.ts",
+          "typeOnly": false
+        },
+        {
+          "specifier": "../../../../packages/nlp/engines.js",
+          "target": "packages/nlp/engines.ts",
+          "typeOnly": false
         }
       ],
       "fanOut": 4,
-      "fanIn": 0
+      "fanIn": 1
+    },
+    {
+      "file": "apps/api/src/services/product-service.ts",
+      "physicalLines": 101,
+      "bytes": 7531,
+      "sha256": "c7e415eac4edb80546fe46f7724e302d767c26fd560976dc9048ab70b54f9d3e",
+      "functions": 20,
+      "methods": 10,
+      "sqlCalls": 0,
+      "refs": 0,
+      "imports": [
+        {
+          "specifier": "@nestjs/common",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "../store.js",
+          "target": "apps/api/src/store.ts",
+          "typeOnly": true
+        },
+        {
+          "specifier": "../request-validation.js",
+          "target": "apps/api/src/request-validation.ts",
+          "typeOnly": false
+        },
+        {
+          "specifier": "../../../../packages/contracts/index.js",
+          "target": "packages/contracts/index.ts",
+          "typeOnly": false
+        },
+        {
+          "specifier": "./product-statistics.js",
+          "target": "apps/api/src/services/product-statistics.ts",
+          "typeOnly": false
+        }
+      ],
+      "fanOut": 3,
+      "fanIn": 1
+    },
+    {
+      "file": "apps/api/src/services/product-statistics.ts",
+      "physicalLines": 25,
+      "bytes": 1383,
+      "sha256": "65ef96f0abf8d2f6790f0359b92d0b0777585cce4392880eac2bcbcfb9ce5e6a",
+      "functions": 7,
+      "methods": 0,
+      "sqlCalls": 0,
+      "refs": 0,
+      "imports": [
+        {
+          "specifier": "../../../../packages/contracts/index.js",
+          "target": "packages/contracts/index.ts",
+          "typeOnly": false
+        }
+      ],
+      "fanOut": 1,
+      "fanIn": 2
+    },
+    {
+      "file": "apps/api/src/sqlite-database.ts",
+      "physicalLines": 23,
+      "bytes": 1136,
+      "sha256": "331a13c75f6ef5a82161a8f28b9f412dcf4a001bc31cb2a53848842889aac66e",
+      "functions": 0,
+      "methods": 5,
+      "sqlCalls": 6,
+      "refs": 0,
+      "imports": [
+        {
+          "specifier": "node:sqlite",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "node:fs",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "node:path",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "./database-bootstrap.js",
+          "target": "apps/api/src/database-bootstrap.ts",
+          "typeOnly": false
+        }
+      ],
+      "fanOut": 1,
+      "fanIn": 2
     },
     {
       "file": "apps/api/src/startup.ts",
@@ -374,52 +917,72 @@
     },
     {
       "file": "apps/api/src/store.ts",
-      "physicalLines": 104,
-      "bytes": 11065,
-      "sha256": "9579407d3ad9dc3c1eff7ceaf19ee3d3845208a91e8af0853a529346335f3c13",
-      "functions": 24,
-      "methods": 14,
-      "sqlCalls": 33,
+      "physicalLines": 30,
+      "bytes": 2441,
+      "sha256": "6d3d2eb6bce2aea5dd535c8d83896c00ce2658dead3e830dbf8d25ad51eab413",
+      "functions": 1,
+      "methods": 8,
+      "sqlCalls": 0,
       "refs": 0,
       "imports": [
         {
-          "specifier": "node:sqlite",
-          "target": null,
-          "typeOnly": false
-        },
-        {
-          "specifier": "node:fs",
-          "target": null,
-          "typeOnly": false
-        },
-        {
-          "specifier": "node:path",
-          "target": null,
-          "typeOnly": false
-        },
-        {
-          "specifier": "node:crypto",
-          "target": null,
-          "typeOnly": false
-        },
-        {
           "specifier": "../../../packages/contracts/index.js",
           "target": "packages/contracts/index.ts",
+          "typeOnly": true
+        },
+        {
+          "specifier": "./sqlite-database.js",
+          "target": "apps/api/src/sqlite-database.ts",
           "typeOnly": false
         },
         {
-          "specifier": "../../../packages/nlp/index.js",
-          "target": "packages/nlp/index.ts",
+          "specifier": "./repositories/product-repository.js",
+          "target": "apps/api/src/repositories/product-repository.ts",
           "typeOnly": false
         },
         {
-          "specifier": "../../../data/demo.js",
-          "target": null,
+          "specifier": "./repositories/review-repository.js",
+          "target": "apps/api/src/repositories/review-repository.ts",
+          "typeOnly": false
+        },
+        {
+          "specifier": "./repositories/batch-repository.js",
+          "target": "apps/api/src/repositories/batch-repository.ts",
+          "typeOnly": false
+        },
+        {
+          "specifier": "./repositories/job-repository.js",
+          "target": "apps/api/src/repositories/job-repository.ts",
+          "typeOnly": false
+        },
+        {
+          "specifier": "./repositories/collection-repository.js",
+          "target": "apps/api/src/repositories/collection-repository.ts",
+          "typeOnly": false
+        },
+        {
+          "specifier": "./repositories/admin-repository.js",
+          "target": "apps/api/src/repositories/admin-repository.ts",
+          "typeOnly": false
+        },
+        {
+          "specifier": "./services/product-statistics.js",
+          "target": "apps/api/src/services/product-statistics.ts",
+          "typeOnly": false
+        },
+        {
+          "specifier": "./sqlite-database.js",
+          "target": "apps/api/src/sqlite-database.ts",
+          "typeOnly": false
+        },
+        {
+          "specifier": "./fingerprint.js",
+          "target": "apps/api/src/fingerprint.ts",
           "typeOnly": false
         }
       ],
-      "fanOut": 2,
-      "fanIn": 3
+      "fanOut": 9,
+      "fanIn": 1
     },
     {
       "file": "apps/web/src/api.ts",
@@ -432,17 +995,17 @@
       "refs": 0,
       "imports": [],
       "fanOut": 0,
-      "fanIn": 3
+      "fanIn": 9
     },
     {
       "file": "apps/web/src/App.vue",
-      "physicalLines": 127,
-      "bytes": 32527,
-      "sha256": "0e7fdf2d8f3c555b14ed9a48138b6a4e6dd7821fa35bc24f4dae5032809428e5",
-      "functions": 45,
+      "physicalLines": 93,
+      "bytes": 23607,
+      "sha256": "3661389ae81dcfbc676738f34f5a0d22ea4f6aef72e747f4200affe447c85439",
+      "functions": 10,
       "methods": 0,
       "sqlCalls": 0,
-      "refs": 46,
+      "refs": 5,
       "imports": [
         {
           "specifier": "vue",
@@ -498,9 +1061,39 @@
           "specifier": "./components/AnalysisTasks.vue",
           "target": "apps/web/src/components/AnalysisTasks.vue",
           "typeOnly": false
+        },
+        {
+          "specifier": "./composables/useSingleAnalysis",
+          "target": "apps/web/src/composables/useSingleAnalysis.ts",
+          "typeOnly": false
+        },
+        {
+          "specifier": "./composables/useProductComparison",
+          "target": "apps/web/src/composables/useProductComparison.ts",
+          "typeOnly": false
+        },
+        {
+          "specifier": "./composables/useProductReviews",
+          "target": "apps/web/src/composables/useProductReviews.ts",
+          "typeOnly": false
+        },
+        {
+          "specifier": "./composables/useAuth",
+          "target": "apps/web/src/composables/useAuth.ts",
+          "typeOnly": false
+        },
+        {
+          "specifier": "./composables/useDataWorkspace",
+          "target": "apps/web/src/composables/useDataWorkspace.ts",
+          "typeOnly": false
+        },
+        {
+          "specifier": "./composables/useProductManagement",
+          "target": "apps/web/src/composables/useProductManagement.ts",
+          "typeOnly": false
         }
       ],
-      "fanOut": 8,
+      "fanOut": 14,
       "fanIn": 1
     },
     {
@@ -539,9 +1132,9 @@
     },
     {
       "file": "apps/web/src/components/AnalysisTasks.vue",
-      "physicalLines": 28,
-      "bytes": 3573,
-      "sha256": "f8fd887def4a21f6eae0748521c9f782d76f407984ce4c30d0704d2bdcecd9d2",
+      "physicalLines": 27,
+      "bytes": 3393,
+      "sha256": "a43828667cea080b7eff739b66fe456cf789f46a7bb12d14784cd75ceb400380",
       "functions": 10,
       "methods": 0,
       "sqlCalls": 0,
@@ -702,6 +1295,180 @@
       "fanIn": 1
     },
     {
+      "file": "apps/web/src/composables/useAuth.ts",
+      "physicalLines": 33,
+      "bytes": 1000,
+      "sha256": "997d122549fbfad776af9af1395aad6df271fe4e5113279a5141cc5c19e383b5",
+      "functions": 3,
+      "methods": 0,
+      "sqlCalls": 0,
+      "refs": 4,
+      "imports": [
+        {
+          "specifier": "vue",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "../api",
+          "target": "apps/web/src/api.ts",
+          "typeOnly": false
+        }
+      ],
+      "fanOut": 1,
+      "fanIn": 1
+    },
+    {
+      "file": "apps/web/src/composables/useDataWorkspace.ts",
+      "physicalLines": 119,
+      "bytes": 6043,
+      "sha256": "a8380cd692a8582d030ebe2510204d8f564852cc87aa441951707d03a1a11dbb",
+      "functions": 17,
+      "methods": 0,
+      "sqlCalls": 0,
+      "refs": 16,
+      "imports": [
+        {
+          "specifier": "vue",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "vue-router",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "../../../../packages/contracts/index",
+          "target": "packages/contracts/index.ts",
+          "typeOnly": true
+        },
+        {
+          "specifier": "../api",
+          "target": "apps/web/src/api.ts",
+          "typeOnly": false
+        }
+      ],
+      "fanOut": 1,
+      "fanIn": 1
+    },
+    {
+      "file": "apps/web/src/composables/useProductComparison.ts",
+      "physicalLines": 30,
+      "bytes": 1404,
+      "sha256": "e5acc53efbd582011279e879bf41cc967b79adbafba90f38badf10ffdfb2a165",
+      "functions": 5,
+      "methods": 0,
+      "sqlCalls": 0,
+      "refs": 4,
+      "imports": [
+        {
+          "specifier": "vue",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "../../../../packages/contracts/index",
+          "target": "packages/contracts/index.ts",
+          "typeOnly": false
+        },
+        {
+          "specifier": "../api",
+          "target": "apps/web/src/api.ts",
+          "typeOnly": false
+        }
+      ],
+      "fanOut": 2,
+      "fanIn": 1
+    },
+    {
+      "file": "apps/web/src/composables/useProductManagement.ts",
+      "physicalLines": 21,
+      "bytes": 1296,
+      "sha256": "2544b538a7c9888dd021f0299e50c57a85dd9f8bc9ac43860276d7e93c09424c",
+      "functions": 3,
+      "methods": 0,
+      "sqlCalls": 0,
+      "refs": 4,
+      "imports": [
+        {
+          "specifier": "vue",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "../../../../packages/contracts/index",
+          "target": "packages/contracts/index.ts",
+          "typeOnly": true
+        },
+        {
+          "specifier": "../api",
+          "target": "apps/web/src/api.ts",
+          "typeOnly": false
+        }
+      ],
+      "fanOut": 1,
+      "fanIn": 1
+    },
+    {
+      "file": "apps/web/src/composables/useProductReviews.ts",
+      "physicalLines": 59,
+      "bytes": 3099,
+      "sha256": "66a88c689e002ea84514cb3fb28e1e5b31248cf85e479aa11da5ec28234a600b",
+      "functions": 10,
+      "methods": 0,
+      "sqlCalls": 0,
+      "refs": 9,
+      "imports": [
+        {
+          "specifier": "vue",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "../../../../packages/contracts/index",
+          "target": "packages/contracts/index.ts",
+          "typeOnly": true
+        },
+        {
+          "specifier": "../api",
+          "target": "apps/web/src/api.ts",
+          "typeOnly": false
+        }
+      ],
+      "fanOut": 1,
+      "fanIn": 1
+    },
+    {
+      "file": "apps/web/src/composables/useSingleAnalysis.ts",
+      "physicalLines": 26,
+      "bytes": 1503,
+      "sha256": "586d720617f2a77a3b444ed089ad40c54c27ebddf6cad140f97849c528f350fe",
+      "functions": 6,
+      "methods": 0,
+      "sqlCalls": 0,
+      "refs": 4,
+      "imports": [
+        {
+          "specifier": "vue",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "../../../../packages/contracts/index",
+          "target": "packages/contracts/index.ts",
+          "typeOnly": true
+        },
+        {
+          "specifier": "../api",
+          "target": "apps/web/src/api.ts",
+          "typeOnly": false
+        }
+      ],
+      "fanOut": 1,
+      "fanIn": 1
+    },
+    {
       "file": "apps/web/src/main.ts",
       "physicalLines": 7,
       "bytes": 374,
@@ -737,16 +1504,16 @@
     },
     {
       "file": "packages/contracts/index.ts",
-      "physicalLines": 27,
-      "bytes": 3464,
-      "sha256": "ca35538cc7e940b5b8a3b3bbfb773933d3b266f036b3cc3043da3cff55a1d1bc",
+      "physicalLines": 29,
+      "bytes": 3710,
+      "sha256": "d939780bd18fce7411b65e4571035c78c4f88733b9118fc80daae4d450a21deb",
       "functions": 0,
       "methods": 0,
       "sqlCalls": 0,
       "refs": 0,
       "imports": [],
       "fanOut": 0,
-      "fanIn": 10
+      "fanIn": 11
     },
     {
       "file": "packages/nlp/comparison-metrics.ts",
@@ -766,6 +1533,35 @@
       ],
       "fanOut": 1,
       "fanIn": 1
+    },
+    {
+      "file": "packages/nlp/engines.ts",
+      "physicalLines": 35,
+      "bytes": 1284,
+      "sha256": "4b570fcf4042362090b6f6839cb23be7e70cf80f4d997838d6b55c9a26e03377",
+      "functions": 4,
+      "methods": 0,
+      "sqlCalls": 0,
+      "refs": 0,
+      "imports": [
+        {
+          "specifier": "../contracts/index.js",
+          "target": "packages/contracts/index.ts",
+          "typeOnly": true
+        },
+        {
+          "specifier": "./index.js",
+          "target": "packages/nlp/index.ts",
+          "typeOnly": false
+        },
+        {
+          "specifier": "./semantic.js",
+          "target": "packages/nlp/semantic.ts",
+          "typeOnly": false
+        }
+      ],
+      "fanOut": 2,
+      "fanIn": 3
     },
     {
       "file": "packages/nlp/index.ts",
@@ -799,7 +1595,7 @@
         }
       ],
       "fanOut": 2,
-      "fanIn": 6
+      "fanIn": 8
     },
     {
       "file": "packages/nlp/model.ts",
@@ -872,6 +1668,50 @@
       ],
       "fanOut": 0,
       "fanIn": 3
+    },
+    {
+      "file": "scripts/benchmark-queries.ts",
+      "physicalLines": 39,
+      "bytes": 2247,
+      "sha256": "127f6cd72f2a2422edb8d5c564827025060f0b3dde9ece06b600e9f6e9eb5bd9",
+      "functions": 2,
+      "methods": 0,
+      "sqlCalls": 0,
+      "refs": 0,
+      "imports": [
+        {
+          "specifier": "node:perf_hooks",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "node:os",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "node:fs",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "../apps/api/src/application-bootstrap.js",
+          "target": "apps/api/src/application-bootstrap.ts",
+          "typeOnly": false
+        },
+        {
+          "specifier": "../packages/nlp/index.js",
+          "target": "packages/nlp/index.ts",
+          "typeOnly": false
+        },
+        {
+          "specifier": "../packages/contracts/index.js",
+          "target": "packages/contracts/index.ts",
+          "typeOnly": true
+        }
+      ],
+      "fanOut": 2,
+      "fanIn": 0
     },
     {
       "file": "scripts/benchmark.ts",
@@ -1150,5 +1990,6 @@
       "fanOut": 1,
       "fanIn": 0
     }
-  ]
+  ],
+  "boundaryViolations": []
 }

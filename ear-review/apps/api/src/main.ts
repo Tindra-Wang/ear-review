@@ -11,9 +11,10 @@ if (!Number.isInteger(port) || port < 1 || port > 65535) { console.error('PORT �
 const portState = await inspectPort(port);
 if (portState === 'our-app') { console.log(`听见已在运行，无需重复启动。请访问 http://127.0.0.1:${port}/ 。此窗口可以关闭。`); process.exit(0); }
 if (portState === 'occupied') { console.error(`端口 ${port} 已被其他程序占用。请在 .env 中设置其他 PORT（例如 3003），或关闭占用该端口的程序后重试。`); process.exit(1); }
-const { Store } = await import('./store.js'); const { Auth } = await import('./auth.js'); const { ApiController } = await import('./controller.js');
-const store = new Store(); const auth = new Auth(store);
-@Module({ controllers: [ApiController], providers: [{ provide: 'STORE', useValue: store }, { provide: 'AUTH', useValue: auth }] })
+const { ApplicationStore: Store } = await import('./application-bootstrap.js'); const { Auth } = await import('./auth.js'); const { ApiController } = await import('./controller.js');
+const { createApplicationServices } = await import('./application-services.js');
+const store = new Store(); const auth = new Auth(store.adminRepository);
+@Module({ controllers: [ApiController], providers: [{ provide: 'STORE', useValue: store }, { provide: 'AUTH', useValue: auth }, { provide: 'SERVICES', useValue: createApplicationServices(store) }] })
 class AppModule {}
 const app = await NestFactory.create(AppModule, { bodyParser: false, logger: ['error','warn'] });
 app.use(express.json({ limit: '6mb' }));

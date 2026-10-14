@@ -1,0 +1,148 @@
+{
+  "checkedAt": "2026-10-14T09:56:42.407Z",
+  "method": "实际数据库只读连接；与重构前 Store 的查询和聚合实现逐项比较；未运行初始化/迁移",
+  "counts": {
+    "products": 6,
+    "batches": 5,
+    "reviews": 238,
+    "predictions": 232,
+    "corrections": 0,
+    "jobs": 4,
+    "job_errors": 0,
+    "collections": 7
+  },
+  "activeJobs": 0,
+  "activeCollections": 0,
+  "checks": [
+    {
+      "name": "products",
+      "equal": true,
+      "digest": "18815e649408f93b3d17900c4baf74ab652aeb75e0f7237a750fea34792d9826"
+    },
+    {
+      "name": "batches",
+      "equal": true,
+      "digest": "2605e53d493798fd307d0a471e9ff30a4db72a8887bc2870d6ce64adbfb5c3cf"
+    },
+    {
+      "name": "qingxing/reviews/pure=false",
+      "equal": true,
+      "digest": "37e012a8710595f47be89eff39772cf2527863626f2e19a7fe8d5105f9bf9ee2"
+    },
+    {
+      "name": "qingxing/stats/pure=false",
+      "equal": true,
+      "digest": "a38d00387b4fd15fef3231cb6719b7680341b67e21a9408391c78e4d436ff2f1"
+    },
+    {
+      "name": "qingxing/reviews/pure=true",
+      "equal": true,
+      "digest": "37e012a8710595f47be89eff39772cf2527863626f2e19a7fe8d5105f9bf9ee2"
+    },
+    {
+      "name": "qingxing/stats/pure=true",
+      "equal": true,
+      "digest": "a38d00387b4fd15fef3231cb6719b7680341b67e21a9408391c78e4d436ff2f1"
+    },
+    {
+      "name": "yueyin/reviews/pure=false",
+      "equal": true,
+      "digest": "3ae4acf5c10bfb2fb053aa6271c67758f987b9ae554fe535aa49e97ecae6c2c4"
+    },
+    {
+      "name": "yueyin/stats/pure=false",
+      "equal": true,
+      "digest": "cc1723b97c450aa84e8010fd69e2562671eb4cfbd2c9fc1aadd78e4095a9c334"
+    },
+    {
+      "name": "yueyin/reviews/pure=true",
+      "equal": true,
+      "digest": "3ae4acf5c10bfb2fb053aa6271c67758f987b9ae554fe535aa49e97ecae6c2c4"
+    },
+    {
+      "name": "yueyin/stats/pure=true",
+      "equal": true,
+      "digest": "cc1723b97c450aa84e8010fd69e2562671eb4cfbd2c9fc1aadd78e4095a9c334"
+    },
+    {
+      "name": "jisu/reviews/pure=false",
+      "equal": true,
+      "digest": "5508f2f1c2df9b5e675641e8d7949562a576024de9a2510fd00ced07e916e8f7"
+    },
+    {
+      "name": "jisu/stats/pure=false",
+      "equal": true,
+      "digest": "015b1bd50f544e6de248eb7152b2fec1ccb05a98ae310b7ee9e72ce194e5852a"
+    },
+    {
+      "name": "jisu/reviews/pure=true",
+      "equal": true,
+      "digest": "5508f2f1c2df9b5e675641e8d7949562a576024de9a2510fd00ced07e916e8f7"
+    },
+    {
+      "name": "jisu/stats/pure=true",
+      "equal": true,
+      "digest": "015b1bd50f544e6de248eb7152b2fec1ccb05a98ae310b7ee9e72ce194e5852a"
+    },
+    {
+      "name": "jd-100239311413/reviews/pure=false",
+      "equal": true,
+      "digest": "c1d440f81bd5c30c913f811f5ce0cf833590b76bdee87c4c493d8c977e4f1949"
+    },
+    {
+      "name": "jd-100239311413/stats/pure=false",
+      "equal": true,
+      "digest": "fed13450bcccbf28d052680c4e07697c78f9ddb1c434f27cc64dfd69dcb4d85a"
+    },
+    {
+      "name": "jd-100239311413/reviews/pure=true",
+      "equal": true,
+      "digest": "c1d440f81bd5c30c913f811f5ce0cf833590b76bdee87c4c493d8c977e4f1949"
+    },
+    {
+      "name": "jd-100239311413/stats/pure=true",
+      "equal": true,
+      "digest": "fed13450bcccbf28d052680c4e07697c78f9ddb1c434f27cc64dfd69dcb4d85a"
+    },
+    {
+      "name": "jd-100258708153/reviews/pure=false",
+      "equal": true,
+      "digest": "40f0c44714aec419afcdb542df683a98eadfd3bae0a37ffd4445f800b1606827"
+    },
+    {
+      "name": "jd-100258708153/stats/pure=false",
+      "equal": true,
+      "digest": "22342b77b32df8dade87f5aaf726c0c5cd037d7b3a74411451444f405cfea02b"
+    },
+    {
+      "name": "jd-100258708153/reviews/pure=true",
+      "equal": true,
+      "digest": "40f0c44714aec419afcdb542df683a98eadfd3bae0a37ffd4445f800b1606827"
+    },
+    {
+      "name": "jd-100258708153/stats/pure=true",
+      "equal": true,
+      "digest": "22342b77b32df8dade87f5aaf726c0c5cd037d7b3a74411451444f405cfea02b"
+    },
+    {
+      "name": "jd-100410460960/reviews/pure=false",
+      "equal": true,
+      "digest": "c74c220741a5b0704d499bb9e6be02cd4d8dc69436fc22a9b7e7fa7e53d50a32"
+    },
+    {
+      "name": "jd-100410460960/stats/pure=false",
+      "equal": true,
+      "digest": "1872356501050d37fa7df2f4649a2012bc1aa346d1a2a49b6c8f682f046ead52"
+    },
+    {
+      "name": "jd-100410460960/reviews/pure=true",
+      "equal": true,
+      "digest": "c74c220741a5b0704d499bb9e6be02cd4d8dc69436fc22a9b7e7fa7e53d50a32"
+    },
+    {
+      "name": "jd-100410460960/stats/pure=true",
+      "equal": true,
+      "digest": "1872356501050d37fa7df2f4649a2012bc1aa346d1a2a49b6c8f682f046ead52"
+    }
+  ]
+}

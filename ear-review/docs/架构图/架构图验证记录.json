@@ -13,13 +13,13 @@
       "file": "NLP核心功能与双模型流程.drawio",
       "pages": [
         {
-          "name": "01 方向与双模型准备",
-          "edges": 11,
+          "name": "01 NLP 在线分析流程",
+          "edges": 12,
           "nativeIdsValid": true
         },
         {
-          "name": "02 CSV 到 NLP 到可视化",
-          "edges": 12,
+          "name": "02 双模型准备与训练",
+          "edges": 11,
           "nativeIdsValid": true
         },
         {
@@ -28,55 +28,45 @@
           "nativeIdsValid": true
         }
       ],
-      "sha256": "a4c2dc8e2ec35b8af1dee48c86968bb6ed5dc9da859202fd23b2533c6145c728"
+      "sha256": "7b706d0940807e390988b7e3c77c4d341c87a4e1da21d874d5a483467082ce54"
     },
     {
       "file": "Web系统设计与使用流程.drawio",
       "pages": [
         {
-          "name": "01 用户使用与数据流",
+          "name": "Web 系统简图",
           "edges": 12,
-          "nativeIdsValid": true
-        },
-        {
-          "name": "02 Web 内部处理与分层",
-          "edges": 16,
           "nativeIdsValid": true
         }
       ],
-      "sha256": "4d629bd2c478550ec50a85b075ec1f3c05176557bfbf26227927a1555b2b86d7"
+      "sha256": "a9474eafc4f5fde393028d6198b0fbd61cc7752e09f40061380ca4a8e1b3c7a7"
     }
   ],
   "images": [
     {
-      "file": "NLP-01-方向与模型准备.png",
-      "width": 3927,
-      "height": 4455,
-      "bytes": 1820891
-    },
-    {
-      "file": "NLP-02-在线处理流程.png",
+      "file": "NLP-01-在线分析流程.png",
       "width": 4646,
       "height": 4955,
-      "bytes": 1794923
+      "bytes": 1423513
+    },
+    {
+      "file": "NLP-02-模型准备与训练.png",
+      "width": 3927,
+      "height": 4455,
+      "bytes": 1329205
     },
     {
       "file": "NLP-03-评估与指标.png",
       "width": 4177,
       "height": 3671,
-      "bytes": 1476123
+      "bytes": 1130435
     },
     {
-      "file": "Web-01-用户使用流程.png",
-      "width": 5650,
-      "height": 2565,
-      "bytes": 1431294
-    },
-    {
-      "file": "Web-02-内部架构.png",
-      "width": 4775,
-      "height": 4305,
-      "bytes": 2174111
+      "file": "Web-01-前后端与API.png",
+      "width": 3858,
+      "height": 4443,
+      "bytes": 805329
     }
-  ]
+  ],
+  "style": "Web 九节点简图：保存评论、保存分析、读取数据三条独立连线，无公共汇合线"
 }

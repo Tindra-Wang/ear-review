@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
-import type { Job } from '../../../../packages/contracts/index';
-export interface DataBatch { id:number; name:string; source:string; count:number; createdAt?:string; products?:{id:string;name:string;count:number}[]; summary?:{submitted?:number;invalid?:number;duplicates?:number} }
+import type { Job, DataBatch } from '../../../../packages/contracts/index';
 const props=defineProps<{jobs:Job[];batches:DataBatch[];errors:Record<number,{reviewId:number;message:string}[]>}>();
 const emit=defineEmits<{retry:[batchId:number];errors:[jobId:number]}>();
 const history=ref(false);

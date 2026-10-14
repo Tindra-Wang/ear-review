@@ -1,0 +1,29 @@
+{
+  "measuredAt": "2026-10-14T09:59:02.694Z",
+  "node": "v24.14.0",
+  "cpu": "Intel(R) Core(TM) Ultra 9 275HX",
+  "scope": "内存 SQLite，合成文本；importRows 不含文件解析；stats 包含完整仓储读取及六方面聚合，不含 HTTP/NLP 推理；20 次预热后样本，nearest-rank P50/P95",
+  "measurements": [
+    {
+      "count": 100,
+      "importRowsMs": 4.6778999999999655,
+      "statsP50Ms": 1.0862999999999943,
+      "statsP95Ms": 1.3833000000000197,
+      "samples": 20
+    },
+    {
+      "count": 1000,
+      "importRowsMs": 18.27090000000004,
+      "statsP50Ms": 11.347200000000043,
+      "statsP95Ms": 12.24619999999993,
+      "samples": 20
+    },
+    {
+      "count": 5000,
+      "importRowsMs": 89.64570000000003,
+      "statsP50Ms": 78.97280000000023,
+      "statsP95Ms": 84.54959999999983,
+      "samples": 20
+    }
+  ]
+}

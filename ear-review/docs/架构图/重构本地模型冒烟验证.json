@@ -1,0 +1,92 @@
+{
+  "modelVersion": "ollama-qwen3:4b-absa-v4",
+  "kind": "本地预训练模型 HTTP 非持久化冒烟验证；不属于金标准质量评估",
+  "aspectCount": 4,
+  "result": {
+    "text": "音质很清晰，降噪效果不错。但戴久了耳朵疼，打游戏声音慢半拍。",
+    "opinions": [
+      {
+        "aspect": "sound",
+        "sentiment": "positive",
+        "status": "classified",
+        "expression": "explicit",
+        "intensity": "high",
+        "rationale": "S1: 音质很清晰",
+        "evidence": [
+          {
+            "text": "音质很清晰，",
+            "start": 0,
+            "end": 6,
+            "sentiment": "positive"
+          }
+        ],
+        "method": "本地文本模型 · 结构化方面抽取"
+      },
+      {
+        "aspect": "noise",
+        "sentiment": "positive",
+        "status": "classified",
+        "expression": "explicit",
+        "intensity": "medium",
+        "rationale": "S2: 降噪效果不错",
+        "evidence": [
+          {
+            "text": "降噪效果不错。",
+            "start": 6,
+            "end": 13,
+            "sentiment": "positive"
+          }
+        ],
+        "method": "本地文本模型 · 结构化方面抽取"
+      },
+      {
+        "aspect": "comfort",
+        "sentiment": "negative",
+        "status": "classified",
+        "expression": "explicit",
+        "intensity": "high",
+        "rationale": "S3: 戴久了耳朵疼",
+        "evidence": [
+          {
+            "text": "但戴久了耳朵疼，",
+            "start": 13,
+            "end": 21,
+            "sentiment": "negative"
+          }
+        ],
+        "method": "本地文本模型 · 结构化方面抽取"
+      },
+      {
+        "aspect": "latency",
+        "sentiment": "negative",
+        "status": "classified",
+        "expression": "explicit",
+        "intensity": "high",
+        "rationale": "S4: 打游戏声音慢半拍",
+        "evidence": [
+          {
+            "text": "打游戏声音慢半拍。",
+            "start": 21,
+            "end": 30,
+            "sentiment": "negative"
+          }
+        ],
+        "method": "本地文本模型 · 结构化方面抽取"
+      }
+    ],
+    "warnings": [],
+    "modelVersion": "ollama-qwen3:4b-absa-v4",
+    "durationMs": 11471,
+    "inference": {
+      "loadMs": 6682.503,
+      "promptTokens": 550,
+      "outputTokens": 338,
+      "generationMs": 4394.258,
+      "attempts": 1
+    }
+  },
+  "checkedAt": "2026-10-14T10:01:18.2561069Z",
+  "durationMs": 11471,
+  "evidenceCount": 4,
+  "evidenceValid": true
+}

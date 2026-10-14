@@ -24,3 +24,5 @@ export interface ImportColumns { headers: string[]; mapping: ColumnMapping; samp
 export interface Job { id: number; batchId: number; status: 'queued' | 'running' | 'completed' | 'failed'; total: number; processed: number; error: string | null; modelVersion: string; createdAt: string }
 export interface CollectionJob { id:number;productId:string;platform:'jd'|'tmall';itemId:string;url:string;method?:'public'|'browser';autoRunning?:boolean;status:'queued'|'running'|'waiting'|'completed'|'partial'|'blocked'|'failed';requested:number;total:number;error:string|null;createdAt:string;updatedAt:string }
 export interface ProductSummary { productId:string;analyzed:number;pending:number;unclassified:number;strengths:{aspect:AspectId;count:number;total:number;evidence:{reviewId:number;text:string;source:string}[]}[];weaknesses:ProductSummary['strengths'];mixed:number }
+
+export interface DataBatch { id:number; name:string; source:string; count:number; createdAt?:string; products?:{id:string;name:string;count:number}[]; summary?:{submitted?:number;invalid?:number;duplicates?:number} }

@@ -1,0 +1,399 @@
+{
+  "checkedAt": "2026-10-14T10:06:52.561Z",
+  "purpose": "保持全部既有功能的分层重构；不改变模型算法、权重和 Prompt",
+  "before": {
+    "fileCount": 32,
+    "runtimeEdgeCount": 52,
+    "controller": {
+      "file": "apps/api/src/controller.ts",
+      "physicalLines": 231,
+      "bytes": 27627,
+      "sha256": "cfd1f7829491a6b5762bfa9fbbb2ad0ec28dc21adb15c5a54c22e9b4693ee705",
+      "functions": 57,
+      "methods": 33,
+      "sqlCalls": 39,
+      "refs": 0,
+      "fanOut": 9,
+      "fanIn": 1
+    },
+    "app": {
+      "file": "apps/web/src/App.vue",
+      "physicalLines": 127,
+      "bytes": 32527,
+      "sha256": "0e7fdf2d8f3c555b14ed9a48138b6a4e6dd7821fa35bc24f4dae5032809428e5",
+      "functions": 45,
+      "methods": 0,
+      "sqlCalls": 0,
+      "refs": 46,
+      "fanOut": 8,
+      "fanIn": 1
+    }
+  },
+  "after": {
+    "fileCount": 58,
+    "runtimeEdgeCount": 97,
+    "controller": {
+      "file": "apps/api/src/controller.ts",
+      "physicalLines": 188,
+      "bytes": 7118,
+      "sha256": "2e40a24b67d4d898ccc6a09fb962f16239eae39eece3000bee9b3a1b7d1376c0",
+      "functions": 0,
+      "methods": 31,
+      "sqlCalls": 0,
+      "refs": 0,
+      "fanOut": 2,
+      "fanIn": 1
+    },
+    "app": {
+      "file": "apps/web/src/App.vue",
+      "physicalLines": 93,
+      "bytes": 23607,
+      "sha256": "3661389ae81dcfbc676738f34f5a0d22ea4f6aef72e747f4200affe447c85439",
+      "functions": 10,
+      "methods": 0,
+      "sqlCalls": 0,
+      "refs": 5,
+      "fanOut": 14,
+      "fanIn": 1
+    },
+    "cycles": [],
+    "boundaryViolations": []
+  },
+  "unchangedRoutes": true,
+  "routes": [
+    "Get auth/me",
+    "Get batches",
+    "Get collections",
+    "Get collections/:id/csv",
+    "Get collections/:id/data",
+    "Get compare",
+    "Get export",
+    "Get health",
+    "Get jobs",
+    "Get jobs/:id/errors",
+    "Get model",
+    "Get products",
+    "Get products/:id/stats",
+    "Get products/:id/summary",
+    "Get reviews",
+    "Get reviews/:id/history",
+    "Patch products/:id",
+    "Patch reviews/:id/correction",
+    "Post analyze",
+    "Post auth/login",
+    "Post auth/logout",
+    "Post collections",
+    "Post collections/:id/auto",
+    "Post collections/:id/finish",
+    "Post collections/:id/read",
+    "Post imports/columns",
+    "Post imports/commit",
+    "Post imports/preview",
+    "Post jobs",
+    "Post products"
+  ],
+  "unchangedPageTemplate": true,
+  "unchangedAlgorithms": [
+    {
+      "file": "packages/nlp/index.ts",
+      "unchanged": true
+    },
+    {
+      "file": "packages/nlp/model.ts",
+      "unchanged": true
+    },
+    {
+      "file": "packages/nlp/semantic.ts",
+      "unchanged": true
+    }
+  ],
+  "verification": {
+    "typecheck": "passed",
+    "build": "passed",
+    "unitAndIntegration": {
+      "passed": 49,
+      "files": 12
+    },
+    "e2e": {
+      "passed": 13,
+      "isolatedPort": 3002,
+      "isolatedDatabase": true
+    },
+    "realData": {
+      "checkedAt": "2026-10-14T09:56:42.407Z",
+      "method": "实际数据库只读连接；与重构前 Store 的查询和聚合实现逐项比较；未运行初始化/迁移",
+      "counts": {
+        "products": 6,
+        "batches": 5,
+        "reviews": 238,
+        "predictions": 232,
+        "corrections": 0,
+        "jobs": 4,
+        "job_errors": 0,
+        "collections": 7
+      },
+      "activeJobs": 0,
+      "activeCollections": 0,
+      "checks": [
+        {
+          "name": "products",
+          "equal": true,
+          "digest": "18815e649408f93b3d17900c4baf74ab652aeb75e0f7237a750fea34792d9826"
+        },
+        {
+          "name": "batches",
+          "equal": true,
+          "digest": "2605e53d493798fd307d0a471e9ff30a4db72a8887bc2870d6ce64adbfb5c3cf"
+        },
+        {
+          "name": "qingxing/reviews/pure=false",
+          "equal": true,
+          "digest": "37e012a8710595f47be89eff39772cf2527863626f2e19a7fe8d5105f9bf9ee2"
+        },
+        {
+          "name": "qingxing/stats/pure=false",
+          "equal": true,
+          "digest": "a38d00387b4fd15fef3231cb6719b7680341b67e21a9408391c78e4d436ff2f1"
+        },
+        {
+          "name": "qingxing/reviews/pure=true",
+          "equal": true,
+          "digest": "37e012a8710595f47be89eff39772cf2527863626f2e19a7fe8d5105f9bf9ee2"
+        },
+        {
+          "name": "qingxing/stats/pure=true",
+          "equal": true,
+          "digest": "a38d00387b4fd15fef3231cb6719b7680341b67e21a9408391c78e4d436ff2f1"
+        },
+        {
+          "name": "yueyin/reviews/pure=false",
+          "equal": true,
+          "digest": "3ae4acf5c10bfb2fb053aa6271c67758f987b9ae554fe535aa49e97ecae6c2c4"
+        },
+        {
+          "name": "yueyin/stats/pure=false",
+          "equal": true,
+          "digest": "cc1723b97c450aa84e8010fd69e2562671eb4cfbd2c9fc1aadd78e4095a9c334"
+        },
+        {
+          "name": "yueyin/reviews/pure=true",
+          "equal": true,
+          "digest": "3ae4acf5c10bfb2fb053aa6271c67758f987b9ae554fe535aa49e97ecae6c2c4"
+        },
+        {
+          "name": "yueyin/stats/pure=true",
+          "equal": true,
+          "digest": "cc1723b97c450aa84e8010fd69e2562671eb4cfbd2c9fc1aadd78e4095a9c334"
+        },
+        {
+          "name": "jisu/reviews/pure=false",
+          "equal": true,
+          "digest": "5508f2f1c2df9b5e675641e8d7949562a576024de9a2510fd00ced07e916e8f7"
+        },
+        {
+          "name": "jisu/stats/pure=false",
+          "equal": true,
+          "digest": "015b1bd50f544e6de248eb7152b2fec1ccb05a98ae310b7ee9e72ce194e5852a"
+        },
+        {
+          "name": "jisu/reviews/pure=true",
+          "equal": true,
+          "digest": "5508f2f1c2df9b5e675641e8d7949562a576024de9a2510fd00ced07e916e8f7"
+        },
+        {
+          "name": "jisu/stats/pure=true",
+          "equal": true,
+          "digest": "015b1bd50f544e6de248eb7152b2fec1ccb05a98ae310b7ee9e72ce194e5852a"
+        },
+        {
+          "name": "jd-100239311413/reviews/pure=false",
+          "equal": true,
+          "digest": "c1d440f81bd5c30c913f811f5ce0cf833590b76bdee87c4c493d8c977e4f1949"
+        },
+        {
+          "name": "jd-100239311413/stats/pure=false",
+          "equal": true,
+          "digest": "fed13450bcccbf28d052680c4e07697c78f9ddb1c434f27cc64dfd69dcb4d85a"
+        },
+        {
+          "name": "jd-100239311413/reviews/pure=true",
+          "equal": true,
+          "digest": "c1d440f81bd5c30c913f811f5ce0cf833590b76bdee87c4c493d8c977e4f1949"
+        },
+        {
+          "name": "jd-100239311413/stats/pure=true",
+          "equal": true,
+          "digest": "fed13450bcccbf28d052680c4e07697c78f9ddb1c434f27cc64dfd69dcb4d85a"
+        },
+        {
+          "name": "jd-100258708153/reviews/pure=false",
+          "equal": true,
+          "digest": "40f0c44714aec419afcdb542df683a98eadfd3bae0a37ffd4445f800b1606827"
+        },
+        {
+          "name": "jd-100258708153/stats/pure=false",
+          "equal": true,
+          "digest": "22342b77b32df8dade87f5aaf726c0c5cd037d7b3a74411451444f405cfea02b"
+        },
+        {
+          "name": "jd-100258708153/reviews/pure=true",
+          "equal": true,
+          "digest": "40f0c44714aec419afcdb542df683a98eadfd3bae0a37ffd4445f800b1606827"
+        },
+        {
+          "name": "jd-100258708153/stats/pure=true",
+          "equal": true,
+          "digest": "22342b77b32df8dade87f5aaf726c0c5cd037d7b3a74411451444f405cfea02b"
+        },
+        {
+          "name": "jd-100410460960/reviews/pure=false",
+          "equal": true,
+          "digest": "c74c220741a5b0704d499bb9e6be02cd4d8dc69436fc22a9b7e7fa7e53d50a32"
+        },
+        {
+          "name": "jd-100410460960/stats/pure=false",
+          "equal": true,
+          "digest": "1872356501050d37fa7df2f4649a2012bc1aa346d1a2a49b6c8f682f046ead52"
+        },
+        {
+          "name": "jd-100410460960/reviews/pure=true",
+          "equal": true,
+          "digest": "c74c220741a5b0704d499bb9e6be02cd4d8dc69436fc22a9b7e7fa7e53d50a32"
+        },
+        {
+          "name": "jd-100410460960/stats/pure=true",
+          "equal": true,
+          "digest": "1872356501050d37fa7df2f4649a2012bc1aa346d1a2a49b6c8f682f046ead52"
+        }
+      ]
+    },
+    "localModelSmoke": {
+      "modelVersion": "ollama-qwen3:4b-absa-v4",
+      "kind": "本地预训练模型 HTTP 非持久化冒烟验证；不属于金标准质量评估",
+      "aspectCount": 4,
+      "result": {
+        "text": "音质很清晰，降噪效果不错。但戴久了耳朵疼，打游戏声音慢半拍。",
+        "opinions": [
+          {
+            "aspect": "sound",
+            "sentiment": "positive",
+            "status": "classified",
+            "expression": "explicit",
+            "intensity": "high",
+            "rationale": "S1: 音质很清晰",
+            "evidence": [
+              {
+                "text": "音质很清晰，",
+                "start": 0,
+                "end": 6,
+                "sentiment": "positive"
+              }
+            ],
+            "method": "本地文本模型 · 结构化方面抽取"
+          },
+          {
+            "aspect": "noise",
+            "sentiment": "positive",
+            "status": "classified",
+            "expression": "explicit",
+            "intensity": "medium",
+            "rationale": "S2: 降噪效果不错",
+            "evidence": [
+              {
+                "text": "降噪效果不错。",
+                "start": 6,
+                "end": 13,
+                "sentiment": "positive"
+              }
+            ],
+            "method": "本地文本模型 · 结构化方面抽取"
+          },
+          {
+            "aspect": "comfort",
+            "sentiment": "negative",
+            "status": "classified",
+            "expression": "explicit",
+            "intensity": "high",
+            "rationale": "S3: 戴久了耳朵疼",
+            "evidence": [
+              {
+                "text": "但戴久了耳朵疼，",
+                "start": 13,
+                "end": 21,
+                "sentiment": "negative"
+              }
+            ],
+            "method": "本地文本模型 · 结构化方面抽取"
+          },
+          {
+            "aspect": "latency",
+            "sentiment": "negative",
+            "status": "classified",
+            "expression": "explicit",
+            "intensity": "high",
+            "rationale": "S4: 打游戏声音慢半拍",
+            "evidence": [
+              {
+                "text": "打游戏声音慢半拍。",
+                "start": 21,
+                "end": 30,
+                "sentiment": "negative"
+              }
+            ],
+            "method": "本地文本模型 · 结构化方面抽取"
+          }
+        ],
+        "warnings": [],
+        "modelVersion": "ollama-qwen3:4b-absa-v4",
+        "durationMs": 11471,
+        "inference": {
+          "loadMs": 6682.503,
+          "promptTokens": 550,
+          "outputTokens": 338,
+          "generationMs": 4394.258,
+          "attempts": 1
+        }
+      },
+      "checkedAt": "2026-10-14T10:01:18.2561069Z",
+      "durationMs": 11471,
+      "evidenceCount": 4,
+      "evidenceValid": true
+    },
+    "queryPerformance": {
+      "measuredAt": "2026-10-14T09:59:02.694Z",
+      "node": "v24.14.0",
+      "cpu": "Intel(R) Core(TM) Ultra 9 275HX",
+      "scope": "内存 SQLite，合成文本；importRows 不含文件解析；stats 包含完整仓储读取及六方面聚合，不含 HTTP/NLP 推理；20 次预热后样本，nearest-rank P50/P95",
+      "measurements": [
+        {
+          "count": 100,
+          "importRowsMs": 4.6778999999999655,
+          "statsP50Ms": 1.0862999999999943,
+          "statsP95Ms": 1.3833000000000197,
+          "samples": 20
+        },
+        {
+          "count": 1000,
+          "importRowsMs": 18.27090000000004,
+          "statsP50Ms": 11.347200000000043,
+          "statsP95Ms": 12.24619999999993,
+          "samples": 20
+        },
+        {
+          "count": 5000,
+          "importRowsMs": 89.64570000000003,
+          "statsP50Ms": 78.97280000000023,
+          "statsP95Ms": 84.54959999999983,
+          "samples": 20
+        }
+      ]
+    }
+  },
+  "limits": [
+    "静态扫描不是完整调用图或 LCOM",
+    "页面模板仍由 App.vue 组合",
+    "同版本预测 upsert 和整批重试行为保留",
+    "absa-v4 真实金标准尚未建立；冒烟测试不作为准确率",
+    "浏览器和平台测试夹具不代表所有电商实站情况"
+  ]
+}

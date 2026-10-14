@@ -1,12 +1,13 @@
+import {createApplicationServices} from './application-services.js';
 import {it,expect,vi} from 'vitest';
 import {BrowserCollector} from './browser-collector.js';
 import type {Request} from 'express';
-import {Store} from './store.js';
+import {ApplicationStore as Store} from './application-bootstrap.js';
 import {ApiController} from './controller.js';
 import type {Auth} from './auth.js';
 vi.mock('./collector.js',async original=>({...await original<typeof import('./collector.js')>(),collectPublic:vi.fn().mockResolvedValue({rows:[],pages:0,error:'测试模拟访问受限',status:'blocked'})}));
 const req={} as Request;
-function setup(){const store=new Store(':memory:',false);return {store,controller:new ApiController(store,{require:()=> 'admin'} as unknown as Auth)};}
+function setup(){const store=new Store(':memory:',false);return {store,controller:new ApiController(store,{require:()=> 'admin'} as unknown as Auth,createApplicationServices(store))};}
 it('未预建耳机也能按链接创建任务，带追踪参数的同商品不会重复建产品',async()=>{
   const {store,controller}=setup();try{
     const first=controller.createCollection({platform:'jd',url:'https://item.jd.com/100239311413.html?pcdk=tracking&spm=abc',productName:'华为 FreeClip',limit:1},req)!;

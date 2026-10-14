@@ -9,58 +9,24 @@ import ReviewList from './components/ReviewList.vue';
 import ImportMapping from './components/ImportMapping.vue';
 import ProductOverview from './components/ProductOverview.vue';
 import PlatformCollection from './components/PlatformCollection.vue';
-import AnalysisTasks, { type DataBatch } from './components/AnalysisTasks.vue';
-const router=useRouter(); const route = useRoute(); const path = computed(() => route.path);
+import AnalysisTasks from './components/AnalysisTasks.vue';
+import { useSingleAnalysis } from './composables/useSingleAnalysis';
+import { useProductComparison } from './composables/useProductComparison';
+import { useProductReviews } from './composables/useProductReviews';
+import { useAuth } from './composables/useAuth';
+import { useDataWorkspace } from './composables/useDataWorkspace';
+import { useProductManagement } from './composables/useProductManagement';
+
+const router=useRouter(); const route=useRoute(); const path=computed(()=>route.path);
 const products = ref<Product[]>([]); const model = ref<{ semantic: { ready: boolean; model: string; version: string; message: string }; version: string; algorithm: string; trainingExamples: number; dataKind: string; limitations: string[]; evaluation: { dataset: string; count: number; hybrid: { aspectMicroF1: number; pairMicroF1: number }; rules: { aspectMicroF1: number; pairMicroF1: number } } | null } | null>(null);
-const error = ref(''); const notice = ref(''); const admin = ref(false); const busy = ref(false); const modelExpanded = ref(false);
-const text = ref('音质很清晰，降噪效果不错。但戴久了耳朵疼，打游戏声音慢半拍。');
-const examples = ['音质很清晰，降噪效果不错。但戴久了耳朵疼，打游戏声音慢半拍。', '降噪真厉害，开了之后地铁广播听得一清二楚，真是谢谢你。', '昨天戴着它开会，对方让我重复了三遍。回家听歌倒是很享受。', '安静办公室里降噪挺舒服，到了地铁上却完全压不住。'];
-const mode = ref('hybrid'); const maxChars = computed(() => mode.value === 'semantic' ? 5000 : 1000); const result = ref<Analysis | null>(null); const chars = computed(() => Array.from(text.value).length);
-watch(mode, () => { result.value = null; });
-async function runAnalysis() { if (busy.value) return; busy.value = true; error.value = ''; try { result.value = await post<Analysis>('/analyze', { text: text.value, mode: mode.value }); } catch (e) { error.value = (e as Error).message; } finally { busy.value = false; } }
-function sample(index: number) { text.value = examples[index]!; void runAnalysis(); }
-const summary=ref<ProductSummary|null>(null); const productId = ref(''); const stats = ref<ProductStats | null>(null); const pure = ref(false);
-const filters = ref({ aspect: '', sentiment: '', search: '', pending: false, corrected: false }); const reviews = ref<Review[]>([]); const page = ref(1); const total = ref(0); const loadingReviews = ref(false);
-let reviewRequest = 0; let statsRequest = 0;
-function reviewQuery() { return new URLSearchParams({ productId: productId.value, aspect: filters.value.aspect, sentiment: filters.value.sentiment, search: filters.value.search, pending: String(filters.value.pending), corrected: String(filters.value.corrected), pure: String(pure.value), page: String(page.value), size: '8' }).toString(); }
-async function loadReviews() { const current = ++reviewRequest; loadingReviews.value = true; try { const data = await api<{ rows: Review[]; total: number }>(`/reviews?${reviewQuery()}`); if (current === reviewRequest) { reviews.value = data.rows; total.value = data.total; } } catch (e) { if (current === reviewRequest) error.value = (e as Error).message; } finally { if (current === reviewRequest) loadingReviews.value = false; } }
-async function loadStats() { if (!productId.value) return; const current = ++statsRequest; try { const [data,points] = await Promise.all([api<ProductStats>(`/products/${productId.value}/stats?pure=${pure.value}`),api<ProductSummary>(`/products/${productId.value}/summary?pure=${pure.value}`)]); if (current === statsRequest) { stats.value = data; summary.value=points; } } catch (e) { error.value = (e as Error).message; } }
-async function refreshed() { await Promise.all([loadReviews(), loadStats(), loadCompare()]); notice.value = '复核已保存，画像与对比已同步更新。'; }
-watch([productId, pure], () => { page.value = 1; void loadStats(); void loadReviews(); });
-watch(page, () => void loadReviews());
-function applyFilters() { page.value = 1; void loadReviews(); }
-function selectAspect(aspect: AspectId) { filters.value.aspect = filters.value.aspect === aspect ? '' : aspect; applyFilters(); }
-const selectedProducts = ref<string[]>([]); const comparisons = ref<ProductStats[]>([]); const compareLoading = ref(false); const scenario = ref('all');
-const scenarioAspects = computed<readonly string[]>(() => ({ all: ASPECTS.map(a => a.id), commute: ['noise','comfort'], game: ['latency','sound'], long: ['comfort','battery'] })[scenario.value] ?? []);
-let compareRequest = 0;
-async function loadCompare() { const current = ++compareRequest; if (selectedProducts.value.length < 2) { comparisons.value = []; return; } compareLoading.value = true; try { const data = await api<ProductStats[]>(`/compare?ids=${selectedProducts.value.join(',')}`); if (current === compareRequest) comparisons.value = data; } catch (e) { if (current === compareRequest) error.value = (e as Error).message; } finally { if (current === compareRequest) compareLoading.value = false; } }
-watch(selectedProducts, () => void loadCompare(), { deep: true });
-const loginForm = ref({ username: 'admin', password: '' }); const loginError = ref(''); const loginBusy = ref(false);
-async function login() { loginBusy.value = true; loginError.value = ''; try { const data = await post<{ token: string }>('/auth/login', loginForm.value); saveToken(data.token); admin.value = true; loginForm.value.password = ''; await loadData(); } catch (e) { loginError.value = (e as Error).message; } finally { loginBusy.value = false; } }
-async function logout() { try { await post('/auth/logout', {}); } finally { saveToken(null); admin.value = false; preview.value = null; jobs.value = []; batches.value = []; } }
-const csv = ref('');
-const importName = ref('评论导入.csv'); const importSource = ref(''); const isSynthetic = ref(false); const preview = ref<ImportPreview | null>(null); const importBusy = ref(false); const importError = ref('');
-const columns = ref<ImportColumns | null>(null); const mapping = ref<ColumnMapping>({}); const fallbackProduct = ref(''); const encoding = ref('utf-8'); const batchMode = ref('semantic'); const fileBytes = ref<ArrayBuffer | null>(null);
-const batches = ref<DataBatch[]>([]); const jobs = ref<Job[]>([]);
-watch([csv, importSource, isSynthetic, importName, fallbackProduct, mapping], () => preview.value = null, { deep: true });
-watch(csv, () => { columns.value = null; mapping.value = {}; });
-watch(encoding, () => decodeFile());
-function decodeFile() { if (!fileBytes.value) return; try { csv.value = new TextDecoder(encoding.value, { fatal: true }).decode(fileBytes.value); importError.value = ''; } catch { csv.value = ''; importError.value = '文件编码不匹配，请改选 UTF-8 或 GB18030 后重试'; } }
-async function inspectColumns() { importError.value = ''; importBusy.value = true; try { columns.value = await post<ImportColumns>('/imports/columns', { csv: csv.value }); mapping.value = { ...columns.value.mapping }; } catch (e) { importError.value = (e as Error).message; } finally { importBusy.value = false; } }
+const error=ref(''); const notice=ref(''); const modelExpanded=ref(false);
+const { busy, text, examples, mode, maxChars, result, chars, runAnalysis, sample } = useSingleAnalysis(error);
+const { selectedProducts, comparisons, compareLoading, scenario, scenarioAspects, loadCompare } = useProductComparison(error);
+const { summary, productId, stats, pure, filters, reviews, page, total, loadingReviews, loadReviews, loadStats, refreshed, applyFilters, selectAspect, exportReviews } = useProductReviews(error, notice, loadCompare);
+const { admin, loginForm, loginError, loginBusy, login, logout } = useAuth(() => loadData(), () => clearData());
+const { csv, importName, importSource, isSynthetic, preview, importBusy, importError, columns, mapping, fallbackProduct, encoding, batchMode, batches, jobs, inspectColumns, jobErrors, loadJobErrors, readFile, previewImport, commitImport, loadData, analyzeBatch, templateDownload, useCollection, clearData } = useDataWorkspace(admin, error, notice, productId, products);
+const { addProductOpen, editingProduct, productForm, productError, editProduct, addProduct } = useProductManagement(products, notice);
 async function refreshModel() { model.value = await api<typeof model.value>('/model'); if (model.value?.semantic.ready) { mode.value = 'semantic'; batchMode.value = 'semantic'; } }
-const jobErrors = ref<Record<number, { reviewId: number; message: string }[]>>({});
-async function loadJobErrors(jobId: number) { try { jobErrors.value[jobId] = await api(`/jobs/${jobId}/errors`); } catch (e) { error.value = (e as Error).message; } }
-async function readFile(event: Event) { const file = (event.target as HTMLInputElement).files?.[0]; if (!file) return; if (file.size > 5 * 1024 * 1024) { importError.value = '文件不能超过 5 MB'; return; } fileBytes.value = await file.arrayBuffer(); importName.value = file.name; decodeFile(); if (csv.value) await inspectColumns(); }
-async function previewImport() { importBusy.value = true; importError.value = ''; try { preview.value = await post<ImportPreview>('/imports/preview', { csv: csv.value, name: importName.value, source: importSource.value, isSynthetic: isSynthetic.value, ...(columns.value ? { mapping: mapping.value } : {}), productId: fallbackProduct.value }); } catch (e) { importError.value = (e as Error).message; } finally { importBusy.value = false; } }
-async function commitImport() { if (!preview.value) return; importBusy.value = true; importError.value = ''; try { const selected=preview.value.rows.find(r=>r.valid&&!r.duplicate)?.productId; const data = await post<{ batchId: number; inserted: number }>('/imports/commit', { token: preview.value.token }); if(selected)productId.value=selected; preview.value = null; notice.value = `已保存 ${data.inserted} 条评论。`; products.value = await api<Product[]>('/products'); await loadData(); await post('/jobs', { batchId: data.batchId, mode: batchMode.value }); notice.value = `已导入 ${data.inserted} 条评论，分析任务已创建。`; products.value = await api<Product[]>('/products'); await loadData(); } catch (e) { importError.value = (e as Error).message; } finally { importBusy.value = false; } }
-async function loadData() { if (!admin.value) return; try { const [b, j] = await Promise.all([api<typeof batches.value>('/batches'), api<Job[]>('/jobs')]); batches.value = b; jobs.value = j; } catch (e) { error.value = (e as Error).message; } }
-async function analyzeBatch(batchId: number) { try { await post('/jobs', { batchId, mode: batchMode.value }); await loadData(); } catch (e) { error.value = (e as Error).message; } }
-async function exportReviews() { try { await download(`/export?${reviewQuery()}`, '耳机评论分析结果.csv'); } catch (e) { error.value = (e as Error).message; } }
-function templateDownload() { const blob = new Blob(['\uFEFFproductId,reviewId,text,source\nqingxing,example-001,"音质很好，但戴久了耳朵疼。",人工编写合成示例\n'], { type: 'text/csv;charset=utf-8' }); const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href = url; a.download = '评论导入模板.csv'; a.click(); setTimeout(() => URL.revokeObjectURL(url), 1000); }
-const addProductOpen = ref(false); const editingProduct = ref(false); const productForm = ref({ id: '', name: '', subtitle: '' }); const productError = ref('');
-function editProduct(p?: Product) { editingProduct.value = !!p; productForm.value = p ? { id: p.id, name: p.name, subtitle: p.subtitle } : { id: '', name: '', subtitle: '' }; addProductOpen.value = true; productError.value = ''; }
-async function addProduct() { productError.value = ''; try { products.value = editingProduct.value ? await api<Product[]>(`/products/${productForm.value.id}`, { method: 'PATCH', body: JSON.stringify(productForm.value) }) : await post<Product[]>('/products', productForm.value); addProductOpen.value = false; productForm.value = { id: '', name: '', subtitle: '' }; notice.value = '产品已保存，可以使用对应 ID 导入评论。'; } catch (e) { productError.value = (e as Error).message; } }
-async function useCollection(data:{csv:string;productId:string;url:string;platform:string}) { csv.value=data.csv;fileBytes.value=null;encoding.value='utf-8';fallbackProduct.value=data.productId;importSource.value=data.url;isSynthetic.value=false;importName.value='平台评论.csv';await router.push('/data');await inspectColumns();notice.value='采集结果已载入，请核对列映射与耳机，再预览导入。'; }
 let poll: ReturnType<typeof setInterval>;
 onMounted(async () => {
   try { const [p, m] = await Promise.all([api<Product[]>('/products'), api<typeof model.value>('/model')]); products.value = p; model.value = m; if (m?.semantic.ready) { mode.value = 'semantic'; batchMode.value = 'semantic'; } productId.value = p.find(v=>v.source==='用户创建')?.id ?? p[0]?.id ?? ''; selectedProducts.value = p.slice(0, 2).map(v => v.id); if (token()) { try { await api('/auth/me'); admin.value = true; await loadData(); } catch { saveToken(null); } } if(path.value==='/try')await runAnalysis(); }

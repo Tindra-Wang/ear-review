@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest';
-import { Store } from './store.js';
+import { ApplicationStore as Store } from './application-bootstrap.js';
 import { analyze, MODEL } from '../../../packages/nlp/index.js';
 import type { PreviewRow } from '../../../packages/contracts/index.js';
 import { mkdirSync } from 'node:fs';
