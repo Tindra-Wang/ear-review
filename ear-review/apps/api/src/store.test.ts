@@ -5,6 +5,15 @@ import type { PreviewRow } from '../../../packages/contracts/index.js';
 import { mkdirSync } from 'node:fs';
 import { resolve } from 'node:path';
 describe('持久化与统计口径', () => {
+  test('批次包含真实关联产品及各产品评论数量，不混入其他批次', () => {
+    const store = new Store(':memory:', false);
+    for (const id of ['a','b']) store.run('INSERT INTO products VALUES(?,?,?,?)',id,`耳机 ${id}`,'','用户创建');
+    const row = (productId:string, reviewId:string, text:string):PreviewRow => ({row:2,productId,reviewId,text,source:'测试来源',isSynthetic:false,valid:true,duplicate:false,errors:[]});
+    const first=store.importRows([row('a','1','音质很好'),row('b','2','续航不错')],'两款耳机.csv','测试来源');
+    store.importRows([row('a','3','声音清晰')],'另一批.csv','其他来源');
+    const batch=store.batches().find(b=>b.id===first.batchId)!;
+    expect(batch.count).toBe(2);expect(batch.products).toEqual([{id:'a',name:'耳机 a',count:1},{id:'b',name:'耳机 b',count:1}]);expect(batch.source).toBe('测试来源');store.close();
+  });
   test('重复导入不重复计数，同评论同方面只计一次', () => {
     const store = new Store(':memory:', false); store.run('INSERT INTO products VALUES(?,?,?,?)','test','测试产品','','教学');
     const row: PreviewRow = { row: 2, productId: 'test', reviewId: '1', text: '音质很好，声音刺耳。', source: '教学', isSynthetic: true, valid: true, duplicate: false, errors: [] };

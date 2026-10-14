@@ -1,0 +1,18 @@
+{
+  "overview桌面": {
+    "overflow": false,
+    "ring": "218\n已判定方面评价"
+  },
+  "tasks桌面": {
+    "overflow": false,
+    "firstTask": "小米耳夹式耳机\n\n批次 #6 · 任务 #8（最新）\n\n已完成 · 已尝试 100/100\n数据文件\n平台评论.csv\n数据来源\nhttps://item.jd.com/100258708153.html\n分析方法\n本地语义模型 · Qwen3\nollama-qwen3:4b-absa-v4\n创建时间\n2026/10/14 12:22:37\n100 条评论 · 0 条未尝试"
+  },
+  "overview手机": {
+    "overflow": false,
+    "ring": "218\n已判定方面评价"
+  },
+  "tasks手机": {
+    "overflow": false,
+    "firstTask": "小米耳夹式耳机\n\n批次 #6 · 任务 #8（最新）\n\n已完成 · 已尝试 100/100\n数据文件\n平台评论.csv\n数据来源\nhttps://item.jd.com/100258708153.html\n分析方法\n本地语义模型 · Qwen3\nollama-qwen3:4b-absa-v4\n创建时间\n2026/10/14 12:22:37\n100 条评论 · 0 条未尝试"
+  }
+}

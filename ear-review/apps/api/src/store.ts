@@ -95,6 +95,9 @@ export class Store {
     });
   }
   jobs(): Job[] { return this.all<Job>('SELECT id,batch_id batchId,status,total,processed,error,version modelVersion,created_at createdAt FROM jobs ORDER BY id DESC LIMIT 30'); }
-  batches() { return this.all<{ id: number; name: string; source: string; count: number; createdAt: string; summary: string }>('SELECT b.id,b.name,b.source,b.summary,b.created_at createdAt,count(r.id) count FROM batches b LEFT JOIN reviews r ON r.batch_id=b.id GROUP BY b.id ORDER BY b.id DESC').map(batch => ({ ...batch, summary: JSON.parse(batch.summary) as { submitted?: number; inserted?: number; invalid?: number; duplicates?: number; rejected?: unknown[] } })); }
+  batches() {
+    const products = this.all<{ batchId: number; id: string; name: string; count: number }>('SELECT r.batch_id batchId,p.id,p.name,count(r.id) count FROM reviews r JOIN products p ON p.id=r.product_id WHERE r.batch_id IS NOT NULL GROUP BY r.batch_id,p.id');
+    return this.all<{ id: number; name: string; source: string; count: number; createdAt: string; summary: string }>('SELECT b.id,b.name,b.source,b.summary,b.created_at createdAt,count(r.id) count FROM batches b LEFT JOIN reviews r ON r.batch_id=b.id GROUP BY b.id ORDER BY b.id DESC').map(batch => ({ ...batch, products: products.filter(p => p.batchId === batch.id).map(({id,name,count})=>({id,name,count})), summary: JSON.parse(batch.summary) as { submitted?: number; inserted?: number; invalid?: number; duplicates?: number; rejected?: unknown[] } }));
+  }
   close() { this.db.close(); }
 }

@@ -20,8 +20,7 @@
     "scripts/train.ts",
     "scripts/evaluate.ts",
     "scripts/compare-models.ts",
-    "scripts/verify-semantic-web.ts",
-    "scripts/import-real-csv.ts"
+    "scripts/verify-semantic-web.ts"
   ],
   "exclude": [
     "**/*.test.ts"

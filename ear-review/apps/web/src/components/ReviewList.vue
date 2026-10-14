@@ -13,7 +13,7 @@ async function save(review: Review) { saving.value = true; error.value = ''; try
 <template>
   <div v-if="!reviews.length" class="empty-state"><p>没有符合条件的评论。试试其他筛选条件。</p></div>
   <article v-for="review in reviews" :key="review.id" class="review-entry">
-    <div class="review-meta"><span>{{ review.externalId }} · {{ review.isSynthetic ? '教学合成样例' : review.source }}</span><button v-if="admin && review.analyzed" class="text-button" @click="edit(review)">人工复核</button></div>
+    <div class="review-meta"><span>{{ review.externalId }} · {{ review.isSynthetic ? '合成示例' : review.source }}</span><button v-if="admin && review.analyzed" class="text-button" @click="edit(review)">人工复核</button></div>
     <p class="review-text"><EvidenceText :text="review.text" :opinions="review.opinions"/></p>
     <div class="review-tags"><span v-for="opinion in review.opinions" :key="opinion.aspect" class="badge" :class="opinion.status === 'review' ? 'pending' : opinion.sentiment">{{ ASPECTS.find(a => a.id === opinion.aspect)?.name }} · {{ opinion.status === 'review' ? '待复核' : SENTIMENT_NAMES[opinion.sentiment] }}{{ opinion.corrected ? ' · 已复核' : '' }}</span><span v-if="!review.analyzed" class="subtle">尚未分析</span><span v-else-if="!review.opinions.length" class="subtle">未识别到固定评价方面</span></div>
     <details v-if="review.opinions.some(o => o.rationale)" class="semantic-details"><summary>查看上下文分析与模型版本</summary><p class="subtle">{{ review.modelVersion }}</p><p v-for="o in review.opinions.filter(o => o.rationale)" :key="o.aspect">{{ ASPECTS.find(a => a.id === o.aspect)?.name }}：{{ o.rationale }}</p></details>

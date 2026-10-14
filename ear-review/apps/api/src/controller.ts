@@ -23,6 +23,7 @@ export class ApiController {
   private activeJob: number | null = null;
   private stopping = false;
   private collecting = false;
+  private browserRuns=new Set<number>();
   private browserCollector=new BrowserCollector();
   private requests = new Map<string, { count: number; until: number }>();
   constructor(@Inject('STORE') private store: Store, @Inject('AUTH') private auth: Auth) {}
@@ -45,7 +46,7 @@ export class ApiController {
     }).slice(0,2)})).sort((a,b)=>b.count-a.count);
     return {productId,analyzed:stats.analyzed,pending:stats.aspects.reduce((n,a)=>n+a.pending,0),unclassified:reviews.filter(r=>!r.analyzed).length,strengths:points('positive'),weaknesses:points('negative'),mixed:stats.aspects.reduce((n,a)=>n+a.mixed,0)};
   }
-  @Get('collections') collections(@Req() req:Request){this.auth.require(req);return this.store.all<CollectionJob>('SELECT id,product_id productId,platform,item_id itemId,url,method,status,requested,total,error,created_at createdAt,updated_at updatedAt FROM collections ORDER BY id DESC LIMIT 30');}
+  @Get('collections') collections(@Req() req:Request){this.auth.require(req);return this.store.all<CollectionJob>('SELECT id,product_id productId,platform,item_id itemId,url,method,status,requested,total,error,created_at createdAt,updated_at updatedAt FROM collections ORDER BY id DESC LIMIT 30').map(job=>({...job,autoRunning:this.browserRuns.has(job.id)}));}
 
   @Get('collections/:id/csv') collectionDownload(@Param('id') value:string,@Req() req:Request,@Res() res:Response){
     this.auth.require(req);const row=this.store.one<{csv:string;status:string}>('SELECT csv,status FROM collections WHERE id=?',id(value));
@@ -74,7 +75,7 @@ export class ApiController {
     });this.collecting=true;
     if(method==='browser'){
       const onClose=()=>{if(!this.stopping)this.store.run("UPDATE collections SET status=CASE WHEN total>0 THEN 'partial' ELSE 'blocked' END,error='采集Chrome已关闭或会话到期；已读取内容保留',updated_at=? WHERE id=? AND status IN ('running','waiting')",new Date().toISOString(),jobId);this.collecting=false;};
-      void this.browserCollector.open(jobId,target,limit,onClose).then(warning=>{if(!this.stopping)this.store.run("UPDATE collections SET status='waiting',error=?,updated_at=? WHERE id=? AND status='running'",warning||null,new Date().toISOString(),jobId);}).catch(error=>{if(!this.stopping)this.store.run("UPDATE collections SET status='failed',error=?,updated_at=? WHERE id=?",(error as Error).message,new Date().toISOString(),jobId);this.collecting=false;});
+      void this.browserCollector.open(jobId,target,limit,onClose).then(()=>{if(!this.stopping)this.startBrowserRun(jobId);}).catch(error=>{if(!this.stopping)this.store.run("UPDATE collections SET status='failed',error=?,updated_at=? WHERE id=?",(error as Error).message,new Date().toISOString(),jobId);this.collecting=false;});
       return this.collections(req).find(j=>j.id===jobId);
     }
     void collectPublic(target,limit,total=>this.store.run('UPDATE collections SET total=?,updated_at=? WHERE id=?',total,new Date().toISOString(),jobId)).then(result=>{
@@ -95,10 +96,15 @@ export class ApiController {
   }
   @Post('collections/:id/auto') autoBrowser(@Param('id') value:string,@Req() req:Request){
     this.auth.require(req);const job=this.collections(req).find(j=>j.id===id(value));if(!job||job.method!=='browser'||job.status!=='waiting')throw new BadRequestException('采集窗口未就绪或正在采集');
+    if(this.browserRuns.has(job.id))throw new BadRequestException('任务已自动运行，完成登录后会自动继续');
+    this.startBrowserRun(job.id);return this.collections(req).find(j=>j.id===job.id);
+  }
+  private startBrowserRun(jobId:number){
+    const job=this.store.one<CollectionJob>('SELECT id,product_id productId,platform,url,requested FROM collections WHERE id=?',jobId);if(!job||this.browserRuns.has(jobId))return;this.browserRuns.add(jobId);
     this.store.run("UPDATE collections SET status='running',error=NULL,updated_at=? WHERE id=?",new Date().toISOString(),job.id);
     const save=(rows:import('./collector.js').CollectedReview[])=>{if(!this.stopping)this.store.run('UPDATE collections SET total=?,csv=?,updated_at=? WHERE id=?',rows.length,collectionCsv(job.productId,collectionTarget(job.platform,job.url),rows,'browser'),new Date().toISOString(),job.id);};
-    void this.browserCollector.automate(job.id,save).then(async result=>{await this.browserCollector.close(job.id);if(!this.stopping)this.store.run("UPDATE collections SET status='completed',error=?,updated_at=? WHERE id=? AND status='running'",result.rows.length<job.requested?result.reason:null,new Date().toISOString(),job.id);this.collecting=false;}).catch(error=>{if(!this.stopping)this.store.run("UPDATE collections SET status='waiting',error=?,updated_at=? WHERE id=? AND status='running'",(error as Error).message,new Date().toISOString(),job.id);});
-    return this.collections(req).find(j=>j.id===job.id);
+    const waiting=(message:string|null)=>{if(!this.stopping)this.store.run("UPDATE collections SET status=?,error=?,updated_at=? WHERE id=? AND status IN ('running','waiting')",message?'waiting':'running',message,new Date().toISOString(),job.id);};
+    void this.browserCollector.automate(job.id,save,waiting).then(async result=>{await this.browserCollector.close(job.id);if(!this.stopping)this.store.run("UPDATE collections SET status=?,error=?,updated_at=? WHERE id=? AND status IN ('running','waiting')",result.rows.length>=job.requested?'completed':'partial',result.rows.length<job.requested?result.reason:null,new Date().toISOString(),job.id);this.collecting=false;}).catch(error=>{if(!this.stopping)this.store.run("UPDATE collections SET status='waiting',error=?,updated_at=? WHERE id=? AND status IN ('running','waiting')",(error as Error).message,new Date().toISOString(),job.id);}).finally(()=>this.browserRuns.delete(job.id));
   }
   @Post('products') addProduct(@Body() body: unknown, @Req() req: Request) {
     this.auth.require(req); const data = object(body); const productId = string(data.id, '产品 ID', 40);

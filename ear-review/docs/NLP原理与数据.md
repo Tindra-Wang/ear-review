@@ -57,19 +57,15 @@ CSV 是文件格式，不是数据来源。下载的数据可能是 ZIP、JSONL 
 
 适合：了解真实中文评价表达，筛选含耳机相关内容后重新标注，或做通用情感实验。限制：当前这个重打包版本的展示字段没有商品型号/产品 ID，也没有方面标签；不能据此恢复具体耳机型号并进行真实型号对比。评级标签的含义应按当前版本说明核对，不要把数值直接当本系统的三类标签。
 
-使用前查看 Files 与数据卡并核实原始数据使用条件。格式转 CSV 时可保留评论 ID 和 text；如果产品身份已丢失，可归入“耳机评论集合（型号未知）”做集合分析，不能编造真实型号或用于型号对比。此次未验证其完整授权链或下载全部文件。
+这个数据集缺少可靠的商品身份，不接入当前具体耳机画像/对比数据链路。课程系统采用用户提供的具体商品CSV或浏览器采集的商品评论；下载通用语料可用于独立情感研究，但不能冒充具体型号评论。
 
-下载操作：进入 Files and versions → 下载一个划分文件 → 检查实际格式。网站的原始文件不一定是 CSV；若每行一个 JSON 对象，即 JSONL（扩展名可能为 .json），可用本项目转换工具。JSON 数组与 Parquet 需先另行转换，工具会明确拒绝；不宣称网站所有版本都有 CSV 下载按钮。
-
-先在工作台创建 unknown-headphones，名称为“耳机评论集合（型号未知）”。保留下载版本、下载日期和使用说明，将获准使用的 JSONL 保存为 data/raw/authorized-reviews.jsonl，然后执行：
+通用JSONL转CSV工具保留：准备有可靠产品归属的授权JSONL，使用下列命令；先在工作台创建对应商品，核对产品ID和来源后上传CSV。
 
 ```powershell
-npm run prepare:data -- --input data/raw/authorized-reviews.jsonl --output data/raw/headphone-comments.csv --product unknown-headphones --source "SetFit 中文 Amazon 评论，型号未知" --contains "耳机,耳塞" --limit 500
+npm run prepare:data -- --input data/raw/authorized-product-reviews.jsonl --output data/raw/product-comments.csv --product jd-100239311413 --source "已核对商品归属的授权评论" --contains "耳机,耳塞" --limit 500
 ```
 
-工具使用 Node readline 流式读取，按 text 和关键词筛选、保留原文、归一去重，输出带 BOM 的 CSV。--text 可指定字段；--limit 最大5000；已有输出不覆盖；星级不转成方面真值。关键词仅筛候选，须人工核对领域；转换不改变使用许可。上传结果并核对集合归属、来源和教学标记后运行分析。
-
-`--input` 也可直接给公开数据集的 HTTPS 地址：当 `huggingface.co` 在某网络下不可达时，工具会自动改用 `hf-mirror.com` 镜像并把原始文件缓存到 `data/raw`，避免重复下载。该下载能力已实现并实际跑通：本次用镜像下载了 `SetFit/amazon_reviews_multi_zh`，筛出 500 条含“耳机/耳塞/耳麦”的中文评论写入 `data/raw/headphone-comments.csv`（关键词仅筛候选，型号未知，尚未据此开展真实领域实验）。
+工具只筛候选并保留原文，不自动添加方面标签或恢复缺失型号。支持本地JSONL或授权HTTPS文件地址，转换时不能覆盖已有文件。
 
 ### 3.3 McAuley Lab：Amazon Reviews 2023
 
@@ -278,6 +274,6 @@ npm run build 先进行后端 tsc 和前端 vue-tsc 类型检查，接着编译�
 
 严谨叙述：“已实现基线、CSV业务闭环与本地预训练文本模型接入；接口经模拟协议验证，实际本地模型运行已完成；真实CSV已做流程检查，独立真实领域效果评价仍需完成。”不能宣称已训练大语言模型或验证了真实京东数据效果。
 
-## 已执行的真实CSV流程补充
+## 已执行的真实平台采集
 
-已从公开中文Amazon数据缓存中筛选并人工阅读核对40条蓝牙耳机相关原始评论，以型号未知集合通过CSV接口实际入库。Qwen3全部尝试40条，23条成功、17条失败；不将sourceLabel作为方面真值，也不据此计算准确率。数据hash、筛选排除记录、实际结果和截图见[真实数据与浏览器辅助采集](真实数据与浏览器辅助采集.md)。辅助浏览器由用户正常登录/翻页，读取已显示的评论，生成CSV后复用导入预览。
+Chrome在用户正常登录后自动读取华为FreeClip 2的京东评价弹窗、滚动加载，采得50条去重评论并保存CSV及采集记录。可通过预览导入复用批量NLP流程；当前具体批次结果以工作台为准。有限采样不代表总体好评率，尚无独立方面级人工金标准。来源、校验和实测见[真实数据与浏览器辅助采集](真实数据与浏览器辅助采集.md)。

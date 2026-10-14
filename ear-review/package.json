@@ -24,8 +24,7 @@
     "benchmark": "tsx scripts/benchmark.ts",
     "train": "tsx scripts/train.ts",
     "prepare:data": "tsx scripts/prepare-reviews.ts",
-    "test:e2e": "playwright test",
-    "data:real": "tsx scripts/import-real-csv.ts"
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "@nestjs/common": "^11.1.6",
