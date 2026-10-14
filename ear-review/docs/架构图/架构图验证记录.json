@@ -1,0 +1,82 @@
+{
+  "auditDate": "2026-10-14",
+  "drawioExecutable": "D:\\EdgeDownload\\draw.io-31.4.5-windows\\draw.io.exe",
+  "verification": "原生 XML ID 与边引用检查；五页 PNG 视觉检查完成；npm run typecheck 通过；插件 installed/enabled 且安装副本导出已实测",
+  "plugin": {
+    "id": "drawio-desktop@nlp-local-tools",
+    "version": "1.0.0",
+    "installed": true,
+    "enabled": true
+  },
+  "diagrams": [
+    {
+      "file": "NLP核心功能与双模型流程.drawio",
+      "pages": [
+        {
+          "name": "01 方向与双模型准备",
+          "edges": 11,
+          "nativeIdsValid": true
+        },
+        {
+          "name": "02 CSV 到 NLP 到可视化",
+          "edges": 12,
+          "nativeIdsValid": true
+        },
+        {
+          "name": "03 评估、指标与适用边界",
+          "edges": 8,
+          "nativeIdsValid": true
+        }
+      ],
+      "sha256": "a4c2dc8e2ec35b8af1dee48c86968bb6ed5dc9da859202fd23b2533c6145c728"
+    },
+    {
+      "file": "Web系统设计与使用流程.drawio",
+      "pages": [
+        {
+          "name": "01 用户使用与数据流",
+          "edges": 12,
+          "nativeIdsValid": true
+        },
+        {
+          "name": "02 Web 内部处理与分层",
+          "edges": 16,
+          "nativeIdsValid": true
+        }
+      ],
+      "sha256": "4d629bd2c478550ec50a85b075ec1f3c05176557bfbf26227927a1555b2b86d7"
+    }
+  ],
+  "images": [
+    {
+      "file": "NLP-01-方向与模型准备.png",
+      "width": 3927,
+      "height": 4455,
+      "bytes": 1820891
+    },
+    {
+      "file": "NLP-02-在线处理流程.png",
+      "width": 4646,
+      "height": 4955,
+      "bytes": 1794923
+    },
+    {
+      "file": "NLP-03-评估与指标.png",
+      "width": 4177,
+      "height": 3671,
+      "bytes": 1476123
+    },
+    {
+      "file": "Web-01-用户使用流程.png",
+      "width": 5650,
+      "height": 2565,
+      "bytes": 1431294
+    },
+    {
+      "file": "Web-02-内部架构.png",
+      "width": 4775,
+      "height": 4305,
+      "bytes": 2174111
+    }
+  ]
+}

@@ -1,0 +1,1154 @@
+{
+  "generatedAt": "2026-10-14T05:42:59.168Z",
+  "scope": "生产 apps/packages/scripts 的 TypeScript/Vue script；排除测试、构建输出与 data 语料文件",
+  "limitations": "fan-in/fan-out 为本地源文件直接运行时依赖数量；不计外部包，type-only 单列；补入 Worker URL。不是完整调用图、圈复杂度或 LCOM。行数仅为物理行数，压缩模板不能由行数衡量复杂度。",
+  "fileCount": 32,
+  "runtimeEdgeCount": 52,
+  "runtimeCycles": [],
+  "controllerEndpoints": 30,
+  "controllerSqlCalls": 39,
+  "files": [
+    {
+      "file": "apps/api/src/analysis-worker.ts",
+      "physicalLines": 14,
+      "bytes": 958,
+      "sha256": "12b6b66e6642d2e7991896752b7ce38ed9588206045863cb1ae90d6b4c5a99e0",
+      "functions": 0,
+      "methods": 0,
+      "sqlCalls": 0,
+      "refs": 0,
+      "imports": [
+        {
+          "specifier": "node:worker_threads",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "../../../packages/nlp/index.js",
+          "target": "packages/nlp/index.ts",
+          "typeOnly": false
+        },
+        {
+          "specifier": "../../../packages/nlp/semantic.js",
+          "target": "packages/nlp/semantic.ts",
+          "typeOnly": false
+        }
+      ],
+      "fanOut": 2,
+      "fanIn": 1
+    },
+    {
+      "file": "apps/api/src/auth.ts",
+      "physicalLines": 30,
+      "bytes": 2419,
+      "sha256": "abc765410e59b95347f8363fadfa1ae34bf7800356cb66588713e9f34d4e670d",
+      "functions": 0,
+      "methods": 3,
+      "sqlCalls": 3,
+      "refs": 0,
+      "imports": [
+        {
+          "specifier": "node:crypto",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "node:fs",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "node:path",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "./errors.js",
+          "target": "apps/api/src/errors.ts",
+          "typeOnly": false
+        },
+        {
+          "specifier": "express",
+          "target": null,
+          "typeOnly": true
+        },
+        {
+          "specifier": "./store.js",
+          "target": "apps/api/src/store.ts",
+          "typeOnly": false
+        }
+      ],
+      "fanOut": 2,
+      "fanIn": 2
+    },
+    {
+      "file": "apps/api/src/browser-collector.ts",
+      "physicalLines": 52,
+      "bytes": 10710,
+      "sha256": "c85f7c1c65fcacb590c3476c280a62fb886f3346183ce57d17a30ba825f1707a",
+      "functions": 34,
+      "methods": 6,
+      "sqlCalls": 0,
+      "refs": 0,
+      "imports": [
+        {
+          "specifier": "node:crypto",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "node:fs",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "node:path",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "node:child_process",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "node:net",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "playwright",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "./collector.js",
+          "target": "apps/api/src/collector.ts",
+          "typeOnly": false
+        }
+      ],
+      "fanOut": 1,
+      "fanIn": 1
+    },
+    {
+      "file": "apps/api/src/collector.ts",
+      "physicalLines": 61,
+      "bytes": 5103,
+      "sha256": "c89a14c7fcfbe2af5c18a89945a36fe9b7c9cec10f0d339aba6854e91265aa2d",
+      "functions": 9,
+      "methods": 0,
+      "sqlCalls": 0,
+      "refs": 0,
+      "imports": [
+        {
+          "specifier": "node:crypto",
+          "target": null,
+          "typeOnly": false
+        }
+      ],
+      "fanOut": 0,
+      "fanIn": 2
+    },
+    {
+      "file": "apps/api/src/controller.ts",
+      "physicalLines": 231,
+      "bytes": 27627,
+      "sha256": "cfd1f7829491a6b5762bfa9fbbb2ad0ec28dc21adb15c5a54c22e9b4693ee705",
+      "functions": 57,
+      "methods": 33,
+      "sqlCalls": 39,
+      "refs": 0,
+      "imports": [
+        {
+          "specifier": "@nestjs/common",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "express",
+          "target": null,
+          "typeOnly": true
+        },
+        {
+          "specifier": "node:crypto",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "node:fs",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "node:path",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "node:worker_threads",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "../../../packages/contracts/index.js",
+          "target": "packages/contracts/index.ts",
+          "typeOnly": false
+        },
+        {
+          "specifier": "./collector.js",
+          "target": "apps/api/src/collector.ts",
+          "typeOnly": false
+        },
+        {
+          "specifier": "./browser-collector.js",
+          "target": "apps/api/src/browser-collector.ts",
+          "typeOnly": false
+        },
+        {
+          "specifier": "../../../packages/nlp/index.js",
+          "target": "packages/nlp/index.ts",
+          "typeOnly": false
+        },
+        {
+          "specifier": "../../../packages/nlp/semantic.js",
+          "target": "packages/nlp/semantic.ts",
+          "typeOnly": false
+        },
+        {
+          "specifier": "./importer.js",
+          "target": "apps/api/src/importer.ts",
+          "typeOnly": false
+        },
+        {
+          "specifier": "./store.js",
+          "target": "apps/api/src/store.ts",
+          "typeOnly": false
+        },
+        {
+          "specifier": "./auth.js",
+          "target": "apps/api/src/auth.ts",
+          "typeOnly": false
+        }
+      ],
+      "fanOut": 9,
+      "fanIn": 1
+    },
+    {
+      "file": "apps/api/src/errors.ts",
+      "physicalLines": 4,
+      "bytes": 222,
+      "sha256": "683a3d2aa56de89c6409a78b3938cfc8fbf6f50bffb6f7f3262c5b926110475b",
+      "functions": 0,
+      "methods": 0,
+      "sqlCalls": 0,
+      "refs": 0,
+      "imports": [
+        {
+          "specifier": "@nestjs/common",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "@nestjs/common",
+          "target": null,
+          "typeOnly": false
+        }
+      ],
+      "fanOut": 0,
+      "fanIn": 1
+    },
+    {
+      "file": "apps/api/src/importer.ts",
+      "physicalLines": 45,
+      "bytes": 3383,
+      "sha256": "00c72d2fc5c08f2a458a49ebc5b7fbd11f669ee9fa78eb4eb2a65c53912c1c45",
+      "functions": 11,
+      "methods": 0,
+      "sqlCalls": 0,
+      "refs": 0,
+      "imports": [
+        {
+          "specifier": "csv-parse/sync",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "node:crypto",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "../../../packages/contracts/index.js",
+          "target": "packages/contracts/index.ts",
+          "typeOnly": true
+        }
+      ],
+      "fanOut": 0,
+      "fanIn": 1
+    },
+    {
+      "file": "apps/api/src/main.ts",
+      "physicalLines": 26,
+      "bytes": 2188,
+      "sha256": "22532e08f8d934239a66116f9fc7c63efd23b47383ba1c4f1d143b4d623fd30c",
+      "functions": 1,
+      "methods": 0,
+      "sqlCalls": 0,
+      "refs": 0,
+      "imports": [
+        {
+          "specifier": "reflect-metadata",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "node:fs",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "node:path",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "@nestjs/core",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "@nestjs/common",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "express",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "./startup.js",
+          "target": "apps/api/src/startup.ts",
+          "typeOnly": false
+        },
+        {
+          "specifier": "./store.js",
+          "target": "apps/api/src/store.ts",
+          "typeOnly": false,
+          "dynamic": true
+        },
+        {
+          "specifier": "./auth.js",
+          "target": "apps/api/src/auth.ts",
+          "typeOnly": false,
+          "dynamic": true
+        },
+        {
+          "specifier": "./controller.js",
+          "target": "apps/api/src/controller.ts",
+          "typeOnly": false,
+          "dynamic": true
+        }
+      ],
+      "fanOut": 4,
+      "fanIn": 0
+    },
+    {
+      "file": "apps/api/src/startup.ts",
+      "physicalLines": 20,
+      "bytes": 1178,
+      "sha256": "ebcd3b22cc3c8a69e3c302ad84707a60071fbce178482d4da384e85b0cc5af59",
+      "functions": 5,
+      "methods": 0,
+      "sqlCalls": 0,
+      "refs": 0,
+      "imports": [
+        {
+          "specifier": "node:net",
+          "target": null,
+          "typeOnly": false
+        }
+      ],
+      "fanOut": 0,
+      "fanIn": 1
+    },
+    {
+      "file": "apps/api/src/store.ts",
+      "physicalLines": 104,
+      "bytes": 11065,
+      "sha256": "9579407d3ad9dc3c1eff7ceaf19ee3d3845208a91e8af0853a529346335f3c13",
+      "functions": 24,
+      "methods": 14,
+      "sqlCalls": 33,
+      "refs": 0,
+      "imports": [
+        {
+          "specifier": "node:sqlite",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "node:fs",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "node:path",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "node:crypto",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "../../../packages/contracts/index.js",
+          "target": "packages/contracts/index.ts",
+          "typeOnly": false
+        },
+        {
+          "specifier": "../../../packages/nlp/index.js",
+          "target": "packages/nlp/index.ts",
+          "typeOnly": false
+        },
+        {
+          "specifier": "../../../data/demo.js",
+          "target": null,
+          "typeOnly": false
+        }
+      ],
+      "fanOut": 2,
+      "fanIn": 3
+    },
+    {
+      "file": "apps/web/src/api.ts",
+      "physicalLines": 15,
+      "bytes": 1318,
+      "sha256": "77d57299b3e0cba59d4a868c08fefaf78e250a751c6fc46a4b7fff3d5ded471c",
+      "functions": 8,
+      "methods": 0,
+      "sqlCalls": 0,
+      "refs": 0,
+      "imports": [],
+      "fanOut": 0,
+      "fanIn": 3
+    },
+    {
+      "file": "apps/web/src/App.vue",
+      "physicalLines": 127,
+      "bytes": 32527,
+      "sha256": "0e7fdf2d8f3c555b14ed9a48138b6a4e6dd7821fa35bc24f4dae5032809428e5",
+      "functions": 45,
+      "methods": 0,
+      "sqlCalls": 0,
+      "refs": 46,
+      "imports": [
+        {
+          "specifier": "vue",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "vue-router",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "lucide-vue-next",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "../../../packages/contracts/index",
+          "target": "packages/contracts/index.ts",
+          "typeOnly": false
+        },
+        {
+          "specifier": "./api",
+          "target": "apps/web/src/api.ts",
+          "typeOnly": false
+        },
+        {
+          "specifier": "./components/AnalysisResult.vue",
+          "target": "apps/web/src/components/AnalysisResult.vue",
+          "typeOnly": false
+        },
+        {
+          "specifier": "./components/ReviewList.vue",
+          "target": "apps/web/src/components/ReviewList.vue",
+          "typeOnly": false
+        },
+        {
+          "specifier": "./components/ImportMapping.vue",
+          "target": "apps/web/src/components/ImportMapping.vue",
+          "typeOnly": false
+        },
+        {
+          "specifier": "./components/ProductOverview.vue",
+          "target": "apps/web/src/components/ProductOverview.vue",
+          "typeOnly": false
+        },
+        {
+          "specifier": "./components/PlatformCollection.vue",
+          "target": "apps/web/src/components/PlatformCollection.vue",
+          "typeOnly": false
+        },
+        {
+          "specifier": "./components/AnalysisTasks.vue",
+          "target": "apps/web/src/components/AnalysisTasks.vue",
+          "typeOnly": false
+        }
+      ],
+      "fanOut": 8,
+      "fanIn": 1
+    },
+    {
+      "file": "apps/web/src/components/AnalysisResult.vue",
+      "physicalLines": 32,
+      "bytes": 3673,
+      "sha256": "cd1e3f2be649a3a8f6565133234691690521d27238a99d191071b1f20c5778b3",
+      "functions": 2,
+      "methods": 0,
+      "sqlCalls": 0,
+      "refs": 1,
+      "imports": [
+        {
+          "specifier": "vue",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "lucide-vue-next",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "../../../../packages/contracts/index",
+          "target": "packages/contracts/index.ts",
+          "typeOnly": false
+        },
+        {
+          "specifier": "./EvidenceText.vue",
+          "target": "apps/web/src/components/EvidenceText.vue",
+          "typeOnly": false
+        }
+      ],
+      "fanOut": 2,
+      "fanIn": 1
+    },
+    {
+      "file": "apps/web/src/components/AnalysisTasks.vue",
+      "physicalLines": 28,
+      "bytes": 3573,
+      "sha256": "f8fd887def4a21f6eae0748521c9f782d76f407984ce4c30d0704d2bdcecd9d2",
+      "functions": 10,
+      "methods": 0,
+      "sqlCalls": 0,
+      "refs": 1,
+      "imports": [
+        {
+          "specifier": "vue",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "../../../../packages/contracts/index",
+          "target": "packages/contracts/index.ts",
+          "typeOnly": true
+        }
+      ],
+      "fanOut": 0,
+      "fanIn": 1
+    },
+    {
+      "file": "apps/web/src/components/EvidenceText.vue",
+      "physicalLines": 12,
+      "bytes": 1057,
+      "sha256": "eed28b0ed39736e14507f8a541913bc21df4e978925177b9a9a2220fb1aa0d40",
+      "functions": 8,
+      "methods": 0,
+      "sqlCalls": 0,
+      "refs": 0,
+      "imports": [
+        {
+          "specifier": "vue",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "../../../../packages/contracts/index",
+          "target": "packages/contracts/index.ts",
+          "typeOnly": true
+        }
+      ],
+      "fanOut": 0,
+      "fanIn": 2
+    },
+    {
+      "file": "apps/web/src/components/ImportMapping.vue",
+      "physicalLines": 14,
+      "bytes": 1442,
+      "sha256": "c0cbf4327460cab6e6766b69fd158ee47565c3e2ca8a8ac16be13f448b610d3f",
+      "functions": 0,
+      "methods": 0,
+      "sqlCalls": 0,
+      "refs": 0,
+      "imports": [
+        {
+          "specifier": "../../../../packages/contracts/index",
+          "target": "packages/contracts/index.ts",
+          "typeOnly": true
+        }
+      ],
+      "fanOut": 0,
+      "fanIn": 1
+    },
+    {
+      "file": "apps/web/src/components/PlatformCollection.vue",
+      "physicalLines": 34,
+      "bytes": 8529,
+      "sha256": "27fbc22f610b75dde2474bfb5b20ae5bd8fd6cfa2526c9e40c6d8120e8ab907f",
+      "functions": 16,
+      "methods": 0,
+      "sqlCalls": 0,
+      "refs": 12,
+      "imports": [
+        {
+          "specifier": "vue",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "lucide-vue-next",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "../../../../packages/contracts/index",
+          "target": "packages/contracts/index.ts",
+          "typeOnly": true
+        },
+        {
+          "specifier": "../api",
+          "target": "apps/web/src/api.ts",
+          "typeOnly": false
+        }
+      ],
+      "fanOut": 1,
+      "fanIn": 1
+    },
+    {
+      "file": "apps/web/src/components/ProductOverview.vue",
+      "physicalLines": 41,
+      "bytes": 7437,
+      "sha256": "09521dd478d5511c0c50df03b3ad1c9dce6f1a2395fc136212bf040c4147724e",
+      "functions": 7,
+      "methods": 0,
+      "sqlCalls": 0,
+      "refs": 0,
+      "imports": [
+        {
+          "specifier": "vue",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "lucide-vue-next",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "../../../../packages/contracts/index",
+          "target": "packages/contracts/index.ts",
+          "typeOnly": false
+        }
+      ],
+      "fanOut": 1,
+      "fanIn": 1
+    },
+    {
+      "file": "apps/web/src/components/ReviewList.vue",
+      "physicalLines": 24,
+      "bytes": 3998,
+      "sha256": "2a09f70ab0d6c11d9e46fc363c3e50a191256a5d13df69c8ba10d3c7e1be6036",
+      "functions": 2,
+      "methods": 0,
+      "sqlCalls": 0,
+      "refs": 4,
+      "imports": [
+        {
+          "specifier": "vue",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "../../../../packages/contracts/index",
+          "target": "packages/contracts/index.ts",
+          "typeOnly": false
+        },
+        {
+          "specifier": "./EvidenceText.vue",
+          "target": "apps/web/src/components/EvidenceText.vue",
+          "typeOnly": false
+        },
+        {
+          "specifier": "../api",
+          "target": "apps/web/src/api.ts",
+          "typeOnly": false
+        }
+      ],
+      "fanOut": 3,
+      "fanIn": 1
+    },
+    {
+      "file": "apps/web/src/main.ts",
+      "physicalLines": 7,
+      "bytes": 374,
+      "sha256": "a0375f6b2488e61248d9ab4bc1b43028478b33f4dc26b30b92c7459e5fd32f30",
+      "functions": 1,
+      "methods": 0,
+      "sqlCalls": 0,
+      "refs": 0,
+      "imports": [
+        {
+          "specifier": "vue",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "vue-router",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "./App.vue",
+          "target": "apps/web/src/App.vue",
+          "typeOnly": false
+        },
+        {
+          "specifier": "./style.css",
+          "target": null,
+          "typeOnly": false
+        }
+      ],
+      "fanOut": 1,
+      "fanIn": 0
+    },
+    {
+      "file": "packages/contracts/index.ts",
+      "physicalLines": 27,
+      "bytes": 3464,
+      "sha256": "ca35538cc7e940b5b8a3b3bbfb773933d3b266f036b3cc3043da3cff55a1d1bc",
+      "functions": 0,
+      "methods": 0,
+      "sqlCalls": 0,
+      "refs": 0,
+      "imports": [],
+      "fanOut": 0,
+      "fanIn": 10
+    },
+    {
+      "file": "packages/nlp/comparison-metrics.ts",
+      "physicalLines": 28,
+      "bytes": 3138,
+      "sha256": "888366e9d884f43df2b0791663a7bf514e22d6cad59b3d7b90841ed9405cf2ec",
+      "functions": 17,
+      "methods": 0,
+      "sqlCalls": 0,
+      "refs": 0,
+      "imports": [
+        {
+          "specifier": "../contracts/index.js",
+          "target": "packages/contracts/index.ts",
+          "typeOnly": false
+        }
+      ],
+      "fanOut": 1,
+      "fanIn": 1
+    },
+    {
+      "file": "packages/nlp/index.ts",
+      "physicalLines": 71,
+      "bytes": 6288,
+      "sha256": "23535df64dda9931ab0cc19908af80940339e70a184efd98b4b09e13de37e1a0",
+      "functions": 8,
+      "methods": 0,
+      "sqlCalls": 0,
+      "refs": 0,
+      "imports": [
+        {
+          "specifier": "node:perf_hooks",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "../contracts/index.js",
+          "target": "packages/contracts/index.ts",
+          "typeOnly": false
+        },
+        {
+          "specifier": "./model.js",
+          "target": "packages/nlp/model.ts",
+          "typeOnly": false
+        },
+        {
+          "specifier": "./model.js",
+          "target": "packages/nlp/model.ts",
+          "typeOnly": false
+        }
+      ],
+      "fanOut": 2,
+      "fanIn": 6
+    },
+    {
+      "file": "packages/nlp/model.ts",
+      "physicalLines": 46,
+      "bytes": 3381,
+      "sha256": "134fc88d238e26cfff1a01373f3f81ea3a29e0ab8906723117fb801b8a3a2741",
+      "functions": 10,
+      "methods": 0,
+      "sqlCalls": 0,
+      "refs": 0,
+      "imports": [
+        {
+          "specifier": "node:crypto",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "node:fs",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "node:path",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "./training-data.js",
+          "target": "packages/nlp/training-data.ts",
+          "typeOnly": false
+        }
+      ],
+      "fanOut": 1,
+      "fanIn": 3
+    },
+    {
+      "file": "packages/nlp/semantic.ts",
+      "physicalLines": 101,
+      "bytes": 10544,
+      "sha256": "76daa21686d8080d8b4d2b1382fc2ee51378a9bed6b76e0bd3dcf50d8648f34a",
+      "functions": 26,
+      "methods": 0,
+      "sqlCalls": 0,
+      "refs": 0,
+      "imports": [
+        {
+          "specifier": "../contracts/index.js",
+          "target": "packages/contracts/index.ts",
+          "typeOnly": false
+        }
+      ],
+      "fanOut": 1,
+      "fanIn": 4
+    },
+    {
+      "file": "packages/nlp/training-data.ts",
+      "physicalLines": 13,
+      "bytes": 3330,
+      "sha256": "acb9d3cd12c44261ad8b4b64d47705e8929f25574c734527fd1f021b078ca110",
+      "functions": 3,
+      "methods": 0,
+      "sqlCalls": 0,
+      "refs": 0,
+      "imports": [
+        {
+          "specifier": "../contracts/index.js",
+          "target": "packages/contracts/index.ts",
+          "typeOnly": true
+        }
+      ],
+      "fanOut": 0,
+      "fanIn": 3
+    },
+    {
+      "file": "scripts/benchmark.ts",
+      "physicalLines": 19,
+      "bytes": 2046,
+      "sha256": "e62618edd9ef64aa9e4d4caf9de544c2863359d84476aa1d5df6c5eeebd44e6d",
+      "functions": 3,
+      "methods": 0,
+      "sqlCalls": 0,
+      "refs": 0,
+      "imports": [
+        {
+          "specifier": "node:fs",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "node:perf_hooks",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "node:os",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "../packages/nlp/index.js",
+          "target": "packages/nlp/index.ts",
+          "typeOnly": false
+        }
+      ],
+      "fanOut": 1,
+      "fanIn": 0
+    },
+    {
+      "file": "scripts/compare-models.ts",
+      "physicalLines": 93,
+      "bytes": 17621,
+      "sha256": "a73111183baff40e6029a95a78d1fd6831d38468a9bbe4cd82cf2e2e4a05e218",
+      "functions": 35,
+      "methods": 0,
+      "sqlCalls": 0,
+      "refs": 0,
+      "imports": [
+        {
+          "specifier": "node:fs",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "node:path",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "node:crypto",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "node:os",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "node:child_process",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "../packages/contracts/index.js",
+          "target": "packages/contracts/index.ts",
+          "typeOnly": true
+        },
+        {
+          "specifier": "../data/comparison-cases.js",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "../packages/nlp/training-data.js",
+          "target": "packages/nlp/training-data.ts",
+          "typeOnly": false
+        },
+        {
+          "specifier": "../packages/nlp/comparison-metrics.js",
+          "target": "packages/nlp/comparison-metrics.ts",
+          "typeOnly": false
+        },
+        {
+          "specifier": "../packages/nlp/model.js",
+          "target": "packages/nlp/model.ts",
+          "typeOnly": false,
+          "dynamic": true
+        },
+        {
+          "specifier": "../packages/nlp/index.js",
+          "target": "packages/nlp/index.ts",
+          "typeOnly": false,
+          "dynamic": true
+        },
+        {
+          "specifier": "../packages/nlp/semantic.js",
+          "target": "packages/nlp/semantic.ts",
+          "typeOnly": false,
+          "dynamic": true
+        }
+      ],
+      "fanOut": 5,
+      "fanIn": 0
+    },
+    {
+      "file": "scripts/evaluate.ts",
+      "physicalLines": 26,
+      "bytes": 3117,
+      "sha256": "49f90525a9b3dc49de329a10fe5d5887b26fb2e79b768152c2ed3dfa2bdf93c5",
+      "functions": 13,
+      "methods": 0,
+      "sqlCalls": 0,
+      "refs": 0,
+      "imports": [
+        {
+          "specifier": "node:fs",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "node:perf_hooks",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "node:os",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "../packages/nlp/index.js",
+          "target": "packages/nlp/index.ts",
+          "typeOnly": false
+        },
+        {
+          "specifier": "../data/evaluation-cases.js",
+          "target": null,
+          "typeOnly": false
+        }
+      ],
+      "fanOut": 1,
+      "fanIn": 0
+    },
+    {
+      "file": "scripts/prepare-reviews.ts",
+      "physicalLines": 62,
+      "bytes": 4705,
+      "sha256": "2214fbcbb091de8c8d46bf16aa7ccaad38182045e9ff1043bce816783bcafbee",
+      "functions": 4,
+      "methods": 0,
+      "sqlCalls": 0,
+      "refs": 0,
+      "imports": [
+        {
+          "specifier": "node:fs",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "node:readline",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "node:path",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "node:crypto",
+          "target": null,
+          "typeOnly": false
+        }
+      ],
+      "fanOut": 0,
+      "fanIn": 0
+    },
+    {
+      "file": "scripts/train.ts",
+      "physicalLines": 19,
+      "bytes": 1583,
+      "sha256": "3829af420bb225c86ea1d82dd6a7963980c0eb416b8d4f8edbb4a31f8f8fa5b3",
+      "functions": 5,
+      "methods": 0,
+      "sqlCalls": 0,
+      "refs": 0,
+      "imports": [
+        {
+          "specifier": "node:fs",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "node:path",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "csv-parse/sync",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "../packages/nlp/model.js",
+          "target": "packages/nlp/model.ts",
+          "typeOnly": false
+        },
+        {
+          "specifier": "../packages/nlp/training-data.js",
+          "target": "packages/nlp/training-data.ts",
+          "typeOnly": false
+        },
+        {
+          "specifier": "../packages/contracts/index.js",
+          "target": "packages/contracts/index.ts",
+          "typeOnly": false
+        }
+      ],
+      "fanOut": 3,
+      "fanIn": 0
+    },
+    {
+      "file": "scripts/verify-semantic-web.ts",
+      "physicalLines": 62,
+      "bytes": 5647,
+      "sha256": "e9b3e5d4b3acbe8a0bf1c34fdf35f9e65518b94145f77e3daed91fc9995d99e7",
+      "functions": 17,
+      "methods": 0,
+      "sqlCalls": 0,
+      "refs": 0,
+      "imports": [
+        {
+          "specifier": "node:fs",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "node:path",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "node:child_process",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "node:net",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "node:crypto",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "../data/comparison-cases.js",
+          "target": null,
+          "typeOnly": false
+        },
+        {
+          "specifier": "../packages/nlp/semantic.js",
+          "target": "packages/nlp/semantic.ts",
+          "typeOnly": false
+        }
+      ],
+      "fanOut": 1,
+      "fanIn": 0
+    }
+  ]
+}
