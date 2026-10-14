@@ -1,0 +1,219 @@
+{
+  "completedAt": "2026-10-13T08:53:27.090Z",
+  "productId": "local-model-demo",
+  "columns": {
+    "text": "text",
+    "reviewId": "reviewId",
+    "productId": "productId",
+    "source": "source"
+  },
+  "preview": {
+    "valid": 3,
+    "invalid": 0,
+    "duplicates": 0
+  },
+  "batch": {
+    "batchId": 3,
+    "inserted": 3,
+    "duplicates": 0
+  },
+  "job": {
+    "id": 2,
+    "batchId": 3,
+    "status": "failed",
+    "total": 3,
+    "processed": 3,
+    "error": "1 条失败，可重试；已成功的结果保留",
+    "modelVersion": "ollama-qwen3:4b-absa-v1",
+    "createdAt": "2026-10-13T08:53:22.023Z"
+  },
+  "errors": [
+    {
+      "reviewId": 41,
+      "message": "评论 #41：模型返回未知或重复方面"
+    }
+  ],
+  "reviews": [
+    {
+      "id": 41,
+      "externalId": "challenge-06",
+      "productId": "local-model-demo",
+      "text": "办公室里降噪不错，上地铁却压不住轰鸣，两种场合差别很大。",
+      "source": "模型对照合成样例，非真实消费者评论",
+      "isSynthetic": true,
+      "opinions": [],
+      "analyzed": false,
+      "modelVersion": null
+    },
+    {
+      "id": 40,
+      "externalId": "challenge-03",
+      "productId": "local-model-demo",
+      "text": "戴着这副耳机开会，对方让我把同一句话重复了三遍才听明白。",
+      "source": "模型对照合成样例，非真实消费者评论",
+      "isSynthetic": true,
+      "opinions": [],
+      "analyzed": true,
+      "modelVersion": "ollama-qwen3:4b-absa-v1"
+    },
+    {
+      "id": 39,
+      "externalId": "challenge-01",
+      "productId": "local-model-demo",
+      "text": "降噪真厉害，开了之后旁边装修的电钻声还是一清二楚，真是谢谢你。",
+      "source": "模型对照合成样例，非真实消费者评论",
+      "isSynthetic": true,
+      "opinions": [
+        {
+          "aspect": "noise",
+          "sentiment": "positive",
+          "status": "review",
+          "expression": "explicit",
+          "intensity": "high",
+          "rationale": "评论中'降噪真厉害'直接表达对降噪效果的强烈满意，'开了之后旁边装修的电钻声还是一清二楚'说明降噪效果在实际使用中有效，但电钻声清晰表明降噪未完全隔绝噪声，属于正向评价但有细微矛盾点，需人工复核。",
+          "evidence": [
+            {
+              "text": "降噪真厉害",
+              "start": 0,
+              "end": 5,
+              "sentiment": "positive"
+            },
+            {
+              "text": "开了之后旁边装修的电钻声还是一清二楚",
+              "start": 6,
+              "end": 24,
+              "sentiment": "positive"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        }
+      ],
+      "analyzed": true,
+      "modelVersion": "ollama-qwen3:4b-absa-v1"
+    }
+  ],
+  "stats": {
+    "product": {
+      "id": "local-model-demo",
+      "name": "本地语义模型验证",
+      "subtitle": "反讽、隐含通话和情境混合；实验合成数据",
+      "source": "用户创建",
+      "count": 3
+    },
+    "reviews": 3,
+    "analyzed": 2,
+    "synthetic": 3,
+    "version": "ollama-qwen3:4b-absa-v1",
+    "aspects": [
+      {
+        "aspect": "sound",
+        "total": 0,
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0,
+        "mixed": 0,
+        "pending": 0,
+        "corrected": 0,
+        "positiveRatio": null,
+        "examples": []
+      },
+      {
+        "aspect": "noise",
+        "total": 0,
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0,
+        "mixed": 0,
+        "pending": 1,
+        "corrected": 0,
+        "positiveRatio": null,
+        "examples": [
+          {
+            "id": 39,
+            "externalId": "challenge-01",
+            "productId": "local-model-demo",
+            "text": "降噪真厉害，开了之后旁边装修的电钻声还是一清二楚，真是谢谢你。",
+            "source": "模型对照合成样例，非真实消费者评论",
+            "isSynthetic": true,
+            "opinions": [
+              {
+                "aspect": "noise",
+                "sentiment": "positive",
+                "status": "review",
+                "expression": "explicit",
+                "intensity": "high",
+                "rationale": "评论中'降噪真厉害'直接表达对降噪效果的强烈满意，'开了之后旁边装修的电钻声还是一清二楚'说明降噪效果在实际使用中有效，但电钻声清晰表明降噪未完全隔绝噪声，属于正向评价但有细微矛盾点，需人工复核。",
+                "evidence": [
+                  {
+                    "text": "降噪真厉害",
+                    "start": 0,
+                    "end": 5,
+                    "sentiment": "positive"
+                  },
+                  {
+                    "text": "开了之后旁边装修的电钻声还是一清二楚",
+                    "start": 6,
+                    "end": 24,
+                    "sentiment": "positive"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              }
+            ],
+            "analyzed": true,
+            "modelVersion": "ollama-qwen3:4b-absa-v1"
+          }
+        ]
+      },
+      {
+        "aspect": "comfort",
+        "total": 0,
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0,
+        "mixed": 0,
+        "pending": 0,
+        "corrected": 0,
+        "positiveRatio": null,
+        "examples": []
+      },
+      {
+        "aspect": "battery",
+        "total": 0,
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0,
+        "mixed": 0,
+        "pending": 0,
+        "corrected": 0,
+        "positiveRatio": null,
+        "examples": []
+      },
+      {
+        "aspect": "call",
+        "total": 0,
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0,
+        "mixed": 0,
+        "pending": 0,
+        "corrected": 0,
+        "positiveRatio": null,
+        "examples": []
+      },
+      {
+        "aspect": "latency",
+        "total": 0,
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0,
+        "mixed": 0,
+        "pending": 0,
+        "corrected": 0,
+        "positiveRatio": null,
+        "examples": []
+      }
+    ]
+  },
+  "ok": false
+}

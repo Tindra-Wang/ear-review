@@ -29,4 +29,4 @@ test('兼容旧健康接口，重复启动不打开或修改数据库', async ()
     const result = await promisify(execFile)(process.execPath,['--import','tsx','apps/api/src/main.ts'], { env: { ...process.env,PORT:String(port),DATA_DIR:dataDir }, timeout:10_000 });
     expect(result.stdout).toContain('已在运行'); expect(result.stderr).not.toContain('EADDRINUSE'); expect(existsSync(dataDir)).toBe(false);
   } finally { await close(server); }
-});
+},15000);

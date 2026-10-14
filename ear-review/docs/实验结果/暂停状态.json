@@ -1,0 +1,17 @@
+{
+  "status": "completed",
+  "pausedAt": "2026-10-12T15:34:19.814Z",
+  "weightsDirectory": "D:/NLP/大作业/模型权重",
+  "model": "qwen3:4b",
+  "modelId": "359d7dd4bcda",
+  "weightsVerified": true,
+  "mnbModel": "D:/NLP/大作业/模型权重/classifiers/mnb-8a862b69.json",
+  "trainingCompleted": true,
+  "completedCases": 42,
+  "totalCases": 42,
+  "lastCase": "challenge-18",
+  "experimentComplete": true,
+  "nextStep": "对照实验已完成，首轮及absa-v2工程复测分别留存",
+  "note": "保留原pausedAt作为用户暂停记录；原22条检查点恢复并完成首轮，之后另做absa-v2同集开发复测。",
+  "completedAt": "2026-10-13T08:55:05.547Z"
+}

@@ -1,0 +1,544 @@
+{
+  "provenance": "开发助手编写的教学与挑战样例，非真实消费者数据，未双人独立标注；在本地语义结果出现之前确定参考标签",
+  "datasetHash": "6aa3cfb909b1592db370188ae4d4e9cea81a68ee2212608a7ccfe9cb990acb4e",
+  "trainingHash": "8a862b690663ae4109a681db88022417f2fc01938362d628e1a6174bef7c5fdc",
+  "cases": [
+    {
+      "text": "音质很棒，但戴久了耳朵疼。",
+      "expected": [
+        [
+          "sound",
+          "positive"
+        ],
+        [
+          "comfort",
+          "negative"
+        ]
+      ],
+      "id": "teaching-01",
+      "group": "teaching",
+      "kind": "教学检查"
+    },
+    {
+      "text": "通话清楚，不过续航太短。",
+      "expected": [
+        [
+          "call",
+          "positive"
+        ],
+        [
+          "battery",
+          "negative"
+        ]
+      ],
+      "id": "teaching-02",
+      "group": "teaching",
+      "kind": "教学检查"
+    },
+    {
+      "text": "游戏音画同步，降噪效果一般。",
+      "expected": [
+        [
+          "latency",
+          "positive"
+        ],
+        [
+          "noise",
+          "neutral"
+        ]
+      ],
+      "id": "teaching-03",
+      "group": "teaching",
+      "kind": "教学检查"
+    },
+    {
+      "text": "佩戴轻巧，麦克风听不清。",
+      "expected": [
+        [
+          "comfort",
+          "positive"
+        ],
+        [
+          "call",
+          "negative"
+        ]
+      ],
+      "id": "teaching-04",
+      "group": "teaching",
+      "kind": "教学检查"
+    },
+    {
+      "text": "充电太慢，但音质很好听。",
+      "expected": [
+        [
+          "battery",
+          "negative"
+        ],
+        [
+          "sound",
+          "positive"
+        ]
+      ],
+      "id": "teaching-05",
+      "group": "teaching",
+      "kind": "教学检查"
+    },
+    {
+      "text": "降噪令人满意，游戏延迟很高。",
+      "expected": [
+        [
+          "noise",
+          "positive"
+        ],
+        [
+          "latency",
+          "negative"
+        ]
+      ],
+      "id": "teaching-06",
+      "group": "teaching",
+      "kind": "教学检查"
+    },
+    {
+      "text": "音质还不错。",
+      "expected": [
+        [
+          "sound",
+          "positive"
+        ]
+      ],
+      "id": "teaching-07",
+      "group": "teaching",
+      "kind": "教学检查"
+    },
+    {
+      "text": "隔音没什么用。",
+      "expected": [
+        [
+          "noise",
+          "negative"
+        ]
+      ],
+      "id": "teaching-08",
+      "group": "teaching",
+      "kind": "教学检查"
+    },
+    {
+      "text": "戴着不舒服。",
+      "expected": [
+        [
+          "comfort",
+          "negative"
+        ]
+      ],
+      "id": "teaching-09",
+      "group": "teaching",
+      "kind": "教学检查"
+    },
+    {
+      "text": "电量很耐用。",
+      "expected": [
+        [
+          "battery",
+          "positive"
+        ]
+      ],
+      "id": "teaching-10",
+      "group": "teaching",
+      "kind": "教学检查"
+    },
+    {
+      "text": "打电话声音模糊。",
+      "expected": [
+        [
+          "call",
+          "negative"
+        ]
+      ],
+      "id": "teaching-11",
+      "group": "teaching",
+      "kind": "教学检查"
+    },
+    {
+      "text": "打游戏没有延迟。",
+      "expected": [
+        [
+          "latency",
+          "positive"
+        ]
+      ],
+      "id": "teaching-12",
+      "group": "teaching",
+      "kind": "教学检查"
+    },
+    {
+      "text": "低音表现一般。",
+      "expected": [
+        [
+          "sound",
+          "neutral"
+        ]
+      ],
+      "id": "teaching-13",
+      "group": "teaching",
+      "kind": "教学检查"
+    },
+    {
+      "text": "支持降噪功能。",
+      "expected": [
+        [
+          "noise",
+          "neutral"
+        ]
+      ],
+      "id": "teaching-14",
+      "group": "teaching",
+      "kind": "教学检查"
+    },
+    {
+      "text": "配有多种耳塞。",
+      "expected": [
+        [
+          "comfort",
+          "neutral"
+        ]
+      ],
+      "id": "teaching-15",
+      "group": "teaching",
+      "kind": "教学检查"
+    },
+    {
+      "text": "采用无线充电。",
+      "expected": [
+        [
+          "battery",
+          "neutral"
+        ]
+      ],
+      "id": "teaching-16",
+      "group": "teaching",
+      "kind": "教学检查"
+    },
+    {
+      "text": "支持接听电话。",
+      "expected": [
+        [
+          "call",
+          "neutral"
+        ]
+      ],
+      "id": "teaching-17",
+      "group": "teaching",
+      "kind": "教学检查"
+    },
+    {
+      "text": "可以开启游戏模式。",
+      "expected": [
+        [
+          "latency",
+          "neutral"
+        ]
+      ],
+      "id": "teaching-18",
+      "group": "teaching",
+      "kind": "教学检查"
+    },
+    {
+      "text": "听歌很好听，但低音浑浊。",
+      "expected": [
+        [
+          "sound",
+          "mixed"
+        ]
+      ],
+      "id": "teaching-19",
+      "group": "teaching",
+      "kind": "教学检查"
+    },
+    {
+      "text": "降噪很好。但降噪仍然很吵。",
+      "expected": [
+        [
+          "noise",
+          "mixed"
+        ]
+      ],
+      "id": "teaching-20",
+      "group": "teaching",
+      "kind": "教学检查"
+    },
+    {
+      "text": "🎧戴久了也不疼，声音很清晰！",
+      "expected": [
+        [
+          "comfort",
+          "positive"
+        ],
+        [
+          "sound",
+          "positive"
+        ]
+      ],
+      "id": "teaching-21",
+      "group": "teaching",
+      "kind": "教学检查"
+    },
+    {
+      "text": "快递送得很快，包装很漂亮。",
+      "expected": [],
+      "id": "teaching-22",
+      "group": "teaching",
+      "kind": "教学检查"
+    },
+    {
+      "text": "客服态度不好。",
+      "expected": [],
+      "id": "teaching-23",
+      "group": "teaching",
+      "kind": "教学检查"
+    },
+    {
+      "text": "地铁上隔音很好，不过电量掉得太快。",
+      "expected": [
+        [
+          "noise",
+          "positive"
+        ],
+        [
+          "battery",
+          "negative"
+        ]
+      ],
+      "id": "teaching-24",
+      "group": "teaching",
+      "kind": "教学检查"
+    },
+    {
+      "id": "challenge-01",
+      "group": "challenge",
+      "kind": "反讽",
+      "text": "降噪真厉害，开了之后旁边装修的电钻声还是一清二楚，真是谢谢你。",
+      "expected": [
+        [
+          "noise",
+          "negative"
+        ]
+      ]
+    },
+    {
+      "id": "challenge-02",
+      "group": "challenge",
+      "kind": "反讽",
+      "text": "这续航真让我感动，充满电还没到公司就关机了。",
+      "expected": [
+        [
+          "battery",
+          "negative"
+        ]
+      ]
+    },
+    {
+      "id": "challenge-03",
+      "group": "challenge",
+      "kind": "隐含通话评价",
+      "text": "戴着这副耳机开会，对方让我把同一句话重复了三遍才听明白。",
+      "expected": [
+        [
+          "call",
+          "negative"
+        ]
+      ]
+    },
+    {
+      "id": "challenge-04",
+      "group": "challenge",
+      "kind": "隐含舒适度",
+      "text": "十分钟就得摘下来揉一揉耳朵，听一张专辑要休息好几次。",
+      "expected": [
+        [
+          "comfort",
+          "negative"
+        ]
+      ]
+    },
+    {
+      "id": "challenge-05",
+      "group": "challenge",
+      "kind": "隐含续航",
+      "text": "每天上下班都用，周一充完一直撑到周五，省得每天找插座。",
+      "expected": [
+        [
+          "battery",
+          "positive"
+        ]
+      ]
+    },
+    {
+      "id": "challenge-06",
+      "group": "challenge",
+      "kind": "同方面情境冲突",
+      "text": "办公室里降噪不错，上地铁却压不住轰鸣，两种场合差别很大。",
+      "expected": [
+        [
+          "noise",
+          "mixed"
+        ]
+      ]
+    },
+    {
+      "id": "challenge-07",
+      "group": "challenge",
+      "kind": "同方面正负混合",
+      "text": "音质的人声部分很清晰，低音却糊成一团，听不同曲子感受完全不同。",
+      "expected": [
+        [
+          "sound",
+          "mixed"
+        ]
+      ]
+    },
+    {
+      "id": "challenge-08",
+      "group": "challenge",
+      "kind": "跨方面相反",
+      "text": "听歌的细节让我很满意，就是每次戴半小时都压得耳朵疼。",
+      "expected": [
+        [
+          "sound",
+          "positive"
+        ],
+        [
+          "comfort",
+          "negative"
+        ]
+      ]
+    },
+    {
+      "id": "challenge-09",
+      "group": "challenge",
+      "kind": "双重否定",
+      "text": "音质并不是不好，只是低音不够震撼；人声通透这一点我还是喜欢的。",
+      "expected": [
+        [
+          "sound",
+          "mixed"
+        ]
+      ]
+    },
+    {
+      "id": "challenge-10",
+      "group": "challenge",
+      "kind": "否定负面",
+      "text": "戴了一下午也没有夹耳，耳朵不疼，终于能安心听完一整张专辑。",
+      "expected": [
+        [
+          "comfort",
+          "positive"
+        ]
+      ]
+    },
+    {
+      "id": "challenge-11",
+      "group": "challenge",
+      "kind": "比较评价",
+      "text": "和上一副相比，这副的麦克风糟糕太多了，现在打电话对方总说声音含糊。",
+      "expected": [
+        [
+          "call",
+          "negative"
+        ]
+      ]
+    },
+    {
+      "id": "challenge-12",
+      "group": "challenge",
+      "kind": "比较评价",
+      "text": "以前玩游戏总是画面先动声音才到，这副已经基本同步，我很满意。",
+      "expected": [
+        [
+          "latency",
+          "positive"
+        ]
+      ]
+    },
+    {
+      "id": "challenge-13",
+      "group": "challenge",
+      "kind": "指代与转折",
+      "text": "降噪和续航都试了。前者隔绝地铁轰鸣很出色，后者撑不到两小时，太失望了。",
+      "expected": [
+        [
+          "noise",
+          "positive"
+        ],
+        [
+          "battery",
+          "negative"
+        ]
+      ]
+    },
+    {
+      "id": "challenge-14",
+      "group": "challenge",
+      "kind": "指代",
+      "text": "佩戴和通话是我最在意的两项。前者舒服，后者让我听见对方不断抱怨听不清。",
+      "expected": [
+        [
+          "comfort",
+          "positive"
+        ],
+        [
+          "call",
+          "negative"
+        ]
+      ]
+    },
+    {
+      "id": "challenge-15",
+      "group": "challenge",
+      "kind": "客观功能",
+      "text": "说明书写着支持主动降噪和无线充电，我还没有试用效果。",
+      "expected": [
+        [
+          "noise",
+          "neutral"
+        ],
+        [
+          "battery",
+          "neutral"
+        ]
+      ]
+    },
+    {
+      "id": "challenge-16",
+      "group": "challenge",
+      "kind": "领域外抱怨",
+      "text": "快递迟到三天，客服一直不回复，耳机还没拆封，暂时不知道好不好。",
+      "expected": []
+    },
+    {
+      "id": "challenge-17",
+      "group": "challenge",
+      "kind": "emoji与口语",
+      "text": "🎧 声音闷得像蒙了层被子，唱什么都糊，真的受不了。",
+      "expected": [
+        [
+          "sound",
+          "negative"
+        ]
+      ]
+    },
+    {
+      "id": "challenge-18",
+      "group": "challenge",
+      "kind": "程度与情境",
+      "text": "刷视频音画还算同步，打游戏却慢得没法玩，这延迟表现有好有坏。",
+      "expected": [
+        [
+          "latency",
+          "mixed"
+        ]
+      ]
+    }
+  ]
+}

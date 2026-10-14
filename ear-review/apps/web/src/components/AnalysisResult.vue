@@ -22,6 +22,7 @@ watch(() => props.result, () => selected.value = null);
           </template><template v-else><span class="evidence-excerpt">评论未涉及此方面</span><span class="not-mentioned">未提及</span><span class="row-arrow"/></template>
         </button>
       </div>
+      <div v-if="result.opinions.some(o => o.rationale)" class="semantic-details"><h3>上下文判断依据</h3><p v-for="opinion in result.opinions.filter(o => o.rationale && (!selected || o.aspect === selected))" :key="opinion.aspect"><strong>{{ ASPECTS.find(a => a.id === opinion.aspect)?.name }}</strong> · {{ { explicit: '直接表达', implicit: '隐含评价', irony: '可能反讽', uncertain: '存在歧义' }[opinion.expression || 'uncertain'] }} · 强度{{ { low: '低', medium: '中', high: '高' }[opinion.intensity || 'medium'] }}<br/>{{ opinion.rationale }}</p><p class="subtle">理由和表达方式由模型推断，须核对高亮原文；强度不代表正确概率。</p></div>
       <div class="evidence-area"><div class="panel-title"><h3>原文依据</h3><button v-if="selected" class="text-button" @click="selected = null">查看全部</button><span v-else class="subtle">点击上方方面，定位原文</span></div><p class="original-text"><EvidenceText :text="result.text" :opinions="result.opinions" :aspect="selected"/></p><div class="legend"><span><i class="positive"/>正面</span><span><i class="negative"/>负面</span><span><i class="neutral"/>中性</span><span><i class="mixed"/>混合</span></div></div>
       <p v-for="warning in result.warnings" :key="warning" class="inline-note warning"><CircleHelp :size="15"/>{{ warning }}</p>
       <div class="result-foot"><Check :size="13"/><span>证据取自输入原文 · {{ result.modelVersion }}</span></div>

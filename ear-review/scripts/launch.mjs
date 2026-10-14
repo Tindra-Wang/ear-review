@@ -12,6 +12,8 @@ process.on('uncaughtException', error => { log(`启动异常：${error.message}`
 const [major, minor] = process.versions.node.split('.').map(Number);
 if (major < 24 || (major === 24 && minor < 14)) { console.error('需要 Node.js 24.14 或更高版本。'); process.exit(1); }
 if (existsSync('.env')) process.loadEnvFile('.env');
+const { ensureLocalModelService } = await import('./ollama-service.mjs');
+try { await ensureLocalModelService(); } catch (error) { log(`Ollama启动失败：${error.message}`); console.error(`本地语义模型未就绪：${error.message}`); }
 const port = Number(process.env.PORT ?? 3001);
 if (!Number.isInteger(port) || port < 1 || port > 65535) { console.error('请检查 .env：PORT 必须是 1～65535 的整数。'); process.exit(1); }
 const { inspectPort } = await import('../dist/server/apps/api/src/startup.js');

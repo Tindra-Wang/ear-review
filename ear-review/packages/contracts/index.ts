@@ -11,12 +11,16 @@ export type Sentiment = 'positive' | 'negative' | 'neutral' | 'mixed';
 export type Status = 'classified' | 'review';
 export const SENTIMENT_NAMES: Record<Sentiment, string> = { positive: '正面', negative: '负面', neutral: '中性', mixed: '混合' };
 export interface Evidence { start: number; end: number; text: string; sentiment: Exclude<Sentiment, 'mixed'> }
-export interface Opinion { aspect: AspectId; sentiment: Sentiment; status: Status; evidence: Evidence[]; method: string; corrected?: boolean; original?: Opinion }
-export interface Analysis { text: string; opinions: Opinion[]; modelVersion: string; durationMs: number; warnings: string[] }
+export interface Opinion { aspect: AspectId; sentiment: Sentiment; status: Status; evidence: Evidence[]; method: string; rationale?: string; expression?: 'explicit' | 'implicit' | 'irony' | 'uncertain'; intensity?: 'low' | 'medium' | 'high'; corrected?: boolean; original?: Opinion }
+export interface Analysis { text: string; opinions: Opinion[]; modelVersion: string; durationMs: number; warnings: string[]; inference?: { loadMs: number; promptTokens: number; outputTokens: number; generationMs: number; attempts?:number } }
 export interface Product { id: string; name: string; subtitle: string; source: string; count: number }
-export interface Review { id: number; externalId: string; productId: string; text: string; source: string; isSynthetic: boolean; opinions: Opinion[]; analyzed: boolean }
+export interface Review { id: number; externalId: string; productId: string; text: string; source: string; isSynthetic: boolean; opinions: Opinion[]; analyzed: boolean; modelVersion?: string }
 export interface AspectStat { aspect: AspectId; total: number; positive: number; negative: number; neutral: number; mixed: number; pending: number; corrected: number; positiveRatio: number | null; examples: Review[] }
 export interface ProductStats { product: Product; reviews: number; analyzed: number; synthetic: number; version: string; aspects: AspectStat[] }
 export interface PreviewRow { row: number; productId: string; reviewId: string; text: string; source: string; isSynthetic: boolean; valid: boolean; duplicate: boolean; errors: string[] }
 export interface ImportPreview { rows: PreviewRow[]; valid: number; invalid: number; duplicates: number; token: string }
+export type ColumnMapping = Partial<Record<'text' | 'reviewId' | 'productId' | 'source', string>>;
+export interface ImportColumns { headers: string[]; mapping: ColumnMapping; sample: Record<string, string>[]; total: number }
 export interface Job { id: number; batchId: number; status: 'queued' | 'running' | 'completed' | 'failed'; total: number; processed: number; error: string | null; modelVersion: string; createdAt: string }
+export interface CollectionJob { id:number;productId:string;platform:'jd'|'tmall';itemId:string;url:string;method?:'public'|'browser';status:'queued'|'running'|'waiting'|'completed'|'partial'|'blocked'|'failed';requested:number;total:number;error:string|null;createdAt:string;updatedAt:string }
+export interface ProductSummary { productId:string;analyzed:number;pending:number;unclassified:number;strengths:{aspect:AspectId;count:number;total:number;evidence:{reviewId:number;text:string;source:string}[]}[];weaknesses:ProductSummary['strengths'];mixed:number }

@@ -23,6 +23,11 @@ export class Store {
       CREATE INDEX IF NOT EXISTS correction_lookup ON corrections(review_id,version,id);
     `);
     if (!this.all<{ name: string }>('PRAGMA table_info(batches)').some(column => column.name === 'summary')) this.db.exec("ALTER TABLE batches ADD COLUMN summary TEXT NOT NULL DEFAULT '{}'");
+    if (!this.all<{ name: string }>('PRAGMA table_info(predictions)').some(column => column.name === 'updated_at')) this.db.exec("ALTER TABLE predictions ADD COLUMN updated_at TEXT NOT NULL DEFAULT ''");
+    this.db.exec('CREATE TABLE IF NOT EXISTS job_errors(job_id INTEGER NOT NULL REFERENCES jobs(id),review_id INTEGER NOT NULL REFERENCES reviews(id),message TEXT NOT NULL,PRIMARY KEY(job_id,review_id))');
+    this.db.exec(`CREATE TABLE IF NOT EXISTS collections(id INTEGER PRIMARY KEY,product_id TEXT NOT NULL REFERENCES products(id),platform TEXT NOT NULL,item_id TEXT NOT NULL,url TEXT NOT NULL,status TEXT NOT NULL,requested INTEGER NOT NULL,total INTEGER NOT NULL DEFAULT 0,error TEXT,csv TEXT NOT NULL DEFAULT '',created_at TEXT NOT NULL,updated_at TEXT NOT NULL)`);
+    if(!this.all<{name:string}>('PRAGMA table_info(collections)').some(c=>c.name==='method'))this.db.exec("ALTER TABLE collections ADD COLUMN method TEXT NOT NULL DEFAULT 'public'");
+    this.db.prepare("UPDATE collections SET status='failed',error='服务重启导致采集中断，请重试' WHERE status IN ('queued','running','waiting')").run();
     this.db.prepare("UPDATE jobs SET status='failed',error='服务重启导致任务中断，请重试' WHERE status IN ('queued','running')").run();
     if (seed && !this.one<{ n: number }>('SELECT count(*) n FROM products')!.n) this.seed();
   }
@@ -43,20 +48,20 @@ export class Store {
     });
   }
   products(): Product[] { return this.all<Product>('SELECT p.*, count(r.id) count FROM products p LEFT JOIN reviews r ON r.product_id=p.id GROUP BY p.id ORDER BY p.rowid'); }
-  savePrediction(id: number, result: Analysis) { this.run('INSERT INTO predictions VALUES(?,?,?) ON CONFLICT(review_id,version) DO UPDATE SET result=excluded.result', id, result.modelVersion, JSON.stringify(result)); }
+  savePrediction(id: number, result: Analysis) { this.run('INSERT INTO predictions(review_id,version,result,updated_at) VALUES(?,?,?,?) ON CONFLICT(review_id,version) DO UPDATE SET result=excluded.result,updated_at=excluded.updated_at', id, result.modelVersion, JSON.stringify(result), new Date().toISOString()); }
   review(id: number, pure = false): Review | undefined {
-    const row = this.one<{ id: number; external_id: string; product_id: string; text: string; source: string; synthetic: number; result?: string }>('SELECT r.*,p.result FROM reviews r LEFT JOIN predictions p ON p.review_id=r.id AND p.version=? WHERE r.id=?', MODEL.version, id);
+    const row = this.one<{ id: number; external_id: string; product_id: string; text: string; source: string; synthetic: number; result?: string; version?: string }>('SELECT r.*,p.result,p.version FROM reviews r LEFT JOIN predictions p ON p.rowid=(SELECT rowid FROM predictions WHERE review_id=r.id ORDER BY updated_at DESC,rowid DESC LIMIT 1) WHERE r.id=?', id);
     if (!row) return undefined;
     let opinions: Opinion[] = row.result ? (JSON.parse(row.result) as Analysis).opinions : [];
     if (!pure) {
-      const corrections = this.all<{ result: string }>('SELECT result FROM corrections WHERE review_id=? AND version=? ORDER BY id', id, MODEL.version);
+      const corrections = this.all<{ result: string }>('SELECT result FROM corrections WHERE review_id=? AND version=? ORDER BY id', id, row.version ?? MODEL.version);
       for (const correction of corrections) {
         const corrected = JSON.parse(correction.result) as Opinion;
         const original = opinions.find(o => o.aspect === corrected.aspect);
         opinions = [...opinions.filter(o => o.aspect !== corrected.aspect), { ...corrected, corrected: true, original: original?.original ?? original }];
       }
     }
-    return { id: row.id, externalId: row.external_id, productId: row.product_id, text: row.text, source: row.source, isSynthetic: !!row.synthetic, opinions, analyzed: !!row.result };
+    return { id: row.id, externalId: row.external_id, productId: row.product_id, text: row.text, source: row.source, isSynthetic: !!row.synthetic, opinions, analyzed: !!row.result, modelVersion: row.version };
   }
   reviews(productId?: string, pure = false): Review[] {
     const rows = productId ? this.all<{ id: number }>('SELECT id FROM reviews WHERE product_id=? ORDER BY id DESC', productId) : this.all<{ id: number }>('SELECT id FROM reviews ORDER BY id DESC');
@@ -75,7 +80,7 @@ export class Store {
       }
       stat.positiveRatio = stat.total ? Math.round(stat.positive / stat.total * 100) : null; return stat;
     });
-    return { product, reviews: reviews.length, analyzed: reviews.filter(r => r.analyzed).length, synthetic: reviews.filter(r => r.isSynthetic).length, version: MODEL.version, aspects };
+    return { product, reviews: reviews.length, analyzed: reviews.filter(r => r.analyzed).length, synthetic: reviews.filter(r => r.isSynthetic).length, version: [...new Set(reviews.filter(r => r.analyzed).map(r => r.modelVersion))].join(' / ') || MODEL.version, aspects };
   }
   importRows(rows: PreviewRow[], name: string, source: string): { batchId: number; inserted: number; duplicates: number } {
     return this.transaction(() => {

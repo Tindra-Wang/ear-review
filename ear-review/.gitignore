@@ -5,3 +5,4 @@ output/
 test-results/
 playwright-report/
 .env
+tools/

@@ -38,7 +38,7 @@ export function splitClauses(text: string): { text: string; start: number; end: 
   }
   return clauses;
 }
-export function analyze(text: string, mode: 'hybrid' | 'rules' = 'hybrid', model: Model = MODEL): Analysis {
+export function analyze(text: string, mode: 'hybrid' | 'rules' | 'mnb' = 'hybrid', model: Model = MODEL): Analysis {
   const start = performance.now(); const opinions: Opinion[] = []; const warnings: string[] = [];
   const grouped = new Map<AspectId, { evidence: Evidence[]; pending: boolean; methods: Set<string> }>();
   for (const clause of splitClauses(text)) {
@@ -46,12 +46,12 @@ export function analyze(text: string, mode: 'hybrid' | 'rules' = 'hybrid', model
     // “打电话声音很小”中的声音归属通话，游戏同步中的声音归属延迟。
     if ((aspects.includes('call') || aspects.includes('latency')) && !/音质|低音|高音|听歌|音效/.test(clause.text)) aspects = aspects.filter(a => a !== 'sound');
     if (aspects.length === 0) continue;
-    const polarity = rulePolarity(clause.text);
+    const polarity = mode === 'mnb' ? undefined : rulePolarity(clause.text);
     for (const aspect of aspects) {
       const group = grouped.get(aspect) ?? { evidence: [], pending: false, methods: new Set<string>() };
       const predicted = predict(model, clause.text, aspect);
-      const ambiguous = polarity === 'mixed' || (aspects.length > 1 && /好|差|疼|吵|短|慢|清晰|舒服/.test(clause.text));
-      const fallbackReview = polarity === undefined && (mode === 'rules' || predicted.margin < 3);
+      const ambiguous = mode !== 'mnb' && (polarity === 'mixed' || (aspects.length > 1 && /好|差|疼|吵|短|慢|清晰|舒服/.test(clause.text)));
+      const fallbackReview = mode !== 'mnb' && polarity === undefined && (mode === 'rules' || predicted.margin < 3);
       const label = polarity && polarity !== 'mixed' ? polarity : predicted.label;
       group.pending ||= ambiguous || fallbackReview;
       group.evidence.push({ ...clause, sentiment: label });
@@ -66,5 +66,5 @@ export function analyze(text: string, mode: 'hybrid' | 'rules' = 'hybrid', model
   }
   if (!opinions.length) warnings.push('没有识别到六项评价方面，请输入更具体的耳机评价。');
   if (opinions.some(o => o.status === 'review')) warnings.push('部分表达较含糊或多个方面共享意见，建议人工复核。');
-  return { text, opinions, modelVersion: mode === 'rules' ? 'rules-v1' : model.version, durationMs: Number((performance.now() - start).toFixed(2)), warnings };
+  return { text, opinions, modelVersion: mode === 'rules' ? 'rules-v1' : mode === 'mnb' ? `${model.version}-pure` : model.version, durationMs: Number((performance.now() - start).toFixed(2)), warnings };
 }

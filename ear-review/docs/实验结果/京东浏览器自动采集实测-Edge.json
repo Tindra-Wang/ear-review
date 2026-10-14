@@ -1,0 +1,18 @@
+{
+  "checkedAt": "2026-10-13T15:24:50.613Z",
+  "collection": {
+    "id": 6,
+    "productId": "jd-100239311413",
+    "platform": "jd",
+    "itemId": "100239311413",
+    "url": "https://item.jd.com/100239311413.html",
+    "method": "browser",
+    "status": "completed",
+    "requested": 50,
+    "total": 3,
+    "error": "当前页未找到下一页或可加载评论的滚动区",
+    "createdAt": "2026-10-13T15:24:45.552Z",
+    "updatedAt": "2026-10-13T15:24:49.683Z"
+  },
+  "note": "真实平台正常显示评论；不保证全量或随机样本；CSV尚需用户核对并导入"
+}

@@ -18,6 +18,14 @@ describe('持久化与统计口径', () => {
     expect(store.review(review.id)!.opinions.find(o => o.aspect === opinion.aspect)?.sentiment).toBe('neutral'); expect(store.review(review.id,true)!.opinions.find(o => o.aspect === opinion.aspect)?.sentiment).toBe(opinion.sentiment); store.close();
   });
   test('没有评论时占比为 null', () => { const store = new Store(':memory:', false); store.run('INSERT INTO products VALUES(?,?,?,?)','empty','空','',''); expect(store.stats('empty')!.aspects.every(a => a.total === 0 && a.positiveRatio === null)).toBe(true); store.close(); });
+  test('语义版本与基线版本分别保存，复核不跨版本污染', () => {
+    const store = new Store(':memory:', true); const review = store.reviews()[0]!; const baseline = analyze(review.text); const original = baseline.opinions[0]!;
+    store.run('INSERT INTO corrections(review_id,version,aspect,result,reason,actor,created_at) VALUES(?,?,?,?,?,?,?)', review.id, MODEL.version, original.aspect, JSON.stringify({ ...original, sentiment: 'neutral' }), '基线复核', 'admin', new Date().toISOString());
+    store.savePrediction(review.id, { ...baseline, modelVersion: 'ollama-test-absa-v1' });
+    expect(store.review(review.id)?.modelVersion).toBe('ollama-test-absa-v1');
+    expect(store.review(review.id)?.opinions.find(o => o.aspect === original.aspect)?.corrected).toBeUndefined();
+    expect(store.all('SELECT version FROM predictions WHERE review_id=?', review.id)).toHaveLength(2); store.close();
+  });
   test('重新打开数据库保留结果，中断任务可重试', () => {
     mkdirSync('output/unit', { recursive: true }); const path = resolve(`output/unit/restart-${Date.now()}-${Math.random().toString(16).slice(2)}.sqlite`);
     const before = new Store(path, true); const review = before.reviews()[0]!; const batch = before.batches()[0]!;

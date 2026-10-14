@@ -1,0 +1,19 @@
+{
+  "checkedAt": "2026-10-13T15:35:00.906Z",
+  "browser": "Chrome",
+  "collection": {
+    "id": 7,
+    "productId": "jd-100239311413",
+    "platform": "jd",
+    "itemId": "100239311413",
+    "url": "https://item.jd.com/100239311413.html",
+    "method": "browser",
+    "status": "completed",
+    "requested": 50,
+    "total": 50,
+    "error": null,
+    "createdAt": "2026-10-13T15:31:58.023Z",
+    "updatedAt": "2026-10-13T15:35:00.664Z"
+  },
+  "note": "用户正常登录后实际采集；非全量或随机样本；CSV尚需用户核对并导入"
+}

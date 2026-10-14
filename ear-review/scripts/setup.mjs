@@ -24,7 +24,8 @@ const requirements = [
   '', '# Build and test dependencies',
   ...Object.keys(manifest.devDependencies).sort().map(name => `${name}@${lock.packages[`node_modules/${name}`].version}`),
   '', '# Optional for browser tests: Chromium via npm run setup:tests',
-  '# No Python, GPU driver, CUDA or online model API is required.', ''
+  '# Optional semantic NLP: install Ollama, then run ollama pull qwen3:4b (about 2.5 GB download).',
+  '# The baseline needs no Python, CUDA or online model API; local semantic inference needs Ollama + model.', ''
 ].join('\n');
 if (!process.argv.includes('--check') && (!existsSync('requirements.txt') || readFileSync('requirements.txt','utf8') !== requirements)) writeFileSync('requirements.txt',requirements);
 if (process.argv.includes('--requirements-only')) process.exit(0);

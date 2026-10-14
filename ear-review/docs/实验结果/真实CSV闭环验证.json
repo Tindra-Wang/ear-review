@@ -1,0 +1,6259 @@
+{
+  "currentVersionAnalyzed": 40,
+  "completedAt": "2026-10-13T14:39:43.247Z",
+  "productId": "real-bluetooth-corpus",
+  "sourceCsv": "data/raw/bluetooth-reviews-real-40.csv",
+  "preview": {
+    "valid": 0,
+    "invalid": 0,
+    "duplicates": 40
+  },
+  "batch": {
+    "batchId": 3,
+    "inserted": 0
+  },
+  "job": {
+    "id": 5,
+    "batchId": 3,
+    "status": "completed",
+    "total": 40,
+    "processed": 40,
+    "error": null,
+    "modelVersion": "ollama-qwen3:4b-absa-v4",
+    "createdAt": "2026-10-13T14:36:40.278Z"
+  },
+  "model": {
+    "ready": true,
+    "model": "qwen3:4b",
+    "version": "ollama-qwen3:4b-absa-v4",
+    "message": "本地文本模型已就绪"
+  },
+  "stats": {
+    "product": {
+      "id": "real-bluetooth-corpus",
+      "name": "公开蓝牙耳机评论集合（型号未知）",
+      "subtitle": "不同型号的40条原始公开评论；筛选样本，不作具体型号推荐",
+      "source": "用户创建",
+      "count": 40
+    },
+    "reviews": 40,
+    "analyzed": 40,
+    "synthetic": 0,
+    "version": "ollama-qwen3:4b-absa-v4",
+    "aspects": [
+      {
+        "aspect": "sound",
+        "total": 30,
+        "positive": 11,
+        "negative": 9,
+        "neutral": 10,
+        "mixed": 0,
+        "pending": 1,
+        "corrected": 0,
+        "positiveRatio": 37,
+        "examples": [
+          {
+            "id": 78,
+            "externalId": "zh_0234475",
+            "productId": "real-bluetooth-corpus",
+            "text": "蓝牙很快会连接，有一点的信号干扰把，但播放音乐后，很清晰，很带感，不管是用插线还是蓝牙，都感觉很给力，看电影，独行听歌，都让自己比较享受，语音功能比较新颖，支持通话，耳机可以开蓝牙，再接入耳机，有妹子的可以试试。就是比较物美价廉，售后打好电话，有保修之类的。就那么多了。",
+            "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+            "isSynthetic": false,
+            "opinions": [
+              {
+                "aspect": "sound",
+                "sentiment": "positive",
+                "status": "classified",
+                "expression": "explicit",
+                "intensity": "high",
+                "rationale": "S3-S4: 播放音乐后很清晰，直接描述音质清晰度",
+                "evidence": [
+                  {
+                    "text": "但播放音乐后，",
+                    "start": 18,
+                    "end": 25,
+                    "sentiment": "positive"
+                  },
+                  {
+                    "text": "很清晰，",
+                    "start": 25,
+                    "end": 29,
+                    "sentiment": "positive"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "noise",
+                "sentiment": "neutral",
+                "status": "review",
+                "expression": "uncertain",
+                "intensity": "low",
+                "rationale": "S2: 有一点的信号干扰，但未明确是环境噪声隔绝效果",
+                "evidence": [
+                  {
+                    "text": "有一点的信号干扰把，",
+                    "start": 8,
+                    "end": 18,
+                    "sentiment": "negative"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "comfort",
+                "sentiment": "neutral",
+                "status": "review",
+                "expression": "uncertain",
+                "intensity": "low",
+                "rationale": "无明确提及舒适度相关描述",
+                "evidence": [
+                  {
+                    "text": "就那么多了。",
+                    "start": 129,
+                    "end": 135,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "battery",
+                "sentiment": "neutral",
+                "status": "review",
+                "expression": "uncertain",
+                "intensity": "low",
+                "rationale": "无明确提及续航相关描述",
+                "evidence": [
+                  {
+                    "text": "就那么多了。",
+                    "start": 129,
+                    "end": 135,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "call",
+                "sentiment": "positive",
+                "status": "classified",
+                "expression": "explicit",
+                "intensity": "medium",
+                "rationale": "S11-S12: 语音功能比较新颖，支持通话",
+                "evidence": [
+                  {
+                    "text": "语音功能比较新颖，",
+                    "start": 69,
+                    "end": 78,
+                    "sentiment": "positive"
+                  },
+                  {
+                    "text": "支持通话，",
+                    "start": 78,
+                    "end": 83,
+                    "sentiment": "positive"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "latency",
+                "sentiment": "neutral",
+                "status": "review",
+                "expression": "uncertain",
+                "intensity": "low",
+                "rationale": "无明确提及游戏延迟相关描述",
+                "evidence": [
+                  {
+                    "text": "就那么多了。",
+                    "start": 129,
+                    "end": 135,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              }
+            ],
+            "analyzed": true,
+            "modelVersion": "ollama-qwen3:4b-absa-v4"
+          },
+          {
+            "id": 77,
+            "externalId": "zh_0017112",
+            "productId": "real-bluetooth-corpus",
+            "text": "蓝牙耳机收到了，带着很方便，我一般就是打电话用，蓝牙功能很强大。通话也很清晰。",
+            "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+            "isSynthetic": false,
+            "opinions": [
+              {
+                "aspect": "sound",
+                "sentiment": "neutral",
+                "status": "classified",
+                "expression": "explicit",
+                "intensity": "low",
+                "rationale": "S4提到蓝牙功能强大，但未具体说明音质，S5提到通话清晰，但通话属于call方面，因此sound方面无明确评价",
+                "evidence": [
+                  {
+                    "text": "蓝牙功能很强大。",
+                    "start": 24,
+                    "end": 32,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "noise",
+                "sentiment": "neutral",
+                "status": "review",
+                "expression": "uncertain",
+                "intensity": "low",
+                "rationale": "原文未提及降噪相关描述，无法判断",
+                "evidence": [
+                  {
+                    "text": "蓝牙功能很强大。",
+                    "start": 24,
+                    "end": 32,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "comfort",
+                "sentiment": "positive",
+                "status": "classified",
+                "expression": "explicit",
+                "intensity": "medium",
+                "rationale": "S2提到'带着很方便'，表明佩戴舒适度高",
+                "evidence": [
+                  {
+                    "text": "带着很方便，",
+                    "start": 8,
+                    "end": 14,
+                    "sentiment": "positive"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "battery",
+                "sentiment": "neutral",
+                "status": "review",
+                "expression": "uncertain",
+                "intensity": "low",
+                "rationale": "原文未提及续航相关描述，无法判断",
+                "evidence": [
+                  {
+                    "text": "蓝牙功能很强大。",
+                    "start": 24,
+                    "end": 32,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "call",
+                "sentiment": "positive",
+                "status": "classified",
+                "expression": "explicit",
+                "intensity": "medium",
+                "rationale": "S5提到'通话也很清晰'，直接评价通话清晰度",
+                "evidence": [
+                  {
+                    "text": "通话也很清晰。",
+                    "start": 32,
+                    "end": 39,
+                    "sentiment": "positive"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "latency",
+                "sentiment": "neutral",
+                "status": "review",
+                "expression": "uncertain",
+                "intensity": "low",
+                "rationale": "原文未提及游戏延迟相关描述，无法判断",
+                "evidence": [
+                  {
+                    "text": "蓝牙功能很强大。",
+                    "start": 24,
+                    "end": 32,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              }
+            ],
+            "analyzed": true,
+            "modelVersion": "ollama-qwen3:4b-absa-v4"
+          },
+          {
+            "id": 75,
+            "externalId": "zh_0789754",
+            "productId": "real-bluetooth-corpus",
+            "text": "找过许多蓝牙耳机，看过许多，对比许多，亚马逊搞活动果断买了！ 正品！以后就看售后服务！先给5星！",
+            "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+            "isSynthetic": false,
+            "opinions": [
+              {
+                "aspect": "sound",
+                "sentiment": "neutral",
+                "status": "classified",
+                "expression": "explicit",
+                "intensity": "low",
+                "rationale": "未提及音质相关评价，属于未提及方面",
+                "evidence": [
+                  {
+                    "text": "找过许多蓝牙耳机，",
+                    "start": 0,
+                    "end": 9,
+                    "sentiment": "neutral"
+                  },
+                  {
+                    "text": "看过许多，",
+                    "start": 9,
+                    "end": 14,
+                    "sentiment": "neutral"
+                  },
+                  {
+                    "text": "对比许多，",
+                    "start": 14,
+                    "end": 19,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "noise",
+                "sentiment": "neutral",
+                "status": "classified",
+                "expression": "explicit",
+                "intensity": "low",
+                "rationale": "未提及降噪相关评价，属于未提及方面",
+                "evidence": [
+                  {
+                    "text": "找过许多蓝牙耳机，",
+                    "start": 0,
+                    "end": 9,
+                    "sentiment": "neutral"
+                  },
+                  {
+                    "text": "看过许多，",
+                    "start": 9,
+                    "end": 14,
+                    "sentiment": "neutral"
+                  },
+                  {
+                    "text": "对比许多，",
+                    "start": 14,
+                    "end": 19,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "comfort",
+                "sentiment": "neutral",
+                "status": "classified",
+                "expression": "explicit",
+                "intensity": "low",
+                "rationale": "未提及佩戴舒适度相关评价，属于未提及方面",
+                "evidence": [
+                  {
+                    "text": "找过许多蓝牙耳机，",
+                    "start": 0,
+                    "end": 9,
+                    "sentiment": "neutral"
+                  },
+                  {
+                    "text": "看过许多，",
+                    "start": 9,
+                    "end": 14,
+                    "sentiment": "neutral"
+                  },
+                  {
+                    "text": "对比许多，",
+                    "start": 14,
+                    "end": 19,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "battery",
+                "sentiment": "neutral",
+                "status": "classified",
+                "expression": "explicit",
+                "intensity": "low",
+                "rationale": "未提及续航相关评价，属于未提及方面",
+                "evidence": [
+                  {
+                    "text": "找过许多蓝牙耳机，",
+                    "start": 0,
+                    "end": 9,
+                    "sentiment": "neutral"
+                  },
+                  {
+                    "text": "看过许多，",
+                    "start": 9,
+                    "end": 14,
+                    "sentiment": "neutral"
+                  },
+                  {
+                    "text": "对比许多，",
+                    "start": 14,
+                    "end": 19,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "call",
+                "sentiment": "neutral",
+                "status": "classified",
+                "expression": "explicit",
+                "intensity": "low",
+                "rationale": "未提及通话相关评价，属于未提及方面",
+                "evidence": [
+                  {
+                    "text": "找过许多蓝牙耳机，",
+                    "start": 0,
+                    "end": 9,
+                    "sentiment": "neutral"
+                  },
+                  {
+                    "text": "看过许多，",
+                    "start": 9,
+                    "end": 14,
+                    "sentiment": "neutral"
+                  },
+                  {
+                    "text": "对比许多，",
+                    "start": 14,
+                    "end": 19,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "latency",
+                "sentiment": "neutral",
+                "status": "classified",
+                "expression": "explicit",
+                "intensity": "low",
+                "rationale": "未提及游戏延迟相关评价，属于未提及方面",
+                "evidence": [
+                  {
+                    "text": "找过许多蓝牙耳机，",
+                    "start": 0,
+                    "end": 9,
+                    "sentiment": "neutral"
+                  },
+                  {
+                    "text": "看过许多，",
+                    "start": 9,
+                    "end": 14,
+                    "sentiment": "neutral"
+                  },
+                  {
+                    "text": "对比许多，",
+                    "start": 14,
+                    "end": 19,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              }
+            ],
+            "analyzed": true,
+            "modelVersion": "ollama-qwen3:4b-absa-v4"
+          }
+        ]
+      },
+      {
+        "aspect": "noise",
+        "total": 10,
+        "positive": 2,
+        "negative": 4,
+        "neutral": 4,
+        "mixed": 0,
+        "pending": 12,
+        "corrected": 0,
+        "positiveRatio": 20,
+        "examples": [
+          {
+            "id": 78,
+            "externalId": "zh_0234475",
+            "productId": "real-bluetooth-corpus",
+            "text": "蓝牙很快会连接，有一点的信号干扰把，但播放音乐后，很清晰，很带感，不管是用插线还是蓝牙，都感觉很给力，看电影，独行听歌，都让自己比较享受，语音功能比较新颖，支持通话，耳机可以开蓝牙，再接入耳机，有妹子的可以试试。就是比较物美价廉，售后打好电话，有保修之类的。就那么多了。",
+            "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+            "isSynthetic": false,
+            "opinions": [
+              {
+                "aspect": "sound",
+                "sentiment": "positive",
+                "status": "classified",
+                "expression": "explicit",
+                "intensity": "high",
+                "rationale": "S3-S4: 播放音乐后很清晰，直接描述音质清晰度",
+                "evidence": [
+                  {
+                    "text": "但播放音乐后，",
+                    "start": 18,
+                    "end": 25,
+                    "sentiment": "positive"
+                  },
+                  {
+                    "text": "很清晰，",
+                    "start": 25,
+                    "end": 29,
+                    "sentiment": "positive"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "noise",
+                "sentiment": "neutral",
+                "status": "review",
+                "expression": "uncertain",
+                "intensity": "low",
+                "rationale": "S2: 有一点的信号干扰，但未明确是环境噪声隔绝效果",
+                "evidence": [
+                  {
+                    "text": "有一点的信号干扰把，",
+                    "start": 8,
+                    "end": 18,
+                    "sentiment": "negative"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "comfort",
+                "sentiment": "neutral",
+                "status": "review",
+                "expression": "uncertain",
+                "intensity": "low",
+                "rationale": "无明确提及舒适度相关描述",
+                "evidence": [
+                  {
+                    "text": "就那么多了。",
+                    "start": 129,
+                    "end": 135,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "battery",
+                "sentiment": "neutral",
+                "status": "review",
+                "expression": "uncertain",
+                "intensity": "low",
+                "rationale": "无明确提及续航相关描述",
+                "evidence": [
+                  {
+                    "text": "就那么多了。",
+                    "start": 129,
+                    "end": 135,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "call",
+                "sentiment": "positive",
+                "status": "classified",
+                "expression": "explicit",
+                "intensity": "medium",
+                "rationale": "S11-S12: 语音功能比较新颖，支持通话",
+                "evidence": [
+                  {
+                    "text": "语音功能比较新颖，",
+                    "start": 69,
+                    "end": 78,
+                    "sentiment": "positive"
+                  },
+                  {
+                    "text": "支持通话，",
+                    "start": 78,
+                    "end": 83,
+                    "sentiment": "positive"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "latency",
+                "sentiment": "neutral",
+                "status": "review",
+                "expression": "uncertain",
+                "intensity": "low",
+                "rationale": "无明确提及游戏延迟相关描述",
+                "evidence": [
+                  {
+                    "text": "就那么多了。",
+                    "start": 129,
+                    "end": 135,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              }
+            ],
+            "analyzed": true,
+            "modelVersion": "ollama-qwen3:4b-absa-v4"
+          },
+          {
+            "id": 77,
+            "externalId": "zh_0017112",
+            "productId": "real-bluetooth-corpus",
+            "text": "蓝牙耳机收到了，带着很方便，我一般就是打电话用，蓝牙功能很强大。通话也很清晰。",
+            "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+            "isSynthetic": false,
+            "opinions": [
+              {
+                "aspect": "sound",
+                "sentiment": "neutral",
+                "status": "classified",
+                "expression": "explicit",
+                "intensity": "low",
+                "rationale": "S4提到蓝牙功能强大，但未具体说明音质，S5提到通话清晰，但通话属于call方面，因此sound方面无明确评价",
+                "evidence": [
+                  {
+                    "text": "蓝牙功能很强大。",
+                    "start": 24,
+                    "end": 32,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "noise",
+                "sentiment": "neutral",
+                "status": "review",
+                "expression": "uncertain",
+                "intensity": "low",
+                "rationale": "原文未提及降噪相关描述，无法判断",
+                "evidence": [
+                  {
+                    "text": "蓝牙功能很强大。",
+                    "start": 24,
+                    "end": 32,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "comfort",
+                "sentiment": "positive",
+                "status": "classified",
+                "expression": "explicit",
+                "intensity": "medium",
+                "rationale": "S2提到'带着很方便'，表明佩戴舒适度高",
+                "evidence": [
+                  {
+                    "text": "带着很方便，",
+                    "start": 8,
+                    "end": 14,
+                    "sentiment": "positive"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "battery",
+                "sentiment": "neutral",
+                "status": "review",
+                "expression": "uncertain",
+                "intensity": "low",
+                "rationale": "原文未提及续航相关描述，无法判断",
+                "evidence": [
+                  {
+                    "text": "蓝牙功能很强大。",
+                    "start": 24,
+                    "end": 32,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "call",
+                "sentiment": "positive",
+                "status": "classified",
+                "expression": "explicit",
+                "intensity": "medium",
+                "rationale": "S5提到'通话也很清晰'，直接评价通话清晰度",
+                "evidence": [
+                  {
+                    "text": "通话也很清晰。",
+                    "start": 32,
+                    "end": 39,
+                    "sentiment": "positive"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "latency",
+                "sentiment": "neutral",
+                "status": "review",
+                "expression": "uncertain",
+                "intensity": "low",
+                "rationale": "原文未提及游戏延迟相关描述，无法判断",
+                "evidence": [
+                  {
+                    "text": "蓝牙功能很强大。",
+                    "start": 24,
+                    "end": 32,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              }
+            ],
+            "analyzed": true,
+            "modelVersion": "ollama-qwen3:4b-absa-v4"
+          },
+          {
+            "id": 76,
+            "externalId": "zh_0796428",
+            "productId": "real-bluetooth-corpus",
+            "text": "宝贝全新，降噪效果不佳，坐公车声音得开很大，音效蓝牙耳机同价位没得说，电池待机简直完美，不间断听7.8个小时完全没问题，不适合运动，剧烈运动易脱落。综合棒棒棒，！！！",
+            "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+            "isSynthetic": false,
+            "opinions": [
+              {
+                "aspect": "noise",
+                "sentiment": "negative",
+                "status": "classified",
+                "expression": "explicit",
+                "intensity": "high",
+                "rationale": "S2明确指出'降噪效果不佳'，S3补充'坐公车声音得开很大'，表明环境噪声隔绝效果差",
+                "evidence": [
+                  {
+                    "text": "降噪效果不佳，",
+                    "start": 5,
+                    "end": 12,
+                    "sentiment": "negative"
+                  },
+                  {
+                    "text": "坐公车声音得开很大，",
+                    "start": 12,
+                    "end": 22,
+                    "sentiment": "negative"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "battery",
+                "sentiment": "positive",
+                "status": "classified",
+                "expression": "explicit",
+                "intensity": "high",
+                "rationale": "S5'电池待机简直完美'和S6'不间断听7.8个小时完全没问题'直接说明续航表现优异",
+                "evidence": [
+                  {
+                    "text": "电池待机简直完美，",
+                    "start": 35,
+                    "end": 44,
+                    "sentiment": "positive"
+                  },
+                  {
+                    "text": "不间断听7.8个小时完全没问题，",
+                    "start": 44,
+                    "end": 60,
+                    "sentiment": "positive"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "latency",
+                "sentiment": "neutral",
+                "status": "review",
+                "expression": "uncertain",
+                "intensity": "low",
+                "rationale": "原文未提及游戏延迟相关描述，无法判断音画同步情况",
+                "evidence": [
+                  {
+                    "text": "宝贝全新，",
+                    "start": 0,
+                    "end": 5,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              }
+            ],
+            "analyzed": true,
+            "modelVersion": "ollama-qwen3:4b-absa-v4"
+          }
+        ]
+      },
+      {
+        "aspect": "comfort",
+        "total": 11,
+        "positive": 3,
+        "negative": 5,
+        "neutral": 3,
+        "mixed": 0,
+        "pending": 14,
+        "corrected": 0,
+        "positiveRatio": 27,
+        "examples": [
+          {
+            "id": 78,
+            "externalId": "zh_0234475",
+            "productId": "real-bluetooth-corpus",
+            "text": "蓝牙很快会连接，有一点的信号干扰把，但播放音乐后，很清晰，很带感，不管是用插线还是蓝牙，都感觉很给力，看电影，独行听歌，都让自己比较享受，语音功能比较新颖，支持通话，耳机可以开蓝牙，再接入耳机，有妹子的可以试试。就是比较物美价廉，售后打好电话，有保修之类的。就那么多了。",
+            "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+            "isSynthetic": false,
+            "opinions": [
+              {
+                "aspect": "sound",
+                "sentiment": "positive",
+                "status": "classified",
+                "expression": "explicit",
+                "intensity": "high",
+                "rationale": "S3-S4: 播放音乐后很清晰，直接描述音质清晰度",
+                "evidence": [
+                  {
+                    "text": "但播放音乐后，",
+                    "start": 18,
+                    "end": 25,
+                    "sentiment": "positive"
+                  },
+                  {
+                    "text": "很清晰，",
+                    "start": 25,
+                    "end": 29,
+                    "sentiment": "positive"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "noise",
+                "sentiment": "neutral",
+                "status": "review",
+                "expression": "uncertain",
+                "intensity": "low",
+                "rationale": "S2: 有一点的信号干扰，但未明确是环境噪声隔绝效果",
+                "evidence": [
+                  {
+                    "text": "有一点的信号干扰把，",
+                    "start": 8,
+                    "end": 18,
+                    "sentiment": "negative"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "comfort",
+                "sentiment": "neutral",
+                "status": "review",
+                "expression": "uncertain",
+                "intensity": "low",
+                "rationale": "无明确提及舒适度相关描述",
+                "evidence": [
+                  {
+                    "text": "就那么多了。",
+                    "start": 129,
+                    "end": 135,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "battery",
+                "sentiment": "neutral",
+                "status": "review",
+                "expression": "uncertain",
+                "intensity": "low",
+                "rationale": "无明确提及续航相关描述",
+                "evidence": [
+                  {
+                    "text": "就那么多了。",
+                    "start": 129,
+                    "end": 135,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "call",
+                "sentiment": "positive",
+                "status": "classified",
+                "expression": "explicit",
+                "intensity": "medium",
+                "rationale": "S11-S12: 语音功能比较新颖，支持通话",
+                "evidence": [
+                  {
+                    "text": "语音功能比较新颖，",
+                    "start": 69,
+                    "end": 78,
+                    "sentiment": "positive"
+                  },
+                  {
+                    "text": "支持通话，",
+                    "start": 78,
+                    "end": 83,
+                    "sentiment": "positive"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "latency",
+                "sentiment": "neutral",
+                "status": "review",
+                "expression": "uncertain",
+                "intensity": "low",
+                "rationale": "无明确提及游戏延迟相关描述",
+                "evidence": [
+                  {
+                    "text": "就那么多了。",
+                    "start": 129,
+                    "end": 135,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              }
+            ],
+            "analyzed": true,
+            "modelVersion": "ollama-qwen3:4b-absa-v4"
+          },
+          {
+            "id": 77,
+            "externalId": "zh_0017112",
+            "productId": "real-bluetooth-corpus",
+            "text": "蓝牙耳机收到了，带着很方便，我一般就是打电话用，蓝牙功能很强大。通话也很清晰。",
+            "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+            "isSynthetic": false,
+            "opinions": [
+              {
+                "aspect": "sound",
+                "sentiment": "neutral",
+                "status": "classified",
+                "expression": "explicit",
+                "intensity": "low",
+                "rationale": "S4提到蓝牙功能强大，但未具体说明音质，S5提到通话清晰，但通话属于call方面，因此sound方面无明确评价",
+                "evidence": [
+                  {
+                    "text": "蓝牙功能很强大。",
+                    "start": 24,
+                    "end": 32,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "noise",
+                "sentiment": "neutral",
+                "status": "review",
+                "expression": "uncertain",
+                "intensity": "low",
+                "rationale": "原文未提及降噪相关描述，无法判断",
+                "evidence": [
+                  {
+                    "text": "蓝牙功能很强大。",
+                    "start": 24,
+                    "end": 32,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "comfort",
+                "sentiment": "positive",
+                "status": "classified",
+                "expression": "explicit",
+                "intensity": "medium",
+                "rationale": "S2提到'带着很方便'，表明佩戴舒适度高",
+                "evidence": [
+                  {
+                    "text": "带着很方便，",
+                    "start": 8,
+                    "end": 14,
+                    "sentiment": "positive"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "battery",
+                "sentiment": "neutral",
+                "status": "review",
+                "expression": "uncertain",
+                "intensity": "low",
+                "rationale": "原文未提及续航相关描述，无法判断",
+                "evidence": [
+                  {
+                    "text": "蓝牙功能很强大。",
+                    "start": 24,
+                    "end": 32,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "call",
+                "sentiment": "positive",
+                "status": "classified",
+                "expression": "explicit",
+                "intensity": "medium",
+                "rationale": "S5提到'通话也很清晰'，直接评价通话清晰度",
+                "evidence": [
+                  {
+                    "text": "通话也很清晰。",
+                    "start": 32,
+                    "end": 39,
+                    "sentiment": "positive"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "latency",
+                "sentiment": "neutral",
+                "status": "review",
+                "expression": "uncertain",
+                "intensity": "low",
+                "rationale": "原文未提及游戏延迟相关描述，无法判断",
+                "evidence": [
+                  {
+                    "text": "蓝牙功能很强大。",
+                    "start": 24,
+                    "end": 32,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              }
+            ],
+            "analyzed": true,
+            "modelVersion": "ollama-qwen3:4b-absa-v4"
+          },
+          {
+            "id": 75,
+            "externalId": "zh_0789754",
+            "productId": "real-bluetooth-corpus",
+            "text": "找过许多蓝牙耳机，看过许多，对比许多，亚马逊搞活动果断买了！ 正品！以后就看售后服务！先给5星！",
+            "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+            "isSynthetic": false,
+            "opinions": [
+              {
+                "aspect": "sound",
+                "sentiment": "neutral",
+                "status": "classified",
+                "expression": "explicit",
+                "intensity": "low",
+                "rationale": "未提及音质相关评价，属于未提及方面",
+                "evidence": [
+                  {
+                    "text": "找过许多蓝牙耳机，",
+                    "start": 0,
+                    "end": 9,
+                    "sentiment": "neutral"
+                  },
+                  {
+                    "text": "看过许多，",
+                    "start": 9,
+                    "end": 14,
+                    "sentiment": "neutral"
+                  },
+                  {
+                    "text": "对比许多，",
+                    "start": 14,
+                    "end": 19,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "noise",
+                "sentiment": "neutral",
+                "status": "classified",
+                "expression": "explicit",
+                "intensity": "low",
+                "rationale": "未提及降噪相关评价，属于未提及方面",
+                "evidence": [
+                  {
+                    "text": "找过许多蓝牙耳机，",
+                    "start": 0,
+                    "end": 9,
+                    "sentiment": "neutral"
+                  },
+                  {
+                    "text": "看过许多，",
+                    "start": 9,
+                    "end": 14,
+                    "sentiment": "neutral"
+                  },
+                  {
+                    "text": "对比许多，",
+                    "start": 14,
+                    "end": 19,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "comfort",
+                "sentiment": "neutral",
+                "status": "classified",
+                "expression": "explicit",
+                "intensity": "low",
+                "rationale": "未提及佩戴舒适度相关评价，属于未提及方面",
+                "evidence": [
+                  {
+                    "text": "找过许多蓝牙耳机，",
+                    "start": 0,
+                    "end": 9,
+                    "sentiment": "neutral"
+                  },
+                  {
+                    "text": "看过许多，",
+                    "start": 9,
+                    "end": 14,
+                    "sentiment": "neutral"
+                  },
+                  {
+                    "text": "对比许多，",
+                    "start": 14,
+                    "end": 19,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "battery",
+                "sentiment": "neutral",
+                "status": "classified",
+                "expression": "explicit",
+                "intensity": "low",
+                "rationale": "未提及续航相关评价，属于未提及方面",
+                "evidence": [
+                  {
+                    "text": "找过许多蓝牙耳机，",
+                    "start": 0,
+                    "end": 9,
+                    "sentiment": "neutral"
+                  },
+                  {
+                    "text": "看过许多，",
+                    "start": 9,
+                    "end": 14,
+                    "sentiment": "neutral"
+                  },
+                  {
+                    "text": "对比许多，",
+                    "start": 14,
+                    "end": 19,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "call",
+                "sentiment": "neutral",
+                "status": "classified",
+                "expression": "explicit",
+                "intensity": "low",
+                "rationale": "未提及通话相关评价，属于未提及方面",
+                "evidence": [
+                  {
+                    "text": "找过许多蓝牙耳机，",
+                    "start": 0,
+                    "end": 9,
+                    "sentiment": "neutral"
+                  },
+                  {
+                    "text": "看过许多，",
+                    "start": 9,
+                    "end": 14,
+                    "sentiment": "neutral"
+                  },
+                  {
+                    "text": "对比许多，",
+                    "start": 14,
+                    "end": 19,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "latency",
+                "sentiment": "neutral",
+                "status": "classified",
+                "expression": "explicit",
+                "intensity": "low",
+                "rationale": "未提及游戏延迟相关评价，属于未提及方面",
+                "evidence": [
+                  {
+                    "text": "找过许多蓝牙耳机，",
+                    "start": 0,
+                    "end": 9,
+                    "sentiment": "neutral"
+                  },
+                  {
+                    "text": "看过许多，",
+                    "start": 9,
+                    "end": 14,
+                    "sentiment": "neutral"
+                  },
+                  {
+                    "text": "对比许多，",
+                    "start": 14,
+                    "end": 19,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              }
+            ],
+            "analyzed": true,
+            "modelVersion": "ollama-qwen3:4b-absa-v4"
+          }
+        ]
+      },
+      {
+        "aspect": "battery",
+        "total": 12,
+        "positive": 2,
+        "negative": 5,
+        "neutral": 5,
+        "mixed": 0,
+        "pending": 18,
+        "corrected": 0,
+        "positiveRatio": 17,
+        "examples": [
+          {
+            "id": 78,
+            "externalId": "zh_0234475",
+            "productId": "real-bluetooth-corpus",
+            "text": "蓝牙很快会连接，有一点的信号干扰把，但播放音乐后，很清晰，很带感，不管是用插线还是蓝牙，都感觉很给力，看电影，独行听歌，都让自己比较享受，语音功能比较新颖，支持通话，耳机可以开蓝牙，再接入耳机，有妹子的可以试试。就是比较物美价廉，售后打好电话，有保修之类的。就那么多了。",
+            "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+            "isSynthetic": false,
+            "opinions": [
+              {
+                "aspect": "sound",
+                "sentiment": "positive",
+                "status": "classified",
+                "expression": "explicit",
+                "intensity": "high",
+                "rationale": "S3-S4: 播放音乐后很清晰，直接描述音质清晰度",
+                "evidence": [
+                  {
+                    "text": "但播放音乐后，",
+                    "start": 18,
+                    "end": 25,
+                    "sentiment": "positive"
+                  },
+                  {
+                    "text": "很清晰，",
+                    "start": 25,
+                    "end": 29,
+                    "sentiment": "positive"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "noise",
+                "sentiment": "neutral",
+                "status": "review",
+                "expression": "uncertain",
+                "intensity": "low",
+                "rationale": "S2: 有一点的信号干扰，但未明确是环境噪声隔绝效果",
+                "evidence": [
+                  {
+                    "text": "有一点的信号干扰把，",
+                    "start": 8,
+                    "end": 18,
+                    "sentiment": "negative"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "comfort",
+                "sentiment": "neutral",
+                "status": "review",
+                "expression": "uncertain",
+                "intensity": "low",
+                "rationale": "无明确提及舒适度相关描述",
+                "evidence": [
+                  {
+                    "text": "就那么多了。",
+                    "start": 129,
+                    "end": 135,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "battery",
+                "sentiment": "neutral",
+                "status": "review",
+                "expression": "uncertain",
+                "intensity": "low",
+                "rationale": "无明确提及续航相关描述",
+                "evidence": [
+                  {
+                    "text": "就那么多了。",
+                    "start": 129,
+                    "end": 135,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "call",
+                "sentiment": "positive",
+                "status": "classified",
+                "expression": "explicit",
+                "intensity": "medium",
+                "rationale": "S11-S12: 语音功能比较新颖，支持通话",
+                "evidence": [
+                  {
+                    "text": "语音功能比较新颖，",
+                    "start": 69,
+                    "end": 78,
+                    "sentiment": "positive"
+                  },
+                  {
+                    "text": "支持通话，",
+                    "start": 78,
+                    "end": 83,
+                    "sentiment": "positive"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "latency",
+                "sentiment": "neutral",
+                "status": "review",
+                "expression": "uncertain",
+                "intensity": "low",
+                "rationale": "无明确提及游戏延迟相关描述",
+                "evidence": [
+                  {
+                    "text": "就那么多了。",
+                    "start": 129,
+                    "end": 135,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              }
+            ],
+            "analyzed": true,
+            "modelVersion": "ollama-qwen3:4b-absa-v4"
+          },
+          {
+            "id": 77,
+            "externalId": "zh_0017112",
+            "productId": "real-bluetooth-corpus",
+            "text": "蓝牙耳机收到了，带着很方便，我一般就是打电话用，蓝牙功能很强大。通话也很清晰。",
+            "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+            "isSynthetic": false,
+            "opinions": [
+              {
+                "aspect": "sound",
+                "sentiment": "neutral",
+                "status": "classified",
+                "expression": "explicit",
+                "intensity": "low",
+                "rationale": "S4提到蓝牙功能强大，但未具体说明音质，S5提到通话清晰，但通话属于call方面，因此sound方面无明确评价",
+                "evidence": [
+                  {
+                    "text": "蓝牙功能很强大。",
+                    "start": 24,
+                    "end": 32,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "noise",
+                "sentiment": "neutral",
+                "status": "review",
+                "expression": "uncertain",
+                "intensity": "low",
+                "rationale": "原文未提及降噪相关描述，无法判断",
+                "evidence": [
+                  {
+                    "text": "蓝牙功能很强大。",
+                    "start": 24,
+                    "end": 32,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "comfort",
+                "sentiment": "positive",
+                "status": "classified",
+                "expression": "explicit",
+                "intensity": "medium",
+                "rationale": "S2提到'带着很方便'，表明佩戴舒适度高",
+                "evidence": [
+                  {
+                    "text": "带着很方便，",
+                    "start": 8,
+                    "end": 14,
+                    "sentiment": "positive"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "battery",
+                "sentiment": "neutral",
+                "status": "review",
+                "expression": "uncertain",
+                "intensity": "low",
+                "rationale": "原文未提及续航相关描述，无法判断",
+                "evidence": [
+                  {
+                    "text": "蓝牙功能很强大。",
+                    "start": 24,
+                    "end": 32,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "call",
+                "sentiment": "positive",
+                "status": "classified",
+                "expression": "explicit",
+                "intensity": "medium",
+                "rationale": "S5提到'通话也很清晰'，直接评价通话清晰度",
+                "evidence": [
+                  {
+                    "text": "通话也很清晰。",
+                    "start": 32,
+                    "end": 39,
+                    "sentiment": "positive"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "latency",
+                "sentiment": "neutral",
+                "status": "review",
+                "expression": "uncertain",
+                "intensity": "low",
+                "rationale": "原文未提及游戏延迟相关描述，无法判断",
+                "evidence": [
+                  {
+                    "text": "蓝牙功能很强大。",
+                    "start": 24,
+                    "end": 32,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              }
+            ],
+            "analyzed": true,
+            "modelVersion": "ollama-qwen3:4b-absa-v4"
+          },
+          {
+            "id": 76,
+            "externalId": "zh_0796428",
+            "productId": "real-bluetooth-corpus",
+            "text": "宝贝全新，降噪效果不佳，坐公车声音得开很大，音效蓝牙耳机同价位没得说，电池待机简直完美，不间断听7.8个小时完全没问题，不适合运动，剧烈运动易脱落。综合棒棒棒，！！！",
+            "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+            "isSynthetic": false,
+            "opinions": [
+              {
+                "aspect": "noise",
+                "sentiment": "negative",
+                "status": "classified",
+                "expression": "explicit",
+                "intensity": "high",
+                "rationale": "S2明确指出'降噪效果不佳'，S3补充'坐公车声音得开很大'，表明环境噪声隔绝效果差",
+                "evidence": [
+                  {
+                    "text": "降噪效果不佳，",
+                    "start": 5,
+                    "end": 12,
+                    "sentiment": "negative"
+                  },
+                  {
+                    "text": "坐公车声音得开很大，",
+                    "start": 12,
+                    "end": 22,
+                    "sentiment": "negative"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "battery",
+                "sentiment": "positive",
+                "status": "classified",
+                "expression": "explicit",
+                "intensity": "high",
+                "rationale": "S5'电池待机简直完美'和S6'不间断听7.8个小时完全没问题'直接说明续航表现优异",
+                "evidence": [
+                  {
+                    "text": "电池待机简直完美，",
+                    "start": 35,
+                    "end": 44,
+                    "sentiment": "positive"
+                  },
+                  {
+                    "text": "不间断听7.8个小时完全没问题，",
+                    "start": 44,
+                    "end": 60,
+                    "sentiment": "positive"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "latency",
+                "sentiment": "neutral",
+                "status": "review",
+                "expression": "uncertain",
+                "intensity": "low",
+                "rationale": "原文未提及游戏延迟相关描述，无法判断音画同步情况",
+                "evidence": [
+                  {
+                    "text": "宝贝全新，",
+                    "start": 0,
+                    "end": 5,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              }
+            ],
+            "analyzed": true,
+            "modelVersion": "ollama-qwen3:4b-absa-v4"
+          }
+        ]
+      },
+      {
+        "aspect": "call",
+        "total": 9,
+        "positive": 2,
+        "negative": 3,
+        "neutral": 4,
+        "mixed": 0,
+        "pending": 19,
+        "corrected": 0,
+        "positiveRatio": 22,
+        "examples": [
+          {
+            "id": 78,
+            "externalId": "zh_0234475",
+            "productId": "real-bluetooth-corpus",
+            "text": "蓝牙很快会连接，有一点的信号干扰把，但播放音乐后，很清晰，很带感，不管是用插线还是蓝牙，都感觉很给力，看电影，独行听歌，都让自己比较享受，语音功能比较新颖，支持通话，耳机可以开蓝牙，再接入耳机，有妹子的可以试试。就是比较物美价廉，售后打好电话，有保修之类的。就那么多了。",
+            "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+            "isSynthetic": false,
+            "opinions": [
+              {
+                "aspect": "sound",
+                "sentiment": "positive",
+                "status": "classified",
+                "expression": "explicit",
+                "intensity": "high",
+                "rationale": "S3-S4: 播放音乐后很清晰，直接描述音质清晰度",
+                "evidence": [
+                  {
+                    "text": "但播放音乐后，",
+                    "start": 18,
+                    "end": 25,
+                    "sentiment": "positive"
+                  },
+                  {
+                    "text": "很清晰，",
+                    "start": 25,
+                    "end": 29,
+                    "sentiment": "positive"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "noise",
+                "sentiment": "neutral",
+                "status": "review",
+                "expression": "uncertain",
+                "intensity": "low",
+                "rationale": "S2: 有一点的信号干扰，但未明确是环境噪声隔绝效果",
+                "evidence": [
+                  {
+                    "text": "有一点的信号干扰把，",
+                    "start": 8,
+                    "end": 18,
+                    "sentiment": "negative"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "comfort",
+                "sentiment": "neutral",
+                "status": "review",
+                "expression": "uncertain",
+                "intensity": "low",
+                "rationale": "无明确提及舒适度相关描述",
+                "evidence": [
+                  {
+                    "text": "就那么多了。",
+                    "start": 129,
+                    "end": 135,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "battery",
+                "sentiment": "neutral",
+                "status": "review",
+                "expression": "uncertain",
+                "intensity": "low",
+                "rationale": "无明确提及续航相关描述",
+                "evidence": [
+                  {
+                    "text": "就那么多了。",
+                    "start": 129,
+                    "end": 135,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "call",
+                "sentiment": "positive",
+                "status": "classified",
+                "expression": "explicit",
+                "intensity": "medium",
+                "rationale": "S11-S12: 语音功能比较新颖，支持通话",
+                "evidence": [
+                  {
+                    "text": "语音功能比较新颖，",
+                    "start": 69,
+                    "end": 78,
+                    "sentiment": "positive"
+                  },
+                  {
+                    "text": "支持通话，",
+                    "start": 78,
+                    "end": 83,
+                    "sentiment": "positive"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "latency",
+                "sentiment": "neutral",
+                "status": "review",
+                "expression": "uncertain",
+                "intensity": "low",
+                "rationale": "无明确提及游戏延迟相关描述",
+                "evidence": [
+                  {
+                    "text": "就那么多了。",
+                    "start": 129,
+                    "end": 135,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              }
+            ],
+            "analyzed": true,
+            "modelVersion": "ollama-qwen3:4b-absa-v4"
+          },
+          {
+            "id": 77,
+            "externalId": "zh_0017112",
+            "productId": "real-bluetooth-corpus",
+            "text": "蓝牙耳机收到了，带着很方便，我一般就是打电话用，蓝牙功能很强大。通话也很清晰。",
+            "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+            "isSynthetic": false,
+            "opinions": [
+              {
+                "aspect": "sound",
+                "sentiment": "neutral",
+                "status": "classified",
+                "expression": "explicit",
+                "intensity": "low",
+                "rationale": "S4提到蓝牙功能强大，但未具体说明音质，S5提到通话清晰，但通话属于call方面，因此sound方面无明确评价",
+                "evidence": [
+                  {
+                    "text": "蓝牙功能很强大。",
+                    "start": 24,
+                    "end": 32,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "noise",
+                "sentiment": "neutral",
+                "status": "review",
+                "expression": "uncertain",
+                "intensity": "low",
+                "rationale": "原文未提及降噪相关描述，无法判断",
+                "evidence": [
+                  {
+                    "text": "蓝牙功能很强大。",
+                    "start": 24,
+                    "end": 32,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "comfort",
+                "sentiment": "positive",
+                "status": "classified",
+                "expression": "explicit",
+                "intensity": "medium",
+                "rationale": "S2提到'带着很方便'，表明佩戴舒适度高",
+                "evidence": [
+                  {
+                    "text": "带着很方便，",
+                    "start": 8,
+                    "end": 14,
+                    "sentiment": "positive"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "battery",
+                "sentiment": "neutral",
+                "status": "review",
+                "expression": "uncertain",
+                "intensity": "low",
+                "rationale": "原文未提及续航相关描述，无法判断",
+                "evidence": [
+                  {
+                    "text": "蓝牙功能很强大。",
+                    "start": 24,
+                    "end": 32,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "call",
+                "sentiment": "positive",
+                "status": "classified",
+                "expression": "explicit",
+                "intensity": "medium",
+                "rationale": "S5提到'通话也很清晰'，直接评价通话清晰度",
+                "evidence": [
+                  {
+                    "text": "通话也很清晰。",
+                    "start": 32,
+                    "end": 39,
+                    "sentiment": "positive"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "latency",
+                "sentiment": "neutral",
+                "status": "review",
+                "expression": "uncertain",
+                "intensity": "low",
+                "rationale": "原文未提及游戏延迟相关描述，无法判断",
+                "evidence": [
+                  {
+                    "text": "蓝牙功能很强大。",
+                    "start": 24,
+                    "end": 32,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              }
+            ],
+            "analyzed": true,
+            "modelVersion": "ollama-qwen3:4b-absa-v4"
+          },
+          {
+            "id": 75,
+            "externalId": "zh_0789754",
+            "productId": "real-bluetooth-corpus",
+            "text": "找过许多蓝牙耳机，看过许多，对比许多，亚马逊搞活动果断买了！ 正品！以后就看售后服务！先给5星！",
+            "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+            "isSynthetic": false,
+            "opinions": [
+              {
+                "aspect": "sound",
+                "sentiment": "neutral",
+                "status": "classified",
+                "expression": "explicit",
+                "intensity": "low",
+                "rationale": "未提及音质相关评价，属于未提及方面",
+                "evidence": [
+                  {
+                    "text": "找过许多蓝牙耳机，",
+                    "start": 0,
+                    "end": 9,
+                    "sentiment": "neutral"
+                  },
+                  {
+                    "text": "看过许多，",
+                    "start": 9,
+                    "end": 14,
+                    "sentiment": "neutral"
+                  },
+                  {
+                    "text": "对比许多，",
+                    "start": 14,
+                    "end": 19,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "noise",
+                "sentiment": "neutral",
+                "status": "classified",
+                "expression": "explicit",
+                "intensity": "low",
+                "rationale": "未提及降噪相关评价，属于未提及方面",
+                "evidence": [
+                  {
+                    "text": "找过许多蓝牙耳机，",
+                    "start": 0,
+                    "end": 9,
+                    "sentiment": "neutral"
+                  },
+                  {
+                    "text": "看过许多，",
+                    "start": 9,
+                    "end": 14,
+                    "sentiment": "neutral"
+                  },
+                  {
+                    "text": "对比许多，",
+                    "start": 14,
+                    "end": 19,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "comfort",
+                "sentiment": "neutral",
+                "status": "classified",
+                "expression": "explicit",
+                "intensity": "low",
+                "rationale": "未提及佩戴舒适度相关评价，属于未提及方面",
+                "evidence": [
+                  {
+                    "text": "找过许多蓝牙耳机，",
+                    "start": 0,
+                    "end": 9,
+                    "sentiment": "neutral"
+                  },
+                  {
+                    "text": "看过许多，",
+                    "start": 9,
+                    "end": 14,
+                    "sentiment": "neutral"
+                  },
+                  {
+                    "text": "对比许多，",
+                    "start": 14,
+                    "end": 19,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "battery",
+                "sentiment": "neutral",
+                "status": "classified",
+                "expression": "explicit",
+                "intensity": "low",
+                "rationale": "未提及续航相关评价，属于未提及方面",
+                "evidence": [
+                  {
+                    "text": "找过许多蓝牙耳机，",
+                    "start": 0,
+                    "end": 9,
+                    "sentiment": "neutral"
+                  },
+                  {
+                    "text": "看过许多，",
+                    "start": 9,
+                    "end": 14,
+                    "sentiment": "neutral"
+                  },
+                  {
+                    "text": "对比许多，",
+                    "start": 14,
+                    "end": 19,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "call",
+                "sentiment": "neutral",
+                "status": "classified",
+                "expression": "explicit",
+                "intensity": "low",
+                "rationale": "未提及通话相关评价，属于未提及方面",
+                "evidence": [
+                  {
+                    "text": "找过许多蓝牙耳机，",
+                    "start": 0,
+                    "end": 9,
+                    "sentiment": "neutral"
+                  },
+                  {
+                    "text": "看过许多，",
+                    "start": 9,
+                    "end": 14,
+                    "sentiment": "neutral"
+                  },
+                  {
+                    "text": "对比许多，",
+                    "start": 14,
+                    "end": 19,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "latency",
+                "sentiment": "neutral",
+                "status": "classified",
+                "expression": "explicit",
+                "intensity": "low",
+                "rationale": "未提及游戏延迟相关评价，属于未提及方面",
+                "evidence": [
+                  {
+                    "text": "找过许多蓝牙耳机，",
+                    "start": 0,
+                    "end": 9,
+                    "sentiment": "neutral"
+                  },
+                  {
+                    "text": "看过许多，",
+                    "start": 9,
+                    "end": 14,
+                    "sentiment": "neutral"
+                  },
+                  {
+                    "text": "对比许多，",
+                    "start": 14,
+                    "end": 19,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              }
+            ],
+            "analyzed": true,
+            "modelVersion": "ollama-qwen3:4b-absa-v4"
+          }
+        ]
+      },
+      {
+        "aspect": "latency",
+        "total": 9,
+        "positive": 0,
+        "negative": 4,
+        "neutral": 5,
+        "mixed": 0,
+        "pending": 21,
+        "corrected": 0,
+        "positiveRatio": 0,
+        "examples": [
+          {
+            "id": 78,
+            "externalId": "zh_0234475",
+            "productId": "real-bluetooth-corpus",
+            "text": "蓝牙很快会连接，有一点的信号干扰把，但播放音乐后，很清晰，很带感，不管是用插线还是蓝牙，都感觉很给力，看电影，独行听歌，都让自己比较享受，语音功能比较新颖，支持通话，耳机可以开蓝牙，再接入耳机，有妹子的可以试试。就是比较物美价廉，售后打好电话，有保修之类的。就那么多了。",
+            "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+            "isSynthetic": false,
+            "opinions": [
+              {
+                "aspect": "sound",
+                "sentiment": "positive",
+                "status": "classified",
+                "expression": "explicit",
+                "intensity": "high",
+                "rationale": "S3-S4: 播放音乐后很清晰，直接描述音质清晰度",
+                "evidence": [
+                  {
+                    "text": "但播放音乐后，",
+                    "start": 18,
+                    "end": 25,
+                    "sentiment": "positive"
+                  },
+                  {
+                    "text": "很清晰，",
+                    "start": 25,
+                    "end": 29,
+                    "sentiment": "positive"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "noise",
+                "sentiment": "neutral",
+                "status": "review",
+                "expression": "uncertain",
+                "intensity": "low",
+                "rationale": "S2: 有一点的信号干扰，但未明确是环境噪声隔绝效果",
+                "evidence": [
+                  {
+                    "text": "有一点的信号干扰把，",
+                    "start": 8,
+                    "end": 18,
+                    "sentiment": "negative"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "comfort",
+                "sentiment": "neutral",
+                "status": "review",
+                "expression": "uncertain",
+                "intensity": "low",
+                "rationale": "无明确提及舒适度相关描述",
+                "evidence": [
+                  {
+                    "text": "就那么多了。",
+                    "start": 129,
+                    "end": 135,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "battery",
+                "sentiment": "neutral",
+                "status": "review",
+                "expression": "uncertain",
+                "intensity": "low",
+                "rationale": "无明确提及续航相关描述",
+                "evidence": [
+                  {
+                    "text": "就那么多了。",
+                    "start": 129,
+                    "end": 135,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "call",
+                "sentiment": "positive",
+                "status": "classified",
+                "expression": "explicit",
+                "intensity": "medium",
+                "rationale": "S11-S12: 语音功能比较新颖，支持通话",
+                "evidence": [
+                  {
+                    "text": "语音功能比较新颖，",
+                    "start": 69,
+                    "end": 78,
+                    "sentiment": "positive"
+                  },
+                  {
+                    "text": "支持通话，",
+                    "start": 78,
+                    "end": 83,
+                    "sentiment": "positive"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "latency",
+                "sentiment": "neutral",
+                "status": "review",
+                "expression": "uncertain",
+                "intensity": "low",
+                "rationale": "无明确提及游戏延迟相关描述",
+                "evidence": [
+                  {
+                    "text": "就那么多了。",
+                    "start": 129,
+                    "end": 135,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              }
+            ],
+            "analyzed": true,
+            "modelVersion": "ollama-qwen3:4b-absa-v4"
+          },
+          {
+            "id": 77,
+            "externalId": "zh_0017112",
+            "productId": "real-bluetooth-corpus",
+            "text": "蓝牙耳机收到了，带着很方便，我一般就是打电话用，蓝牙功能很强大。通话也很清晰。",
+            "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+            "isSynthetic": false,
+            "opinions": [
+              {
+                "aspect": "sound",
+                "sentiment": "neutral",
+                "status": "classified",
+                "expression": "explicit",
+                "intensity": "low",
+                "rationale": "S4提到蓝牙功能强大，但未具体说明音质，S5提到通话清晰，但通话属于call方面，因此sound方面无明确评价",
+                "evidence": [
+                  {
+                    "text": "蓝牙功能很强大。",
+                    "start": 24,
+                    "end": 32,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "noise",
+                "sentiment": "neutral",
+                "status": "review",
+                "expression": "uncertain",
+                "intensity": "low",
+                "rationale": "原文未提及降噪相关描述，无法判断",
+                "evidence": [
+                  {
+                    "text": "蓝牙功能很强大。",
+                    "start": 24,
+                    "end": 32,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "comfort",
+                "sentiment": "positive",
+                "status": "classified",
+                "expression": "explicit",
+                "intensity": "medium",
+                "rationale": "S2提到'带着很方便'，表明佩戴舒适度高",
+                "evidence": [
+                  {
+                    "text": "带着很方便，",
+                    "start": 8,
+                    "end": 14,
+                    "sentiment": "positive"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "battery",
+                "sentiment": "neutral",
+                "status": "review",
+                "expression": "uncertain",
+                "intensity": "low",
+                "rationale": "原文未提及续航相关描述，无法判断",
+                "evidence": [
+                  {
+                    "text": "蓝牙功能很强大。",
+                    "start": 24,
+                    "end": 32,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "call",
+                "sentiment": "positive",
+                "status": "classified",
+                "expression": "explicit",
+                "intensity": "medium",
+                "rationale": "S5提到'通话也很清晰'，直接评价通话清晰度",
+                "evidence": [
+                  {
+                    "text": "通话也很清晰。",
+                    "start": 32,
+                    "end": 39,
+                    "sentiment": "positive"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "latency",
+                "sentiment": "neutral",
+                "status": "review",
+                "expression": "uncertain",
+                "intensity": "low",
+                "rationale": "原文未提及游戏延迟相关描述，无法判断",
+                "evidence": [
+                  {
+                    "text": "蓝牙功能很强大。",
+                    "start": 24,
+                    "end": 32,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              }
+            ],
+            "analyzed": true,
+            "modelVersion": "ollama-qwen3:4b-absa-v4"
+          },
+          {
+            "id": 76,
+            "externalId": "zh_0796428",
+            "productId": "real-bluetooth-corpus",
+            "text": "宝贝全新，降噪效果不佳，坐公车声音得开很大，音效蓝牙耳机同价位没得说，电池待机简直完美，不间断听7.8个小时完全没问题，不适合运动，剧烈运动易脱落。综合棒棒棒，！！！",
+            "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+            "isSynthetic": false,
+            "opinions": [
+              {
+                "aspect": "noise",
+                "sentiment": "negative",
+                "status": "classified",
+                "expression": "explicit",
+                "intensity": "high",
+                "rationale": "S2明确指出'降噪效果不佳'，S3补充'坐公车声音得开很大'，表明环境噪声隔绝效果差",
+                "evidence": [
+                  {
+                    "text": "降噪效果不佳，",
+                    "start": 5,
+                    "end": 12,
+                    "sentiment": "negative"
+                  },
+                  {
+                    "text": "坐公车声音得开很大，",
+                    "start": 12,
+                    "end": 22,
+                    "sentiment": "negative"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "battery",
+                "sentiment": "positive",
+                "status": "classified",
+                "expression": "explicit",
+                "intensity": "high",
+                "rationale": "S5'电池待机简直完美'和S6'不间断听7.8个小时完全没问题'直接说明续航表现优异",
+                "evidence": [
+                  {
+                    "text": "电池待机简直完美，",
+                    "start": 35,
+                    "end": 44,
+                    "sentiment": "positive"
+                  },
+                  {
+                    "text": "不间断听7.8个小时完全没问题，",
+                    "start": 44,
+                    "end": 60,
+                    "sentiment": "positive"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              },
+              {
+                "aspect": "latency",
+                "sentiment": "neutral",
+                "status": "review",
+                "expression": "uncertain",
+                "intensity": "low",
+                "rationale": "原文未提及游戏延迟相关描述，无法判断音画同步情况",
+                "evidence": [
+                  {
+                    "text": "宝贝全新，",
+                    "start": 0,
+                    "end": 5,
+                    "sentiment": "neutral"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              }
+            ],
+            "analyzed": true,
+            "modelVersion": "ollama-qwen3:4b-absa-v4"
+          }
+        ]
+      }
+    ]
+  },
+  "summary": {
+    "productId": "real-bluetooth-corpus",
+    "analyzed": 40,
+    "pending": 85,
+    "unclassified": 0,
+    "strengths": [
+      {
+        "aspect": "sound",
+        "count": 11,
+        "total": 30,
+        "evidence": [
+          {
+            "reviewId": 78,
+            "text": "但播放音乐后，；很清晰，",
+            "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机"
+          },
+          {
+            "reviewId": 73,
+            "text": "声音品质不错。",
+            "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机"
+          }
+        ]
+      },
+      {
+        "aspect": "comfort",
+        "count": 3,
+        "total": 11,
+        "evidence": [
+          {
+            "reviewId": 77,
+            "text": "带着很方便，",
+            "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机"
+          },
+          {
+            "reviewId": 56,
+            "text": "佩戴很舒服 音质实在太差了 也就是30元一副的耳机水平。",
+            "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机"
+          }
+        ]
+      },
+      {
+        "aspect": "noise",
+        "count": 2,
+        "total": 10,
+        "evidence": [
+          {
+            "reviewId": 64,
+            "text": "目前最好的蓝牙降噪耳机了，",
+            "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机"
+          },
+          {
+            "reviewId": 50,
+            "text": " 戴上耳机好像在潜水！；可以很好的屏蔽环境噪声。",
+            "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机"
+          }
+        ]
+      },
+      {
+        "aspect": "battery",
+        "count": 2,
+        "total": 12,
+        "evidence": [
+          {
+            "reviewId": 76,
+            "text": "电池待机简直完美，；不间断听7.8个小时完全没问题，",
+            "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机"
+          },
+          {
+            "reviewId": 66,
+            "text": "电池也还算耐用。",
+            "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机"
+          }
+        ]
+      },
+      {
+        "aspect": "call",
+        "count": 2,
+        "total": 9,
+        "evidence": [
+          {
+            "reviewId": 78,
+            "text": "语音功能比较新颖，；支持通话，",
+            "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机"
+          },
+          {
+            "reviewId": 77,
+            "text": "通话也很清晰。",
+            "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机"
+          }
+        ]
+      }
+    ],
+    "weaknesses": [
+      {
+        "aspect": "sound",
+        "count": 9,
+        "total": 30,
+        "evidence": [
+          {
+            "reviewId": 66,
+            "text": "蓝牙耳机音质没啥好说的了，；低音基本没有，",
+            "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机"
+          },
+          {
+            "reviewId": 58,
+            "text": "因为真的功能很弱，；很鸡肋，",
+            "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机"
+          }
+        ]
+      },
+      {
+        "aspect": "comfort",
+        "count": 5,
+        "total": 11,
+        "evidence": [
+          {
+            "reviewId": 70,
+            "text": "戴多了会有点疼，",
+            "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机"
+          },
+          {
+            "reviewId": 68,
+            "text": "耳机略大",
+            "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机"
+          }
+        ]
+      },
+      {
+        "aspect": "battery",
+        "count": 5,
+        "total": 12,
+        "evidence": [
+          {
+            "reviewId": 53,
+            "text": "电池又出现明显衰减",
+            "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机"
+          },
+          {
+            "reviewId": 49,
+            "text": "忽然就不能开机不能充电了。；应该是电池完蛋了。",
+            "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机"
+          }
+        ]
+      },
+      {
+        "aspect": "noise",
+        "count": 4,
+        "total": 10,
+        "evidence": [
+          {
+            "reviewId": 76,
+            "text": "降噪效果不佳，；坐公车声音得开很大，",
+            "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机"
+          },
+          {
+            "reviewId": 74,
+            "text": "播放时有微小的噪音。",
+            "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机"
+          }
+        ]
+      },
+      {
+        "aspect": "latency",
+        "count": 4,
+        "total": 9,
+        "evidence": [
+          {
+            "reviewId": 68,
+            "text": "连接在移动或晃动蓝牙设备时有点断断续续。",
+            "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机"
+          },
+          {
+            "reviewId": 64,
+            "text": "可是我用的Sony播放器链接蓝牙耳机的时候会出现歌曲不稳的情况",
+            "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机"
+          }
+        ]
+      },
+      {
+        "aspect": "call",
+        "count": 3,
+        "total": 9,
+        "evidence": [
+          {
+            "reviewId": 67,
+            "text": "线控离太远 通话会听不清 有时候蓝牙连接不顺畅 需要连好几次 耳塞头质量一般 已经脱胶掉下来过一次 自己粘了一下 但性价比高 强烈推荐",
+            "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机"
+          },
+          {
+            "reviewId": 55,
+            "text": "耳机不能自动接听电话，；需要在手机点蓝牙接听才有声音，",
+            "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机"
+          }
+        ]
+      }
+    ],
+    "mixed": 0
+  },
+  "errors": [],
+  "reviews": [
+    {
+      "id": 78,
+      "externalId": "zh_0234475",
+      "productId": "real-bluetooth-corpus",
+      "text": "蓝牙很快会连接，有一点的信号干扰把，但播放音乐后，很清晰，很带感，不管是用插线还是蓝牙，都感觉很给力，看电影，独行听歌，都让自己比较享受，语音功能比较新颖，支持通话，耳机可以开蓝牙，再接入耳机，有妹子的可以试试。就是比较物美价廉，售后打好电话，有保修之类的。就那么多了。",
+      "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+      "isSynthetic": false,
+      "opinions": [
+        {
+          "aspect": "sound",
+          "sentiment": "positive",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "high",
+          "rationale": "S3-S4: 播放音乐后很清晰，直接描述音质清晰度",
+          "evidence": [
+            {
+              "text": "但播放音乐后，",
+              "start": 18,
+              "end": 25,
+              "sentiment": "positive"
+            },
+            {
+              "text": "很清晰，",
+              "start": 25,
+              "end": 29,
+              "sentiment": "positive"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "noise",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "S2: 有一点的信号干扰，但未明确是环境噪声隔绝效果",
+          "evidence": [
+            {
+              "text": "有一点的信号干扰把，",
+              "start": 8,
+              "end": 18,
+              "sentiment": "negative"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "comfort",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "无明确提及舒适度相关描述",
+          "evidence": [
+            {
+              "text": "就那么多了。",
+              "start": 129,
+              "end": 135,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "battery",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "无明确提及续航相关描述",
+          "evidence": [
+            {
+              "text": "就那么多了。",
+              "start": 129,
+              "end": 135,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "call",
+          "sentiment": "positive",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "medium",
+          "rationale": "S11-S12: 语音功能比较新颖，支持通话",
+          "evidence": [
+            {
+              "text": "语音功能比较新颖，",
+              "start": 69,
+              "end": 78,
+              "sentiment": "positive"
+            },
+            {
+              "text": "支持通话，",
+              "start": 78,
+              "end": 83,
+              "sentiment": "positive"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "latency",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "无明确提及游戏延迟相关描述",
+          "evidence": [
+            {
+              "text": "就那么多了。",
+              "start": 129,
+              "end": 135,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        }
+      ],
+      "analyzed": true,
+      "modelVersion": "ollama-qwen3:4b-absa-v4"
+    },
+    {
+      "id": 77,
+      "externalId": "zh_0017112",
+      "productId": "real-bluetooth-corpus",
+      "text": "蓝牙耳机收到了，带着很方便，我一般就是打电话用，蓝牙功能很强大。通话也很清晰。",
+      "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+      "isSynthetic": false,
+      "opinions": [
+        {
+          "aspect": "sound",
+          "sentiment": "neutral",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "low",
+          "rationale": "S4提到蓝牙功能强大，但未具体说明音质，S5提到通话清晰，但通话属于call方面，因此sound方面无明确评价",
+          "evidence": [
+            {
+              "text": "蓝牙功能很强大。",
+              "start": 24,
+              "end": 32,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "noise",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及降噪相关描述，无法判断",
+          "evidence": [
+            {
+              "text": "蓝牙功能很强大。",
+              "start": 24,
+              "end": 32,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "comfort",
+          "sentiment": "positive",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "medium",
+          "rationale": "S2提到'带着很方便'，表明佩戴舒适度高",
+          "evidence": [
+            {
+              "text": "带着很方便，",
+              "start": 8,
+              "end": 14,
+              "sentiment": "positive"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "battery",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及续航相关描述，无法判断",
+          "evidence": [
+            {
+              "text": "蓝牙功能很强大。",
+              "start": 24,
+              "end": 32,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "call",
+          "sentiment": "positive",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "medium",
+          "rationale": "S5提到'通话也很清晰'，直接评价通话清晰度",
+          "evidence": [
+            {
+              "text": "通话也很清晰。",
+              "start": 32,
+              "end": 39,
+              "sentiment": "positive"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "latency",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及游戏延迟相关描述，无法判断",
+          "evidence": [
+            {
+              "text": "蓝牙功能很强大。",
+              "start": 24,
+              "end": 32,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        }
+      ],
+      "analyzed": true,
+      "modelVersion": "ollama-qwen3:4b-absa-v4"
+    },
+    {
+      "id": 76,
+      "externalId": "zh_0796428",
+      "productId": "real-bluetooth-corpus",
+      "text": "宝贝全新，降噪效果不佳，坐公车声音得开很大，音效蓝牙耳机同价位没得说，电池待机简直完美，不间断听7.8个小时完全没问题，不适合运动，剧烈运动易脱落。综合棒棒棒，！！！",
+      "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+      "isSynthetic": false,
+      "opinions": [
+        {
+          "aspect": "noise",
+          "sentiment": "negative",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "high",
+          "rationale": "S2明确指出'降噪效果不佳'，S3补充'坐公车声音得开很大'，表明环境噪声隔绝效果差",
+          "evidence": [
+            {
+              "text": "降噪效果不佳，",
+              "start": 5,
+              "end": 12,
+              "sentiment": "negative"
+            },
+            {
+              "text": "坐公车声音得开很大，",
+              "start": 12,
+              "end": 22,
+              "sentiment": "negative"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "battery",
+          "sentiment": "positive",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "high",
+          "rationale": "S5'电池待机简直完美'和S6'不间断听7.8个小时完全没问题'直接说明续航表现优异",
+          "evidence": [
+            {
+              "text": "电池待机简直完美，",
+              "start": 35,
+              "end": 44,
+              "sentiment": "positive"
+            },
+            {
+              "text": "不间断听7.8个小时完全没问题，",
+              "start": 44,
+              "end": 60,
+              "sentiment": "positive"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "latency",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及游戏延迟相关描述，无法判断音画同步情况",
+          "evidence": [
+            {
+              "text": "宝贝全新，",
+              "start": 0,
+              "end": 5,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        }
+      ],
+      "analyzed": true,
+      "modelVersion": "ollama-qwen3:4b-absa-v4"
+    },
+    {
+      "id": 75,
+      "externalId": "zh_0789754",
+      "productId": "real-bluetooth-corpus",
+      "text": "找过许多蓝牙耳机，看过许多，对比许多，亚马逊搞活动果断买了！ 正品！以后就看售后服务！先给5星！",
+      "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+      "isSynthetic": false,
+      "opinions": [
+        {
+          "aspect": "sound",
+          "sentiment": "neutral",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "low",
+          "rationale": "未提及音质相关评价，属于未提及方面",
+          "evidence": [
+            {
+              "text": "找过许多蓝牙耳机，",
+              "start": 0,
+              "end": 9,
+              "sentiment": "neutral"
+            },
+            {
+              "text": "看过许多，",
+              "start": 9,
+              "end": 14,
+              "sentiment": "neutral"
+            },
+            {
+              "text": "对比许多，",
+              "start": 14,
+              "end": 19,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "noise",
+          "sentiment": "neutral",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "low",
+          "rationale": "未提及降噪相关评价，属于未提及方面",
+          "evidence": [
+            {
+              "text": "找过许多蓝牙耳机，",
+              "start": 0,
+              "end": 9,
+              "sentiment": "neutral"
+            },
+            {
+              "text": "看过许多，",
+              "start": 9,
+              "end": 14,
+              "sentiment": "neutral"
+            },
+            {
+              "text": "对比许多，",
+              "start": 14,
+              "end": 19,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "comfort",
+          "sentiment": "neutral",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "low",
+          "rationale": "未提及佩戴舒适度相关评价，属于未提及方面",
+          "evidence": [
+            {
+              "text": "找过许多蓝牙耳机，",
+              "start": 0,
+              "end": 9,
+              "sentiment": "neutral"
+            },
+            {
+              "text": "看过许多，",
+              "start": 9,
+              "end": 14,
+              "sentiment": "neutral"
+            },
+            {
+              "text": "对比许多，",
+              "start": 14,
+              "end": 19,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "battery",
+          "sentiment": "neutral",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "low",
+          "rationale": "未提及续航相关评价，属于未提及方面",
+          "evidence": [
+            {
+              "text": "找过许多蓝牙耳机，",
+              "start": 0,
+              "end": 9,
+              "sentiment": "neutral"
+            },
+            {
+              "text": "看过许多，",
+              "start": 9,
+              "end": 14,
+              "sentiment": "neutral"
+            },
+            {
+              "text": "对比许多，",
+              "start": 14,
+              "end": 19,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "call",
+          "sentiment": "neutral",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "low",
+          "rationale": "未提及通话相关评价，属于未提及方面",
+          "evidence": [
+            {
+              "text": "找过许多蓝牙耳机，",
+              "start": 0,
+              "end": 9,
+              "sentiment": "neutral"
+            },
+            {
+              "text": "看过许多，",
+              "start": 9,
+              "end": 14,
+              "sentiment": "neutral"
+            },
+            {
+              "text": "对比许多，",
+              "start": 14,
+              "end": 19,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "latency",
+          "sentiment": "neutral",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "low",
+          "rationale": "未提及游戏延迟相关评价，属于未提及方面",
+          "evidence": [
+            {
+              "text": "找过许多蓝牙耳机，",
+              "start": 0,
+              "end": 9,
+              "sentiment": "neutral"
+            },
+            {
+              "text": "看过许多，",
+              "start": 9,
+              "end": 14,
+              "sentiment": "neutral"
+            },
+            {
+              "text": "对比许多，",
+              "start": 14,
+              "end": 19,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        }
+      ],
+      "analyzed": true,
+      "modelVersion": "ollama-qwen3:4b-absa-v4"
+    },
+    {
+      "id": 74,
+      "externalId": "zh_0138391",
+      "productId": "real-bluetooth-corpus",
+      "text": "魔声老用户了，典型的美式风格，外形比较粗犷，线材是比较硬，播放时有微小的噪音。因为没用过其他牌子的蓝牙耳机，音质不好评判，但自认为不差，堪比有些有线耳机。期待质量和寿命上有所突破吧。",
+      "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+      "isSynthetic": false,
+      "opinions": [
+        {
+          "aspect": "sound",
+          "sentiment": "neutral",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "low",
+          "rationale": "S7提到'音质不好评判'，S8'自认为不差'，S9'堪比有些有线耳机'，表明用户对音质有主观评价但未明确正负，属于中性客观描述",
+          "evidence": [
+            {
+              "text": "音质不好评判，",
+              "start": 54,
+              "end": 61,
+              "sentiment": "neutral"
+            },
+            {
+              "text": "但自认为不差，",
+              "start": 61,
+              "end": 68,
+              "sentiment": "neutral"
+            },
+            {
+              "text": "堪比有些有线耳机。",
+              "start": 68,
+              "end": 77,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "noise",
+          "sentiment": "negative",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "low",
+          "rationale": "S5提到'播放时有微小的噪音'，直接描述噪声问题",
+          "evidence": [
+            {
+              "text": "播放时有微小的噪音。",
+              "start": 29,
+              "end": 39,
+              "sentiment": "negative"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "comfort",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及舒适度相关描述，无法确定",
+          "evidence": [
+            {
+              "text": "魔声老用户了，",
+              "start": 0,
+              "end": 7,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "battery",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及电池相关描述，无法确定",
+          "evidence": [
+            {
+              "text": "魔声老用户了，",
+              "start": 0,
+              "end": 7,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "call",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及通话相关描述，无法确定",
+          "evidence": [
+            {
+              "text": "魔声老用户了，",
+              "start": 0,
+              "end": 7,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "latency",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及游戏延迟相关描述，无法确定",
+          "evidence": [
+            {
+              "text": "魔声老用户了，",
+              "start": 0,
+              "end": 7,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        }
+      ],
+      "analyzed": true,
+      "modelVersion": "ollama-qwen3:4b-absa-v4"
+    },
+    {
+      "id": 73,
+      "externalId": "zh_0721943",
+      "productId": "real-bluetooth-corpus",
+      "text": "一开始耳机声音太小，后来调了手机的蓝牙设置后正常了，差点申请退货。下一步就看在户外使用情况了。声音品质不错。",
+      "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+      "isSynthetic": false,
+      "opinions": [
+        {
+          "aspect": "sound",
+          "sentiment": "positive",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "medium",
+          "rationale": "S5提到声音品质不错，直接肯定音质",
+          "evidence": [
+            {
+              "text": "声音品质不错。",
+              "start": 47,
+              "end": 54,
+              "sentiment": "positive"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "noise",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及降噪相关描述，无法判断",
+          "evidence": [
+            {
+              "text": "一开始耳机声音太小，",
+              "start": 0,
+              "end": 10,
+              "sentiment": "negative"
+            },
+            {
+              "text": "后来调了手机的蓝牙设置后正常了，",
+              "start": 10,
+              "end": 26,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "comfort",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及舒适度相关描述，无法判断",
+          "evidence": [
+            {
+              "text": "一开始耳机声音太小，",
+              "start": 0,
+              "end": 10,
+              "sentiment": "negative"
+            },
+            {
+              "text": "后来调了手机的蓝牙设置后正常了，",
+              "start": 10,
+              "end": 26,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "battery",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及续航相关描述，无法判断",
+          "evidence": [
+            {
+              "text": "一开始耳机声音太小，",
+              "start": 0,
+              "end": 10,
+              "sentiment": "negative"
+            },
+            {
+              "text": "后来调了手机的蓝牙设置后正常了，",
+              "start": 10,
+              "end": 26,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "call",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及通话相关描述，无法判断",
+          "evidence": [
+            {
+              "text": "一开始耳机声音太小，",
+              "start": 0,
+              "end": 10,
+              "sentiment": "negative"
+            },
+            {
+              "text": "后来调了手机的蓝牙设置后正常了，",
+              "start": 10,
+              "end": 26,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "latency",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及游戏延迟相关描述，无法判断",
+          "evidence": [
+            {
+              "text": "一开始耳机声音太小，",
+              "start": 0,
+              "end": 10,
+              "sentiment": "negative"
+            },
+            {
+              "text": "后来调了手机的蓝牙设置后正常了，",
+              "start": 10,
+              "end": 26,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        }
+      ],
+      "analyzed": true,
+      "modelVersion": "ollama-qwen3:4b-absa-v4"
+    },
+    {
+      "id": 72,
+      "externalId": "zh_0349682",
+      "productId": "real-bluetooth-corpus",
+      "text": "音质很好的一款耳机，蓝牙的功能还没使用，主要是买来夜跑的！",
+      "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+      "isSynthetic": false,
+      "opinions": [
+        {
+          "aspect": "sound",
+          "sentiment": "positive",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "high",
+          "rationale": "S1明确提到'音质很好的一款耳机'，直接肯定音质，无否定或转折",
+          "evidence": [
+            {
+              "text": "音质很好的一款耳机，",
+              "start": 0,
+              "end": 10,
+              "sentiment": "positive"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        }
+      ],
+      "analyzed": true,
+      "modelVersion": "ollama-qwen3:4b-absa-v4"
+    },
+    {
+      "id": 71,
+      "externalId": "zh_0208072",
+      "productId": "real-bluetooth-corpus",
+      "text": "z实惠买的，除了拆封了，没有划痕，没有瑕疵，音质是我用的蓝牙耳机中最好的，推荐！",
+      "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+      "isSynthetic": false,
+      "opinions": [
+        {
+          "aspect": "sound",
+          "sentiment": "positive",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "high",
+          "rationale": "S5明确表示音质是蓝牙耳机中最好的，属于正面评价",
+          "evidence": [
+            {
+              "text": "音质是我用的蓝牙耳机中最好的，",
+              "start": 22,
+              "end": 37,
+              "sentiment": "positive"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        }
+      ],
+      "analyzed": true,
+      "modelVersion": "ollama-qwen3:4b-absa-v4"
+    },
+    {
+      "id": 70,
+      "externalId": "zh_0279273",
+      "productId": "real-bluetooth-corpus",
+      "text": "一直想买半入耳的蓝牙耳机，好不容易找到了这款，尺寸比苹果耳机大一点，戴多了会有点疼，这个价位的耳机说实话音质也不能有太大的要求，无功无过吧",
+      "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+      "isSynthetic": false,
+      "opinions": [
+        {
+          "aspect": "comfort",
+          "sentiment": "negative",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "medium",
+          "rationale": "S4提到'戴多了会有点疼'，明确表达佩戴不适",
+          "evidence": [
+            {
+              "text": "戴多了会有点疼，",
+              "start": 34,
+              "end": 42,
+              "sentiment": "negative"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "battery",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及电池相关描述，无法判断",
+          "evidence": [
+            {
+              "text": "一直想买半入耳的蓝牙耳机，",
+              "start": 0,
+              "end": 13,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "call",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及通话功能相关描述，无法判断",
+          "evidence": [
+            {
+              "text": "一直想买半入耳的蓝牙耳机，",
+              "start": 0,
+              "end": 13,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "latency",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及游戏延迟相关描述，无法判断",
+          "evidence": [
+            {
+              "text": "一直想买半入耳的蓝牙耳机，",
+              "start": 0,
+              "end": 13,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        }
+      ],
+      "analyzed": true,
+      "modelVersion": "ollama-qwen3:4b-absa-v4"
+    },
+    {
+      "id": 69,
+      "externalId": "zh_0645568",
+      "productId": "real-bluetooth-corpus",
+      "text": "耳机非常好，适合出街，不适合运动。作为一款蓝牙耳机，音质很不错。 可惜我弄丢了，想再入一副。目前amazon又缺货，何时会有货呢？",
+      "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+      "isSynthetic": false,
+      "opinions": [
+        {
+          "aspect": "sound",
+          "sentiment": "positive",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "medium",
+          "rationale": "S5提到'音质很不错'，直接肯定音质，属于显式正面评价",
+          "evidence": [
+            {
+              "text": "音质很不错。",
+              "start": 26,
+              "end": 32,
+              "sentiment": "positive"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "comfort",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未明确提及舒适度，S2和S3涉及使用场景但未直接评价舒适度，需进一步确认",
+          "evidence": [
+            {
+              "text": "适合出街，",
+              "start": 6,
+              "end": 11,
+              "sentiment": "neutral"
+            },
+            {
+              "text": "不适合运动。",
+              "start": 11,
+              "end": 17,
+              "sentiment": "negative"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "battery",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及电池相关描述，无法判断续航情况",
+          "evidence": [
+            {
+              "text": "目前amazon又缺货，",
+              "start": 46,
+              "end": 58,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "call",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及通话功能相关描述",
+          "evidence": [
+            {
+              "text": "目前amazon又缺货，",
+              "start": 46,
+              "end": 58,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "latency",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及游戏延迟相关描述",
+          "evidence": [
+            {
+              "text": "目前amazon又缺货，",
+              "start": 46,
+              "end": 58,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        }
+      ],
+      "analyzed": true,
+      "modelVersion": "ollama-qwen3:4b-absa-v4"
+    },
+    {
+      "id": 68,
+      "externalId": "zh_0240086",
+      "productId": "real-bluetooth-corpus",
+      "text": "包装好简陋，这个价位音质还可以，连接在移动或晃动蓝牙设备时有点断断续续。耳机略大",
+      "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+      "isSynthetic": false,
+      "opinions": [
+        {
+          "aspect": "sound",
+          "sentiment": "positive",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "medium",
+          "rationale": "S2提到'这个价位音质还可以'，表示音质在该价位下表现尚可，属于正面评价",
+          "evidence": [
+            {
+              "text": "这个价位音质还可以，",
+              "start": 6,
+              "end": 16,
+              "sentiment": "positive"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "noise",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及降噪相关描述，无法判断降噪表现",
+          "evidence": [
+            {
+              "text": "包装好简陋，",
+              "start": 0,
+              "end": 6,
+              "sentiment": "negative"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "comfort",
+          "sentiment": "negative",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "low",
+          "rationale": "S4提到'耳机略大'，暗示佩戴尺寸过大导致不适，属于负面评价",
+          "evidence": [
+            {
+              "text": "耳机略大",
+              "start": 36,
+              "end": 40,
+              "sentiment": "negative"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "battery",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及电池续航相关描述，无法判断电池表现",
+          "evidence": [
+            {
+              "text": "包装好简陋，",
+              "start": 0,
+              "end": 6,
+              "sentiment": "negative"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "call",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及通话功能相关描述，无法判断通话表现",
+          "evidence": [
+            {
+              "text": "包装好简陋，",
+              "start": 0,
+              "end": 6,
+              "sentiment": "negative"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "latency",
+          "sentiment": "negative",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "medium",
+          "rationale": "S3提到'连接在移动或晃动蓝牙设备时有点断断续续'，表明蓝牙连接不稳定，存在延迟问题",
+          "evidence": [
+            {
+              "text": "连接在移动或晃动蓝牙设备时有点断断续续。",
+              "start": 16,
+              "end": 36,
+              "sentiment": "negative"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        }
+      ],
+      "analyzed": true,
+      "modelVersion": "ollama-qwen3:4b-absa-v4"
+    },
+    {
+      "id": 67,
+      "externalId": "zh_0776885",
+      "productId": "real-bluetooth-corpus",
+      "text": "总体是好的 但是有几点 耳塞头的部分有点大，线控离太远 通话会听不清 有时候蓝牙连接不顺畅 需要连好几次 耳塞头质量一般 已经脱胶掉下来过一次 自己粘了一下 但性价比高 强烈推荐",
+      "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+      "isSynthetic": false,
+      "opinions": [
+        {
+          "aspect": "sound",
+          "sentiment": "neutral",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "low",
+          "rationale": "S1提到耳塞头部分有点大，但未直接评价音质；S2提到通话会听不清，可能涉及声音清晰度，但未明确音质问题。整体未直接提及音质，故为中性。",
+          "evidence": [
+            {
+              "text": "总体是好的 但是有几点 耳塞头的部分有点大，",
+              "start": 0,
+              "end": 22,
+              "sentiment": "neutral"
+            },
+            {
+              "text": "线控离太远 通话会听不清 有时候蓝牙连接不顺畅 需要连好几次 耳塞头质量一般 已经脱胶掉下来过一次 自己粘了一下 但性价比高 强烈推荐",
+              "start": 22,
+              "end": 89,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "noise",
+          "sentiment": "neutral",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "low",
+          "rationale": "原文未提及降噪相关描述，故为中性。",
+          "evidence": [
+            {
+              "text": "总体是好的 但是有几点 耳塞头的部分有点大，",
+              "start": 0,
+              "end": 22,
+              "sentiment": "neutral"
+            },
+            {
+              "text": "线控离太远 通话会听不清 有时候蓝牙连接不顺畅 需要连好几次 耳塞头质量一般 已经脱胶掉下来过一次 自己粘了一下 但性价比高 强烈推荐",
+              "start": 22,
+              "end": 89,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "comfort",
+          "sentiment": "negative",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "medium",
+          "rationale": "S1提到耳塞头部分有点大，可能影响贴合，导致不适；S2提到耳塞头质量一般，已经脱胶掉下来过一次，说明佩戴舒适度差。综合为负面。",
+          "evidence": [
+            {
+              "text": "总体是好的 但是有几点 耳塞头的部分有点大，",
+              "start": 0,
+              "end": 22,
+              "sentiment": "negative"
+            },
+            {
+              "text": "线控离太远 通话会听不清 有时候蓝牙连接不顺畅 需要连好几次 耳塞头质量一般 已经脱胶掉下来过一次 自己粘了一下 但性价比高 强烈推荐",
+              "start": 22,
+              "end": 89,
+              "sentiment": "negative"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "battery",
+          "sentiment": "neutral",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "low",
+          "rationale": "原文未提及电池相关描述，故为中性。",
+          "evidence": [
+            {
+              "text": "总体是好的 但是有几点 耳塞头的部分有点大，",
+              "start": 0,
+              "end": 22,
+              "sentiment": "neutral"
+            },
+            {
+              "text": "线控离太远 通话会听不清 有时候蓝牙连接不顺畅 需要连好几次 耳塞头质量一般 已经脱胶掉下来过一次 自己粘了一下 但性价比高 强烈推荐",
+              "start": 22,
+              "end": 89,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "call",
+          "sentiment": "negative",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "medium",
+          "rationale": "S2提到通话会听不清，直接说明通话清晰度问题，故为负面。",
+          "evidence": [
+            {
+              "text": "线控离太远 通话会听不清 有时候蓝牙连接不顺畅 需要连好几次 耳塞头质量一般 已经脱胶掉下来过一次 自己粘了一下 但性价比高 强烈推荐",
+              "start": 22,
+              "end": 89,
+              "sentiment": "negative"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "latency",
+          "sentiment": "neutral",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "low",
+          "rationale": "原文未提及游戏延迟相关描述，故为中性。",
+          "evidence": [
+            {
+              "text": "总体是好的 但是有几点 耳塞头的部分有点大，",
+              "start": 0,
+              "end": 22,
+              "sentiment": "neutral"
+            },
+            {
+              "text": "线控离太远 通话会听不清 有时候蓝牙连接不顺畅 需要连好几次 耳塞头质量一般 已经脱胶掉下来过一次 自己粘了一下 但性价比高 强烈推荐",
+              "start": 22,
+              "end": 89,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        }
+      ],
+      "analyzed": true,
+      "modelVersion": "ollama-qwen3:4b-absa-v4"
+    },
+    {
+      "id": 66,
+      "externalId": "zh_0281307",
+      "productId": "real-bluetooth-corpus",
+      "text": "性价比很高。连接苹果很方便。蓝牙耳机音质没啥好说的了，低音基本没有，也就路上锻炼的时候听个响。没有听诊器效应，电池也还算耐用。",
+      "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+      "isSynthetic": false,
+      "opinions": [
+        {
+          "aspect": "sound",
+          "sentiment": "negative",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "low",
+          "rationale": "S3和S4提到'蓝牙耳机音质没啥好说的了，低音基本没有'，明确表示低音缺失，音质评价负面",
+          "evidence": [
+            {
+              "text": "蓝牙耳机音质没啥好说的了，",
+              "start": 14,
+              "end": 27,
+              "sentiment": "negative"
+            },
+            {
+              "text": "低音基本没有，",
+              "start": 27,
+              "end": 34,
+              "sentiment": "negative"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "noise",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及降噪相关描述，无法判断",
+          "evidence": [
+            {
+              "text": "性价比很高。",
+              "start": 0,
+              "end": 6,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "comfort",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及佩戴舒适度相关描述，无法判断",
+          "evidence": [
+            {
+              "text": "性价比很高。",
+              "start": 0,
+              "end": 6,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "battery",
+          "sentiment": "positive",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "low",
+          "rationale": "S7提到'电池也还算耐用'，表示电池续航良好",
+          "evidence": [
+            {
+              "text": "电池也还算耐用。",
+              "start": 55,
+              "end": 63,
+              "sentiment": "positive"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "call",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及通话相关描述，无法判断",
+          "evidence": [
+            {
+              "text": "性价比很高。",
+              "start": 0,
+              "end": 6,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "latency",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及游戏延迟相关描述，无法判断",
+          "evidence": [
+            {
+              "text": "性价比很高。",
+              "start": 0,
+              "end": 6,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        }
+      ],
+      "analyzed": true,
+      "modelVersion": "ollama-qwen3:4b-absa-v4"
+    },
+    {
+      "id": 65,
+      "externalId": "zh_0884236",
+      "productId": "real-bluetooth-corpus",
+      "text": "就跑步而言够用，关键是比国内便宜一半，蓝牙耳机音质在这个价位就不能有太多奢求了。",
+      "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+      "isSynthetic": false,
+      "opinions": [
+        {
+          "aspect": "sound",
+          "sentiment": "neutral",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "low",
+          "rationale": "S3提到'蓝牙耳机音质在这个价位就不能有太多奢求了'，表示音质在该价位是合理预期，无明确负面评价，属于客观陈述",
+          "evidence": [
+            {
+              "text": "蓝牙耳机音质在这个价位就不能有太多奢求了。",
+              "start": 19,
+              "end": 40,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        }
+      ],
+      "analyzed": true,
+      "modelVersion": "ollama-qwen3:4b-absa-v4"
+    },
+    {
+      "id": 64,
+      "externalId": "zh_0401771",
+      "productId": "real-bluetooth-corpus",
+      "text": "耳机非常不错了，目前最好的蓝牙降噪耳机了，音质没得说，可是我用的Sony播放器链接蓝牙耳机的时候会出现歌曲不稳的情况",
+      "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+      "isSynthetic": false,
+      "opinions": [
+        {
+          "aspect": "sound",
+          "sentiment": "positive",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "high",
+          "rationale": "S3: 音质没得说，直接肯定音质，无歧义",
+          "evidence": [
+            {
+              "text": "音质没得说，",
+              "start": 21,
+              "end": 27,
+              "sentiment": "positive"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "noise",
+          "sentiment": "positive",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "high",
+          "rationale": "S2: 目前最好的蓝牙降噪耳机了，明确表示降噪效果好",
+          "evidence": [
+            {
+              "text": "目前最好的蓝牙降噪耳机了，",
+              "start": 8,
+              "end": 21,
+              "sentiment": "positive"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "comfort",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及舒适度相关描述，无法判断",
+          "evidence": [
+            {
+              "text": "耳机非常不错了，",
+              "start": 0,
+              "end": 8,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "battery",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及续航相关描述，无法判断",
+          "evidence": [
+            {
+              "text": "耳机非常不错了，",
+              "start": 0,
+              "end": 8,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "call",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及通话功能相关描述，无法判断",
+          "evidence": [
+            {
+              "text": "耳机非常不错了，",
+              "start": 0,
+              "end": 8,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "latency",
+          "sentiment": "negative",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "medium",
+          "rationale": "S4: 我用的Sony播放器链接蓝牙耳机的时候会出现歌曲不稳的情况，暗示音画不同步，游戏延迟问题",
+          "evidence": [
+            {
+              "text": "可是我用的Sony播放器链接蓝牙耳机的时候会出现歌曲不稳的情况",
+              "start": 27,
+              "end": 58,
+              "sentiment": "negative"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        }
+      ],
+      "analyzed": true,
+      "modelVersion": "ollama-qwen3:4b-absa-v4"
+    },
+    {
+      "id": 63,
+      "externalId": "zh_0651542",
+      "productId": "real-bluetooth-corpus",
+      "text": "作为一款蓝牙耳机，音质本身就没太高的期望，勉强能接受。运动过程中听诊器效应还是挺明显，这个问题好像很多无线蓝牙耳机都有这问题。 耳机的做工质量还是可以的。",
+      "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+      "isSynthetic": false,
+      "opinions": [
+        {
+          "aspect": "sound",
+          "sentiment": "neutral",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "low",
+          "rationale": "S2提到音质本身就没太高的期望，勉强能接受，表明音质未达到高期望但可接受，属于中性评价",
+          "evidence": [
+            {
+              "text": "音质本身就没太高的期望，",
+              "start": 9,
+              "end": 21,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "noise",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未直接提及降噪效果，但提到运动过程中听诊器效应，可能与环境噪声相关，但未明确评价降噪性能，需进一步确认",
+          "evidence": [
+            {
+              "text": "运动过程中听诊器效应还是挺明显，",
+              "start": 27,
+              "end": 43,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "comfort",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未直接提及佩戴舒适度，但提到做工质量，可能与舒适度间接相关，但无明确依据",
+          "evidence": [
+            {
+              "text": " 耳机的做工质量还是可以的。",
+              "start": 63,
+              "end": 77,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        }
+      ],
+      "analyzed": true,
+      "modelVersion": "ollama-qwen3:4b-absa-v4"
+    },
+    {
+      "id": 62,
+      "externalId": "zh_0474621",
+      "productId": "real-bluetooth-corpus",
+      "text": "比一般蓝牙耳机音质好点，不如99元有线耳机，仅此而已，待机时间如说明一样。",
+      "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+      "isSynthetic": false,
+      "opinions": [
+        {
+          "aspect": "sound",
+          "sentiment": "positive",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "medium",
+          "rationale": "S1提到比一般蓝牙耳机音: 1. 比较对象是'一般蓝牙耳机'，说明音质优于基准；2. '好点'表示轻微提升，程度中等",
+          "evidence": [
+            {
+              "text": "比一般蓝牙耳机音质好点，",
+              "start": 0,
+              "end": 12,
+              "sentiment": "positive"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "battery",
+          "sentiment": "neutral",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "low",
+          "rationale": "S4提到待机时间如说明一样，表示与宣传一致，无评价倾向",
+          "evidence": [
+            {
+              "text": "待机时间如说明一样。",
+              "start": 27,
+              "end": 37,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "call",
+          "sentiment": "neutral",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "low",
+          "rationale": "未提及通话相关评价，按默认中性处理",
+          "evidence": [
+            {
+              "text": "待机时间如说明一样。",
+              "start": 27,
+              "end": 37,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "latency",
+          "sentiment": "neutral",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "low",
+          "rationale": "未提及游戏延迟相关评价，按默认中性处理",
+          "evidence": [
+            {
+              "text": "待机时间如说明一样。",
+              "start": 27,
+              "end": 37,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        }
+      ],
+      "analyzed": true,
+      "modelVersion": "ollama-qwen3:4b-absa-v4"
+    },
+    {
+      "id": 61,
+      "externalId": "zh_0528861",
+      "productId": "real-bluetooth-corpus",
+      "text": "耳机音质不错，不负JBL的品牌。但是，最严重的缺点这是蓝牙运动耳机，戴上是要运动的，耳塞没有一点挂住的设计，稍微跑下就从耳朵里掉下来，不适合用来做运动！严重不适合",
+      "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+      "isSynthetic": false,
+      "opinions": [
+        {
+          "aspect": "sound",
+          "sentiment": "positive",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "medium",
+          "rationale": "S1: 耳机音质不错，直接肯定音质表现",
+          "evidence": [
+            {
+              "text": "耳机音质不错，",
+              "start": 0,
+              "end": 7,
+              "sentiment": "positive"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "noise",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及降噪相关描述，无法判断",
+          "evidence": [
+            {
+              "text": "耳机音质不错，",
+              "start": 0,
+              "end": 7,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "comfort",
+          "sentiment": "negative",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "high",
+          "rationale": "S6-S8: 耳塞无挂住设计，运动时易脱落，直接说明佩戴不适",
+          "evidence": [
+            {
+              "text": "耳塞没有一点挂住的设计，",
+              "start": 42,
+              "end": 54,
+              "sentiment": "negative"
+            },
+            {
+              "text": "稍微跑下就从耳朵里掉下来，",
+              "start": 54,
+              "end": 67,
+              "sentiment": "negative"
+            },
+            {
+              "text": "不适合用来做运动！",
+              "start": 67,
+              "end": 76,
+              "sentiment": "negative"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "battery",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及电池相关描述，无法判断",
+          "evidence": [
+            {
+              "text": "耳机音质不错，",
+              "start": 0,
+              "end": 7,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "call",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及通话相关描述，无法判断",
+          "evidence": [
+            {
+              "text": "耳机音质不错，",
+              "start": 0,
+              "end": 7,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "latency",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及游戏延迟相关描述，无法判断",
+          "evidence": [
+            {
+              "text": "耳机音质不错，",
+              "start": 0,
+              "end": 7,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        }
+      ],
+      "analyzed": true,
+      "modelVersion": "ollama-qwen3:4b-absa-v4"
+    },
+    {
+      "id": 60,
+      "externalId": "zh_0222269",
+      "productId": "real-bluetooth-corpus",
+      "text": "我有有个问题，这个耳机连接不上我任何设备的蓝牙，是我操作有问题么？求解",
+      "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+      "isSynthetic": false,
+      "opinions": [
+        {
+          "aspect": "sound",
+          "sentiment": "neutral",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "low",
+          "rationale": "用户提到连接问题，但未直接评价音质，属于事实陈述，无情感倾向",
+          "evidence": [
+            {
+              "text": "我有有个问题，",
+              "start": 0,
+              "end": 7,
+              "sentiment": "neutral"
+            },
+            {
+              "text": "这个耳机连接不上我任何设备的蓝牙，",
+              "start": 7,
+              "end": 24,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        }
+      ],
+      "analyzed": true,
+      "modelVersion": "ollama-qwen3:4b-absa-v4"
+    },
+    {
+      "id": 59,
+      "externalId": "zh_0959602",
+      "productId": "real-bluetooth-corpus",
+      "text": "降噪不行 跑动还会有很大的风声个杂音 身为一个运动蓝牙耳机真的不合格",
+      "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+      "isSynthetic": false,
+      "opinions": [
+        {
+          "aspect": "noise",
+          "sentiment": "negative",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "high",
+          "rationale": "原文直接指出'降噪不行'，并具体说明'跑动还会有很大的风声个杂音'，表明环境噪声隔绝效果差，属于明确负面评价。选择片段S1",
+          "evidence": [
+            {
+              "text": "降噪不行 跑动还会有很大的风声个杂音 身为一个运动蓝牙耳机真的不合格",
+              "start": 0,
+              "end": 34,
+              "sentiment": "negative"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        }
+      ],
+      "analyzed": true,
+      "modelVersion": "ollama-qwen3:4b-absa-v4"
+    },
+    {
+      "id": 58,
+      "externalId": "zh_0240842",
+      "productId": "real-bluetooth-corpus",
+      "text": "用了很久才来评价，说实话，很后悔买，因为真的功能很弱，很鸡肋，比苹果还不是差了一点半点，价格还挺贵，感觉就是花了一千多买了一副蓝牙耳机。华为出这款产品，有点失望。",
+      "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+      "isSynthetic": false,
+      "opinions": [
+        {
+          "aspect": "sound",
+          "sentiment": "negative",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "high",
+          "rationale": "S4:因为真的功能很弱，S5:很鸡肋",
+          "evidence": [
+            {
+              "text": "因为真的功能很弱，",
+              "start": 18,
+              "end": 27,
+              "sentiment": "negative"
+            },
+            {
+              "text": "很鸡肋，",
+              "start": 27,
+              "end": 31,
+              "sentiment": "negative"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "noise",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "未提及降噪相关描述",
+          "evidence": [
+            {
+              "text": "用了很久才来评价，",
+              "start": 0,
+              "end": 9,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "comfort",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "未提及舒适度相关描述",
+          "evidence": [
+            {
+              "text": "用了很久才来评价，",
+              "start": 0,
+              "end": 9,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "battery",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "未提及续航相关描述",
+          "evidence": [
+            {
+              "text": "用了很久才来评价，",
+              "start": 0,
+              "end": 9,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "call",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "未提及通话相关描述",
+          "evidence": [
+            {
+              "text": "用了很久才来评价，",
+              "start": 0,
+              "end": 9,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "latency",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "未提及游戏延迟相关描述",
+          "evidence": [
+            {
+              "text": "用了很久才来评价，",
+              "start": 0,
+              "end": 9,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        }
+      ],
+      "analyzed": true,
+      "modelVersion": "ollama-qwen3:4b-absa-v4"
+    },
+    {
+      "id": 57,
+      "externalId": "zh_0574283",
+      "productId": "real-bluetooth-corpus",
+      "text": "八十多的蓝牙耳机，就别追求音质了，充电三小时使用两小时",
+      "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+      "isSynthetic": false,
+      "opinions": [
+        {
+          "aspect": "sound",
+          "sentiment": "negative",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "high",
+          "rationale": "S2明确表示'就别追求音质了'，表明用户对音质的不满，且S1和S3提供上下文：价格低（八十多）和续航短（充电三小时用两小时），支持音质不值得追求的否定评价",
+          "evidence": [
+            {
+              "text": "就别追求音质了，",
+              "start": 9,
+              "end": 17,
+              "sentiment": "negative"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "battery",
+          "sentiment": "neutral",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "medium",
+          "rationale": "S3'充电三小时使用两小时'描述续航时长，属于客观事实，未表达满意或不满，因此中性",
+          "evidence": [
+            {
+              "text": "充电三小时使用两小时",
+              "start": 17,
+              "end": 27,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        }
+      ],
+      "analyzed": true,
+      "modelVersion": "ollama-qwen3:4b-absa-v4"
+    },
+    {
+      "id": 56,
+      "externalId": "zh_0258938",
+      "productId": "real-bluetooth-corpus",
+      "text": "佩戴很舒服 音质实在太差了 也就是30元一副的耳机水平。运动蓝牙耳机大概就这幅德性吧 我也是第一次买蓝牙耳机。这个价格虽是特价 ，就这音质而言太没性价比了 我是不推荐买的 而且是马来西亚产的 不是国行！",
+      "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+      "isSynthetic": false,
+      "opinions": [
+        {
+          "aspect": "sound",
+          "sentiment": "negative",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "high",
+          "rationale": "S1中'音质实在太差了'直接否定音质，S4中'就这音质而言太没性价比了'强化负面评价，明确音质差且性价比低",
+          "evidence": [
+            {
+              "text": "佩戴很舒服 音质实在太差了 也就是30元一副的耳机水平。",
+              "start": 0,
+              "end": 28,
+              "sentiment": "negative"
+            },
+            {
+              "text": "就这音质而言太没性价比了 我是不推荐买的 而且是马来西亚产的 不是国行！",
+              "start": 65,
+              "end": 101,
+              "sentiment": "negative"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "comfort",
+          "sentiment": "positive",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "medium",
+          "rationale": "S1中'佩戴很舒服'直接表达舒适度正面评价",
+          "evidence": [
+            {
+              "text": "佩戴很舒服 音质实在太差了 也就是30元一副的耳机水平。",
+              "start": 0,
+              "end": 28,
+              "sentiment": "positive"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "battery",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及电池相关描述，无法判断",
+          "evidence": [
+            {
+              "text": "佩戴很舒服 音质实在太差了 也就是30元一副的耳机水平。",
+              "start": 0,
+              "end": 28,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "call",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及通话功能相关描述，无法判断",
+          "evidence": [
+            {
+              "text": "佩戴很舒服 音质实在太差了 也就是30元一副的耳机水平。",
+              "start": 0,
+              "end": 28,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "latency",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及游戏延迟相关描述，无法判断",
+          "evidence": [
+            {
+              "text": "佩戴很舒服 音质实在太差了 也就是30元一副的耳机水平。",
+              "start": 0,
+              "end": 28,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        }
+      ],
+      "analyzed": true,
+      "modelVersion": "ollama-qwen3:4b-absa-v4"
+    },
+    {
+      "id": 55,
+      "externalId": "zh_0470548",
+      "productId": "real-bluetooth-corpus",
+      "text": "我耳机第一配对结束后，实用了半个月，耳机不能自动接听电话，需要在手机点蓝牙接听才有声音，多媒体有声音，删除配对后，现在又不能链接配对手机，请问是什么情况，怎么办？",
+      "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+      "isSynthetic": false,
+      "opinions": [
+        {
+          "aspect": "call",
+          "sentiment": "negative",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "high",
+          "rationale": "S3和S4明确指出耳机不能自动接听电话，需手动点蓝牙才能有声音，属于通话功能缺陷",
+          "evidence": [
+            {
+              "text": "耳机不能自动接听电话，",
+              "start": 18,
+              "end": 29,
+              "sentiment": "negative"
+            },
+            {
+              "text": "需要在手机点蓝牙接听才有声音，",
+              "start": 29,
+              "end": 44,
+              "sentiment": "negative"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        }
+      ],
+      "analyzed": true,
+      "modelVersion": "ollama-qwen3:4b-absa-v4"
+    },
+    {
+      "id": 54,
+      "externalId": "zh_0692252",
+      "productId": "real-bluetooth-corpus",
+      "text": "大失所望。本来是用了bose家有线的运动耳机，很喜欢，所以现在升级到蓝牙版，结果蓝牙这款音质不行，佩戴感不舒适，好想退货……不过盒子都扔了，我忍。",
+      "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+      "isSynthetic": false,
+      "opinions": [
+        {
+          "aspect": "sound",
+          "sentiment": "negative",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "high",
+          "rationale": "S5明确提到'蓝牙这款音质不行'，直接否定音质表现",
+          "evidence": [
+            {
+              "text": "结果蓝牙这款音质不行，",
+              "start": 38,
+              "end": 49,
+              "sentiment": "negative"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "comfort",
+          "sentiment": "negative",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "high",
+          "rationale": "S6明确提到'佩戴感不舒适'，直接否定舒适度",
+          "evidence": [
+            {
+              "text": "佩戴感不舒适，",
+              "start": 49,
+              "end": 56,
+              "sentiment": "negative"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "battery",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及电池相关问题，无法判断",
+          "evidence": [
+            {
+              "text": "大失所望。",
+              "start": 0,
+              "end": 5,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "call",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及通话功能，无法判断",
+          "evidence": [
+            {
+              "text": "大失所望。",
+              "start": 0,
+              "end": 5,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "latency",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及游戏延迟，无法判断",
+          "evidence": [
+            {
+              "text": "大失所望。",
+              "start": 0,
+              "end": 5,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        }
+      ],
+      "analyzed": true,
+      "modelVersion": "ollama-qwen3:4b-absa-v4"
+    },
+    {
+      "id": 53,
+      "externalId": "zh_0079346",
+      "productId": "real-bluetooth-corpus",
+      "text": "蓝牙耳机刚刚收到的时候就出现连接不稳，更换完使用不到三个月，电池又出现明显衰减",
+      "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+      "isSynthetic": false,
+      "opinions": [
+        {
+          "aspect": "sound",
+          "sentiment": "neutral",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "low",
+          "rationale": "原文未提及音质相关描述，属于未提及方面，省略",
+          "evidence": [
+            {
+              "text": "蓝牙耳机刚刚收到的时候就出现连接不稳，",
+              "start": 0,
+              "end": 19,
+              "sentiment": "neutral"
+            },
+            {
+              "text": "更换完使用不到三个月，",
+              "start": 19,
+              "end": 30,
+              "sentiment": "neutral"
+            },
+            {
+              "text": "电池又出现明显衰减",
+              "start": 30,
+              "end": 39,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "noise",
+          "sentiment": "neutral",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "low",
+          "rationale": "原文未提及降噪相关描述，属于未提及方面，省略",
+          "evidence": [
+            {
+              "text": "蓝牙耳机刚刚收到的时候就出现连接不稳，",
+              "start": 0,
+              "end": 19,
+              "sentiment": "neutral"
+            },
+            {
+              "text": "更换完使用不到三个月，",
+              "start": 19,
+              "end": 30,
+              "sentiment": "neutral"
+            },
+            {
+              "text": "电池又出现明显衰减",
+              "start": 30,
+              "end": 39,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "comfort",
+          "sentiment": "neutral",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "low",
+          "rationale": "原文未提及佩戴舒适度相关描述，属于未提及方面，省略",
+          "evidence": [
+            {
+              "text": "蓝牙耳机刚刚收到的时候就出现连接不稳，",
+              "start": 0,
+              "end": 19,
+              "sentiment": "neutral"
+            },
+            {
+              "text": "更换完使用不到三个月，",
+              "start": 19,
+              "end": 30,
+              "sentiment": "neutral"
+            },
+            {
+              "text": "电池又出现明显衰减",
+              "start": 30,
+              "end": 39,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "battery",
+          "sentiment": "negative",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "medium",
+          "rationale": "S3 '电池又出现明显衰减' 表明电池续航能力下降，属于负面评价",
+          "evidence": [
+            {
+              "text": "电池又出现明显衰减",
+              "start": 30,
+              "end": 39,
+              "sentiment": "negative"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "call",
+          "sentiment": "neutral",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "low",
+          "rationale": "原文未提及通话相关描述，属于未提及方面，省略",
+          "evidence": [
+            {
+              "text": "蓝牙耳机刚刚收到的时候就出现连接不稳，",
+              "start": 0,
+              "end": 19,
+              "sentiment": "neutral"
+            },
+            {
+              "text": "更换完使用不到三个月，",
+              "start": 19,
+              "end": 30,
+              "sentiment": "neutral"
+            },
+            {
+              "text": "电池又出现明显衰减",
+              "start": 30,
+              "end": 39,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "latency",
+          "sentiment": "neutral",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "low",
+          "rationale": "原文未提及游戏延迟相关描述，属于未提及方面，省略",
+          "evidence": [
+            {
+              "text": "蓝牙耳机刚刚收到的时候就出现连接不稳，",
+              "start": 0,
+              "end": 19,
+              "sentiment": "neutral"
+            },
+            {
+              "text": "更换完使用不到三个月，",
+              "start": 19,
+              "end": 30,
+              "sentiment": "neutral"
+            },
+            {
+              "text": "电池又出现明显衰减",
+              "start": 30,
+              "end": 39,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        }
+      ],
+      "analyzed": true,
+      "modelVersion": "ollama-qwen3:4b-absa-v4"
+    },
+    {
+      "id": 52,
+      "externalId": "zh_0006516",
+      "productId": "real-bluetooth-corpus",
+      "text": "卧槽卧槽卧槽卧槽卧槽，用无线连耳机的时候有很强的杂音，基本上都听不了歌！用线连着的时候还不错，只不过99这个价不值，在亚马逊买了三个耳机，第一个用了三天，就有一边没声音了，第二个音质太差，这个蓝牙耳机。。。不说了，不说了，再也不在亚马逊买耳机了！",
+      "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+      "isSynthetic": false,
+      "opinions": [
+        {
+          "aspect": "sound",
+          "sentiment": "negative",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "high",
+          "rationale": "S9提到'第二个音质太差'，S2和S3描述无线连接时有强杂音导致听不到歌，S8提到一边没声音，均指向音质问题",
+          "evidence": [
+            {
+              "text": "第二个音质太差，",
+              "start": 86,
+              "end": 94,
+              "sentiment": "negative"
+            },
+            {
+              "text": "用无线连耳机的时候有很强的杂音，",
+              "start": 11,
+              "end": 27,
+              "sentiment": "negative"
+            },
+            {
+              "text": "基本上都听不了歌！",
+              "start": 27,
+              "end": 36,
+              "sentiment": "negative"
+            },
+            {
+              "text": "就有一边没声音了，",
+              "start": 77,
+              "end": 86,
+              "sentiment": "negative"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "noise",
+          "sentiment": "negative",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "high",
+          "rationale": "S2提到'用无线连耳机的时候有很强的杂音'，表明无线连接时环境噪声干扰严重",
+          "evidence": [
+            {
+              "text": "用无线连耳机的时候有很强的杂音，",
+              "start": 11,
+              "end": 27,
+              "sentiment": "negative"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "comfort",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及舒适度相关描述，无法判断",
+          "evidence": [
+            {
+              "text": "卧槽卧槽卧槽卧槽卧槽，",
+              "start": 0,
+              "end": 11,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "battery",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及电池续航问题",
+          "evidence": [
+            {
+              "text": "卧槽卧槽卧槽卧槽卧槽，",
+              "start": 0,
+              "end": 11,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "call",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及通话功能",
+          "evidence": [
+            {
+              "text": "卧槽卧槽卧槽卧槽卧槽，",
+              "start": 0,
+              "end": 11,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "latency",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及游戏延迟问题",
+          "evidence": [
+            {
+              "text": "卧槽卧槽卧槽卧槽卧槽，",
+              "start": 0,
+              "end": 11,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        }
+      ],
+      "analyzed": true,
+      "modelVersion": "ollama-qwen3:4b-absa-v4"
+    },
+    {
+      "id": 51,
+      "externalId": "zh_0637351",
+      "productId": "real-bluetooth-corpus",
+      "text": "一款垃圾的蓝牙耳机！质量差，有间接的无如何声音，发来的货，只有数据线，连充电器都没有",
+      "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+      "isSynthetic": false,
+      "opinions": [
+        {
+          "aspect": "sound",
+          "sentiment": "negative",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "high",
+          "rationale": "S3提到'有间接的无如何声音'，表明音质问题，直接否定音质表现",
+          "evidence": [
+            {
+              "text": "有间接的无如何声音，",
+              "start": 14,
+              "end": 24,
+              "sentiment": "negative"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "comfort",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及舒适度相关描述，无法确定舒适度评价",
+          "evidence": [
+            {
+              "text": "一款垃圾的蓝牙耳机！",
+              "start": 0,
+              "end": 10,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "battery",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及电池续航相关描述，无法确定电池评价",
+          "evidence": [
+            {
+              "text": "一款垃圾的蓝牙耳机！",
+              "start": 0,
+              "end": 10,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "call",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及通话功能相关描述，无法确定通话评价",
+          "evidence": [
+            {
+              "text": "一款垃圾的蓝牙耳机！",
+              "start": 0,
+              "end": 10,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "latency",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及游戏延迟相关描述，无法确定游戏延迟评价",
+          "evidence": [
+            {
+              "text": "一款垃圾的蓝牙耳机！",
+              "start": 0,
+              "end": 10,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        }
+      ],
+      "analyzed": true,
+      "modelVersion": "ollama-qwen3:4b-absa-v4"
+    },
+    {
+      "id": 50,
+      "externalId": "zh_0178344",
+      "productId": "real-bluetooth-corpus",
+      "text": "【12月8日更新，使用两周后的体验】 总结： 降噪满分！音质过关。 蓝牙连接体验很差！内置麦克风几乎没用！ 适合听爵士/古典，重型/摇滚表现力欠佳。不适合行走时佩戴。 优点： 1. 降噪非常棒。 戴上耳机好像在潜水！可以很好的屏蔽环境噪声。 2.音质过关。 此前用过Marshall Major, Sennheiser IM70, Sennheiser Momentum In-ear。对比之后，QC35音色不算特别出彩，但细节非常清楚。很适合听爵士，古典音乐(乐器分明，立体感非常强)。 3.非常舒适。 耳机部分可以完全和耳朵贴合，不会有任何压迫感。 4. 保护听力。 Bose QC35的最大音量对比其他耳机小了很多，习惯了这个设定后会觉得很舒服。因为有良好的降噪，不需要用大音量来掩盖外界噪音。 如果频繁听音乐的话这款耳机会对耳朵更好！ 缺点： 1. 耳机内置麦克风体验不好！ 和很多手机不兼容，麦克风音量要么很小，要么会直接使用手机的麦克风。 2. 蓝牙连接体验有待优化！无法连接至部分PC！ 如果希望在电脑上使用，建议你选择其他的蓝牙耳机。 与PC连接时，我使用Thinkpad笔记本电脑，添加设备后无法播放声音。Bose客服表示这个问题“没有解决方案”。 我使用小米MIX2手机，有时会出现已连接但无声音的情况，必须重启手机，重启耳机，重新连接才能恢复。 稳定性方面，偶尔会出现原因不明的卡顿，不算太频繁。 3. 与微信语音不能很好兼容。 每次发送/收听微信语音都会中断音乐，体验很不好！ 4. 音量偏小。 最大音量对比其他型号的耳机会小很多。喜欢重型/摇滚乐的话，这款耳机的表现力可能没有那么好。(个人觉得这类音乐去现场听更好 : )) 5. 不适合走路时佩戴。 行走时耳机关节处会因振动发出比较大的噪音。",
+      "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+      "isSynthetic": false,
+      "opinions": [
+        {
+          "aspect": "sound",
+          "sentiment": "positive",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "medium",
+          "rationale": "S19, S20, S21: 音质过关，适合听爵士/古典音乐，乐器分明，立体感非常强",
+          "evidence": [
+            {
+              "text": "很适合听爵士，",
+              "start": 219,
+              "end": 226,
+              "sentiment": "positive"
+            },
+            {
+              "text": "古典音乐(乐器分明，",
+              "start": 226,
+              "end": 236,
+              "sentiment": "positive"
+            },
+            {
+              "text": "立体感非常强)。",
+              "start": 236,
+              "end": 244,
+              "sentiment": "positive"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "noise",
+          "sentiment": "positive",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "high",
+          "rationale": "S10, S11: 降噪非常棒，戴上耳机好像在潜水，可以很好的屏蔽环境噪声",
+          "evidence": [
+            {
+              "text": " 戴上耳机好像在潜水！",
+              "start": 97,
+              "end": 108,
+              "sentiment": "positive"
+            },
+            {
+              "text": "可以很好的屏蔽环境噪声。",
+              "start": 108,
+              "end": 120,
+              "sentiment": "positive"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "comfort",
+          "sentiment": "positive",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "medium",
+          "rationale": "S23, S24: 耳机部分可以完全和耳朵贴合，不会有任何压迫感",
+          "evidence": [
+            {
+              "text": " 耳机部分可以完全和耳朵贴合，",
+              "start": 252,
+              "end": 267,
+              "sentiment": "positive"
+            },
+            {
+              "text": "不会有任何压迫感。",
+              "start": 267,
+              "end": 276,
+              "sentiment": "positive"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "battery",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及电池相关描述",
+          "evidence": [
+            {
+              "text": "【12月8日更新，",
+              "start": 0,
+              "end": 9,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "call",
+          "sentiment": "negative",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "high",
+          "rationale": "S32, S33, S34: 耳机内置麦克风体验不好，和很多手机不兼容，麦克风音量要么很小，要么会直接使用手机的麦克风",
+          "evidence": [
+            {
+              "text": " 和很多手机不兼容，",
+              "start": 391,
+              "end": 401,
+              "sentiment": "negative"
+            },
+            {
+              "text": "麦克风音量要么很小，",
+              "start": 401,
+              "end": 411,
+              "sentiment": "negative"
+            },
+            {
+              "text": "要么会直接使用手机的麦克风。",
+              "start": 411,
+              "end": 425,
+              "sentiment": "negative"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "latency",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及游戏延迟相关描述",
+          "evidence": [
+            {
+              "text": "【12月8日更新，",
+              "start": 0,
+              "end": 9,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        }
+      ],
+      "analyzed": true,
+      "modelVersion": "ollama-qwen3:4b-absa-v4"
+    },
+    {
+      "id": 49,
+      "externalId": "zh_0708166",
+      "productId": "real-bluetooth-corpus",
+      "text": "8月底买的，用着还行，电量也可以，声音……反正蓝牙耳机都那样呗。就是连到iphone上，电量显示一开始下的很慢，但是到60%以后就很快没多少电了。然后最可怕的是，用到11月，忽然就不能开机不能充电了。应该是电池完蛋了。也退不了货，挺闹心的。",
+      "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+      "isSynthetic": false,
+      "opinions": [
+        {
+          "aspect": "battery",
+          "sentiment": "negative",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "high",
+          "rationale": "S10-S11：用到11月后电池突然失效，无法开机充电，明确指出电池损坏，且无法退货导致不满",
+          "evidence": [
+            {
+              "text": "忽然就不能开机不能充电了。",
+              "start": 87,
+              "end": 100,
+              "sentiment": "negative"
+            },
+            {
+              "text": "应该是电池完蛋了。",
+              "start": 100,
+              "end": 109,
+              "sentiment": "negative"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "call",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "未提及通话相关评价，无法确定",
+          "evidence": [
+            {
+              "text": "8月底买的，",
+              "start": 0,
+              "end": 6,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "latency",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "未提及游戏延迟相关评价，无法确定",
+          "evidence": [
+            {
+              "text": "8月底买的，",
+              "start": 0,
+              "end": 6,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        }
+      ],
+      "analyzed": true,
+      "modelVersion": "ollama-qwen3:4b-absa-v4"
+    },
+    {
+      "id": 48,
+      "externalId": "zh_0394286",
+      "productId": "real-bluetooth-corpus",
+      "text": "为什么这款蓝牙耳机在京东只卖155元。在亚马逊要199元。",
+      "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+      "isSynthetic": false,
+      "opinions": [
+        {
+          "aspect": "sound",
+          "sentiment": "neutral",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "low",
+          "rationale": "价格对比不涉及音质，属于客观事实描述",
+          "evidence": [
+            {
+              "text": "为什么这款蓝牙耳机在京东只卖155元。",
+              "start": 0,
+              "end": 19,
+              "sentiment": "neutral"
+            },
+            {
+              "text": "在亚马逊要199元。",
+              "start": 19,
+              "end": 29,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        }
+      ],
+      "analyzed": true,
+      "modelVersion": "ollama-qwen3:4b-absa-v4"
+    },
+    {
+      "id": 47,
+      "externalId": "zh_0025691",
+      "productId": "real-bluetooth-corpus",
+      "text": "不知道是我手机的原因还是耳机的原因，蓝牙偶尔会断开连接。真的很费解。还以为100多的价位东西会很好，没想到也会出现连接断开的问题。",
+      "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+      "isSynthetic": false,
+      "opinions": [
+        {
+          "aspect": "latency",
+          "sentiment": "negative",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "high",
+          "rationale": "S2提到蓝牙断开连接，S5提到连接断开问题，表明连接不稳定，可能影响音画同步，属于游戏延迟相关问题",
+          "evidence": [
+            {
+              "text": "蓝牙偶尔会断开连接。",
+              "start": 18,
+              "end": 28,
+              "sentiment": "negative"
+            },
+            {
+              "text": "没想到也会出现连接断开的问题。",
+              "start": 50,
+              "end": 65,
+              "sentiment": "negative"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        }
+      ],
+      "analyzed": true,
+      "modelVersion": "ollama-qwen3:4b-absa-v4"
+    },
+    {
+      "id": 46,
+      "externalId": "zh_0567743",
+      "productId": "real-bluetooth-corpus",
+      "text": "无法打开耳机，就无法连接蓝牙。联系客服回答退货，但找不到客服给的退货口，打开看到的是此货不符合退货条件。当时没有想到的是买了一个坏品，包装盒随手扔了，看样子这二百多元打水漂了。以后再也不上亚马逊买东西了。拜拜，再说一遍一颗星也不想给。",
+      "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+      "isSynthetic": false,
+      "opinions": [
+        {
+          "aspect": "sound",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及音质相关描述，无法判断该方面情感",
+          "evidence": [
+            {
+              "text": "无法打开耳机，",
+              "start": 0,
+              "end": 7,
+              "sentiment": "neutral"
+            },
+            {
+              "text": "就无法连接蓝牙。",
+              "start": 7,
+              "end": 15,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "noise",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及降噪相关描述，无法判断该方面情感",
+          "evidence": [
+            {
+              "text": "无法打开耳机，",
+              "start": 0,
+              "end": 7,
+              "sentiment": "neutral"
+            },
+            {
+              "text": "就无法连接蓝牙。",
+              "start": 7,
+              "end": 15,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "comfort",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及佩戴舒适度相关描述，无法判断该方面情感",
+          "evidence": [
+            {
+              "text": "无法打开耳机，",
+              "start": 0,
+              "end": 7,
+              "sentiment": "neutral"
+            },
+            {
+              "text": "就无法连接蓝牙。",
+              "start": 7,
+              "end": 15,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "battery",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及续航相关描述，无法判断该方面情感",
+          "evidence": [
+            {
+              "text": "无法打开耳机，",
+              "start": 0,
+              "end": 7,
+              "sentiment": "neutral"
+            },
+            {
+              "text": "就无法连接蓝牙。",
+              "start": 7,
+              "end": 15,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "call",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及通话相关描述，无法判断该方面情感",
+          "evidence": [
+            {
+              "text": "无法打开耳机，",
+              "start": 0,
+              "end": 7,
+              "sentiment": "neutral"
+            },
+            {
+              "text": "就无法连接蓝牙。",
+              "start": 7,
+              "end": 15,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "latency",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及游戏延迟相关描述，无法判断该方面情感",
+          "evidence": [
+            {
+              "text": "无法打开耳机，",
+              "start": 0,
+              "end": 7,
+              "sentiment": "neutral"
+            },
+            {
+              "text": "就无法连接蓝牙。",
+              "start": 7,
+              "end": 15,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        }
+      ],
+      "analyzed": true,
+      "modelVersion": "ollama-qwen3:4b-absa-v4"
+    },
+    {
+      "id": 45,
+      "externalId": "zh_0373582",
+      "productId": "real-bluetooth-corpus",
+      "text": "音质不错很好，其他也ok，就是有点坑人明明说中文短信显示蓝牙耳机，我的却没有",
+      "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+      "isSynthetic": false,
+      "opinions": [
+        {
+          "aspect": "sound",
+          "sentiment": "positive",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "high",
+          "rationale": "S1明确提到'音质不错很好'，表示音质评价正面且程度高",
+          "evidence": [
+            {
+              "text": "音质不错很好，",
+              "start": 0,
+              "end": 7,
+              "sentiment": "positive"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "noise",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及降噪相关描述，无法判断",
+          "evidence": [
+            {
+              "text": "音质不错很好，",
+              "start": 0,
+              "end": 7,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "comfort",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及舒适度相关描述，无法判断",
+          "evidence": [
+            {
+              "text": "音质不错很好，",
+              "start": 0,
+              "end": 7,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "battery",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及续航相关描述，无法判断",
+          "evidence": [
+            {
+              "text": "音质不错很好，",
+              "start": 0,
+              "end": 7,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "call",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及通话相关描述，无法判断",
+          "evidence": [
+            {
+              "text": "音质不错很好，",
+              "start": 0,
+              "end": 7,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "latency",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及游戏延迟相关描述，无法判断",
+          "evidence": [
+            {
+              "text": "音质不错很好，",
+              "start": 0,
+              "end": 7,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        }
+      ],
+      "analyzed": true,
+      "modelVersion": "ollama-qwen3:4b-absa-v4"
+    },
+    {
+      "id": 44,
+      "externalId": "zh_0433484",
+      "productId": "real-bluetooth-corpus",
+      "text": "买来3个月蓝牙坏了，5个月电已经冲不上了，这么渣的耳机，你说他不是高仿",
+      "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+      "isSynthetic": false,
+      "opinions": [
+        {
+          "aspect": "battery",
+          "sentiment": "negative",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "high",
+          "rationale": "S2提到'5个月电已经冲不上了'，明确表示电池续航问题，且'冲不上'暗示严重故障，属于高程度负面评价。",
+          "evidence": [
+            {
+              "text": "5个月电已经冲不上了，",
+              "start": 10,
+              "end": 21,
+              "sentiment": "negative"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "call",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未直接提及通话功能，'蓝牙坏了'可能影响通话，但无明确证据，需进一步确认。",
+          "evidence": [
+            {
+              "text": "买来3个月蓝牙坏了，",
+              "start": 0,
+              "end": 10,
+              "sentiment": "negative"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "latency",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "原文未提及游戏延迟相关描述，无法判断。",
+          "evidence": [
+            {
+              "text": "买来3个月蓝牙坏了，",
+              "start": 0,
+              "end": 10,
+              "sentiment": "negative"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        }
+      ],
+      "analyzed": true,
+      "modelVersion": "ollama-qwen3:4b-absa-v4"
+    },
+    {
+      "id": 43,
+      "externalId": "zh_0013464",
+      "productId": "real-bluetooth-corpus",
+      "text": "买了一个100多元的蓝牙耳机，一是充满电，开机用不到半天就没电了，二是说明介绍可以调节音量，可事实上是根本就没有调节的功能。网购几百次，这次简直台垃圾了。奉劝广大消费者，一定不要再上当受骗。",
+      "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+      "isSynthetic": false,
+      "opinions": [
+        {
+          "aspect": "sound",
+          "sentiment": "negative",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "high",
+          "rationale": "S3",
+          "evidence": [
+            {
+              "text": "开机用不到半天就没电了，",
+              "start": 21,
+              "end": 33,
+              "sentiment": "negative"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "noise",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "",
+          "evidence": [
+            {
+              "text": "开机用不到半天就没电了，",
+              "start": 21,
+              "end": 33,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "comfort",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "",
+          "evidence": [
+            {
+              "text": "开机用不到半天就没电了，",
+              "start": 21,
+              "end": 33,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "battery",
+          "sentiment": "negative",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "high",
+          "rationale": "S3",
+          "evidence": [
+            {
+              "text": "开机用不到半天就没电了，",
+              "start": 21,
+              "end": 33,
+              "sentiment": "negative"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "call",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "",
+          "evidence": [
+            {
+              "text": "二是说明介绍可以调节音量，",
+              "start": 33,
+              "end": 46,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "latency",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "",
+          "evidence": [
+            {
+              "text": "二是说明介绍可以调节音量，",
+              "start": 33,
+              "end": 46,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        }
+      ],
+      "analyzed": true,
+      "modelVersion": "ollama-qwen3:4b-absa-v4"
+    },
+    {
+      "id": 42,
+      "externalId": "zh_0240027",
+      "productId": "real-bluetooth-corpus",
+      "text": "信号太差，有时手机拿在手上都像改影碟机卡碟一样，我联系卖家说要退货，他答应了，说会把地址给我发过来，可有四五天了吧一点动静都没有。 不过蓝牙耳机的音质不错",
+      "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+      "isSynthetic": false,
+      "opinions": [
+        {
+          "aspect": "latency",
+          "sentiment": "negative",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "high",
+          "rationale": "S1:信号太差，S2:有时手机拿在手上都像改影碟机卡碟一样",
+          "evidence": [
+            {
+              "text": "信号太差，",
+              "start": 0,
+              "end": 5,
+              "sentiment": "negative"
+            },
+            {
+              "text": "有时手机拿在手上都像改影碟机卡碟一样，",
+              "start": 5,
+              "end": 24,
+              "sentiment": "negative"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        }
+      ],
+      "analyzed": true,
+      "modelVersion": "ollama-qwen3:4b-absa-v4"
+    },
+    {
+      "id": 41,
+      "externalId": "zh_0760342",
+      "productId": "real-bluetooth-corpus",
+      "text": "买的蓝牙耳机，收到的是一个小变形金刚，亚马逊要给我解释一下，这是什么问题？",
+      "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+      "isSynthetic": false,
+      "opinions": [
+        {
+          "aspect": "sound",
+          "sentiment": "neutral",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "low",
+          "rationale": "未提及音质相关描述，属于未提及方面，省略",
+          "evidence": [
+            {
+              "text": "买的蓝牙耳机，",
+              "start": 0,
+              "end": 7,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "noise",
+          "sentiment": "neutral",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "low",
+          "rationale": "未提及降噪相关描述，属于未提及方面，省略",
+          "evidence": [
+            {
+              "text": "买的蓝牙耳机，",
+              "start": 0,
+              "end": 7,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "comfort",
+          "sentiment": "neutral",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "low",
+          "rationale": "未提及佩戴舒适度相关描述，属于未提及方面，省略",
+          "evidence": [
+            {
+              "text": "买的蓝牙耳机，",
+              "start": 0,
+              "end": 7,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "battery",
+          "sentiment": "neutral",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "low",
+          "rationale": "未提及续航相关描述，属于未提及方面，省略",
+          "evidence": [
+            {
+              "text": "买的蓝牙耳机，",
+              "start": 0,
+              "end": 7,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "call",
+          "sentiment": "neutral",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "low",
+          "rationale": "未提及通话相关描述，属于未提及方面，省略",
+          "evidence": [
+            {
+              "text": "买的蓝牙耳机，",
+              "start": 0,
+              "end": 7,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "latency",
+          "sentiment": "neutral",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "low",
+          "rationale": "未提及游戏延迟相关描述，属于未提及方面，省略",
+          "evidence": [
+            {
+              "text": "买的蓝牙耳机，",
+              "start": 0,
+              "end": 7,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        }
+      ],
+      "analyzed": true,
+      "modelVersion": "ollama-qwen3:4b-absa-v4"
+    },
+    {
+      "id": 40,
+      "externalId": "zh_0247792",
+      "productId": "real-bluetooth-corpus",
+      "text": "刚收到耳机两天，存在严重质量问题，现在两个问题：1.手机搜索不到耳机蓝牙，2.经过反复开关机蓝牙耳机，手机蓝牙反复开关，重新搜索到蓝牙耳机，连接后只有一个耳机有声音，多次尝试都无法正常工作，这个耳机太不好用了",
+      "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+      "isSynthetic": false,
+      "opinions": [
+        {
+          "aspect": "sound",
+          "sentiment": "negative",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "high",
+          "rationale": "S9:这个耳机太不好用了",
+          "evidence": [
+            {
+              "text": "这个耳机太不好用了",
+              "start": 95,
+              "end": 104,
+              "sentiment": "negative"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "noise",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "未提及噪声相关描述",
+          "evidence": [
+            {
+              "text": "刚收到耳机两天，",
+              "start": 0,
+              "end": 8,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "comfort",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "未提及舒适度相关描述",
+          "evidence": [
+            {
+              "text": "刚收到耳机两天，",
+              "start": 0,
+              "end": 8,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "battery",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "未提及电池续航相关描述",
+          "evidence": [
+            {
+              "text": "刚收到耳机两天，",
+              "start": 0,
+              "end": 8,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "call",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "未提及通话功能相关描述",
+          "evidence": [
+            {
+              "text": "刚收到耳机两天，",
+              "start": 0,
+              "end": 8,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        },
+        {
+          "aspect": "latency",
+          "sentiment": "neutral",
+          "status": "review",
+          "expression": "uncertain",
+          "intensity": "low",
+          "rationale": "未提及游戏延迟相关描述",
+          "evidence": [
+            {
+              "text": "刚收到耳机两天，",
+              "start": 0,
+              "end": 8,
+              "sentiment": "neutral"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        }
+      ],
+      "analyzed": true,
+      "modelVersion": "ollama-qwen3:4b-absa-v4"
+    },
+    {
+      "id": 39,
+      "externalId": "zh_0819557",
+      "productId": "real-bluetooth-corpus",
+      "text": "充电时间，长。放电时间，短。耳塞过大由于蓝牙设备和电池的细化做的很差。耳朵疼，带的时间长。",
+      "source": "SetFit/amazon_reviews_multi_zh；原文公开评论；型号未知；筛选样本非随机",
+      "isSynthetic": false,
+      "opinions": [
+        {
+          "aspect": "battery",
+          "sentiment": "negative",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "high",
+          "rationale": "S1-S2提到充电时间长，S3-S4提到放电时间短，直接说明电池续航问题，充电时间长和放电时间短都属于电池性能的负面表现",
+          "evidence": [
+            {
+              "text": "充电时间，",
+              "start": 0,
+              "end": 5,
+              "sentiment": "positive"
+            },
+            {
+              "text": "长。",
+              "start": 5,
+              "end": 7,
+              "sentiment": "positive"
+            },
+            {
+              "text": "放电时间，",
+              "start": 7,
+              "end": 12,
+              "sentiment": "negative"
+            },
+            {
+              "text": "短。",
+              "start": 12,
+              "end": 14,
+              "sentiment": "negative"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        }
+      ],
+      "analyzed": true,
+      "modelVersion": "ollama-qwen3:4b-absa-v4"
+    }
+  ],
+  "note": "实际本地模型推理和数据库汇总；没有方面级人工金标准，不报告准确率/F1"
+}

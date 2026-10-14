@@ -1,0 +1,19 @@
+import {it,expect,vi} from 'vitest';
+import {mkdtempSync,mkdirSync} from 'node:fs';
+import {resolve} from 'node:path';
+import {BrowserCollector,browserRows,browserRestriction,launchChromeBrowser,closeOwnedBrowser} from './browser-collector.js';
+import {collectionTarget} from './collector.js';
+it('正文清洗、默认空评价忽略、原文去重，不生成替代内容',()=>{expect(browserRows([{text:'音质 很好'},{text:'音质很好'},{text:'此用户未填写评价。'},{text:' '},{text:'续航不够',id:'real-2'}])).toHaveLength(2);});
+it('实际原生Chrome的CDP连接、可见DOM提取、自动翻页与上限、拒绝其他商品，配置重开保留状态（受控夹具）',async()=>{
+ mkdirSync('data/runtime',{recursive:true});const profile=mkdtempSync(resolve('data/runtime/chrome-cdp-test-'));let browser=await launchChromeBrowser('about:blank',profile,true);let service:BrowserCollector|null=null;
+ try{const context=browser.contexts()[0]!;await context.route('https://item.jd.com/**',route=>route.fulfill({contentType:'text/html; charset=utf-8',body:`<div class="comment-item"><p class="comment-con">音质清晰</p></div><div style="display:none" class="comment-item"><p class="comment-con">隐藏内容</p></div><button onclick="document.querySelector('.comment-con').textContent='续航不足';this.disabled=true">下一页</button>`}));await context.pages()[0]!.goto('https://item.jd.com/123456.html');await context.pages()[0]!.evaluate(()=>localStorage.setItem('fixture-marker','saved'));
+ service=new BrowserCollector(async()=>browser);await service.open(1,collectionTarget('jd','123456'),2,()=>{});expect((await service.read(1)).rows).toHaveLength(1);expect((await service.read(1)).added).toBe(0);const saves=vi.fn();const result=await service.automate(1,saves);expect(result.rows.map(r=>r.text)).toEqual(['音质清晰','续航不足']);expect(saves).toHaveBeenCalledTimes(2);
+ await context.pages()[0]!.goto('https://item.jd.com/654321.html');await expect(service.read(1)).rejects.toThrow('对应商品');await service.closeAll();service=null;
+ browser=await launchChromeBrowser('about:blank',profile,true);const c=browser.contexts()[0]!;await c.route('https://item.jd.com/**',route=>route.fulfill({body:'<html>fixture</html>'}));await c.pages()[0]!.goto('https://item.jd.com/123456.html');expect(await c.pages()[0]!.evaluate(()=>localStorage.getItem('fixture-marker'))).toBe('saved');
+ }finally{if(service)await service.closeAll();else await closeOwnedBrowser(browser);}
+},30000);
+it('识别京东403页面，正常商品页不误报受限',()=>{expect(browserRestriction('https://pc-frequent-pro.pf.jd.com/?reason=403')).toContain('平台限制');expect(browserRestriction('https://item.jd.com/123456.html')).toBe('');});
+it('新版全部评价弹窗优先读取完整正文，自动滚动加载后继续去重（Chrome受控夹具）',async()=>{
+ mkdirSync('data/runtime',{recursive:true});const profile=mkdtempSync(resolve('data/runtime/chrome-modal-test-'));const browser=await launchChromeBrowser('about:blank',profile,true);const service=new BrowserCollector(async()=>browser);
+ try{const context=browser.contexts()[0]!;await context.route('https://item.jd.com/**',route=>route.fulfill({contentType:'text/html; charset=utf-8',body:`<div class="comment-root"><div class="list"><div class="item"><div class="info">音质好...</div></div></div></div><button onclick="document.querySelector('#modal').style.display='block'">全部评价</button><div id="modal" style="display:none;height:80px;overflow-y:auto"><div class="jdc-pc-rate-card-main" style="height:300px">音质好，听歌清晰</div></div><script>document.querySelector("#modal").onscroll=function(){if(!this.dataset.loaded){this.dataset.loaded="yes";const node=document.createElement("div");node.className="jdc-pc-rate-card-main";node.textContent="续航不足";this.append(node)}}</script>`}));await context.pages()[0]!.goto('https://item.jd.com/123456.html');await service.open(1,collectionTarget('jd','123456'),2,()=>{});const result=await service.automate(1,()=>{});expect(result.rows.map(r=>r.text)).toEqual(['音质好，听歌清晰','续航不足']);}finally{await service.closeAll();}
+},20000);

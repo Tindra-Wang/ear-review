@@ -1,0 +1,16 @@
+{
+  "checkedAt": "2026-10-13T15:36:33.221Z",
+  "browser": "Chrome",
+  "file": "data/raw/jd-freeclip2-chrome-100239311413-real.csv",
+  "bytes": 22958,
+  "sha256": "d280e953b3eb4755c42d2039d95fd362e90849bd6e0523f6bcfcfabd5a1f9e04",
+  "rows": 50,
+  "emptyText": 0,
+  "uniqueTexts": 50,
+  "productIds": [
+    "jd-100239311413"
+  ],
+  "maxCharacters": 252,
+  "source": "京东商品100239311413，华为FreeClip 2，用户正常登录后读取商品评价弹窗",
+  "sampling": "平台当前默认排序的有限样本；非随机、非全量，不能推断总体好评率"
+}

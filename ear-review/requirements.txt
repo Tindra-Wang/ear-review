@@ -14,6 +14,7 @@ SQLite (built into Node.js; no separate server installation)
 @nestjs/platform-express@11.2.7
 csv-parse@6.2.1
 lucide-vue-next@0.468.0
+playwright@1.64.0
 reflect-metadata@0.2.2
 rxjs@7.8.2
 vue@3.5.43
@@ -32,4 +33,5 @@ vitest@3.2.7
 vue-tsc@3.3.13
 
 # Optional for browser tests: Chromium via npm run setup:tests
-# No Python, GPU driver, CUDA or online model API is required.
+# Optional semantic NLP: install Ollama, then run ollama pull qwen3:4b (about 2.5 GB download).
+# The baseline needs no Python, CUDA or online model API; local semantic inference needs Ollama + model.

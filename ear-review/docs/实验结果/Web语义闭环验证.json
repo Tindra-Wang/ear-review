@@ -1,0 +1,269 @@
+{
+  "completedAt": "2026-10-13T08:58:18.461Z",
+  "productId": "local-model-demo-absa-v2",
+  "columns": {
+    "text": "text",
+    "reviewId": "reviewId",
+    "productId": "productId",
+    "source": "source"
+  },
+  "preview": {
+    "valid": 0,
+    "invalid": 0,
+    "duplicates": 3
+  },
+  "batch": {
+    "batchId": 4,
+    "inserted": 3,
+    "duplicates": 0
+  },
+  "job": {
+    "id": 3,
+    "batchId": 4,
+    "status": "failed",
+    "total": 3,
+    "processed": 3,
+    "error": "1 条失败，可重试；已成功的结果保留",
+    "modelVersion": "ollama-qwen3:4b-absa-v2",
+    "createdAt": "2026-10-13T08:57:03.292Z"
+  },
+  "errors": [
+    {
+      "reviewId": 44,
+      "message": "评论 #44：模型返回未知或重复方面"
+    }
+  ],
+  "reviews": [
+    {
+      "id": 44,
+      "externalId": "challenge-06",
+      "productId": "local-model-demo-absa-v2",
+      "text": "办公室里降噪不错，上地铁却压不住轰鸣，两种场合差别很大。",
+      "source": "模型对照合成样例，非真实消费者评论",
+      "isSynthetic": true,
+      "opinions": [],
+      "analyzed": false,
+      "modelVersion": null
+    },
+    {
+      "id": 43,
+      "externalId": "challenge-03",
+      "productId": "local-model-demo-absa-v2",
+      "text": "戴着这副耳机开会，对方让我把同一句话重复了三遍才听明白。",
+      "source": "模型对照合成样例，非真实消费者评论",
+      "isSynthetic": true,
+      "opinions": [
+        {
+          "aspect": "call",
+          "sentiment": "negative",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "high",
+          "rationale": "对方要求重复三遍才听清，说明通话清晰度差，直接导致沟通障碍，属于明确负面体验",
+          "evidence": [
+            {
+              "text": "对方让我把同一句话重复了三遍才听明白",
+              "start": 9,
+              "end": 27,
+              "sentiment": "negative"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        }
+      ],
+      "analyzed": true,
+      "modelVersion": "ollama-qwen3:4b-absa-v2"
+    },
+    {
+      "id": 42,
+      "externalId": "challenge-01",
+      "productId": "local-model-demo-absa-v2",
+      "text": "降噪真厉害，开了之后旁边装修的电钻声还是一清二楚，真是谢谢你。",
+      "source": "模型对照合成样例，非真实消费者评论",
+      "isSynthetic": true,
+      "opinions": [
+        {
+          "aspect": "noise",
+          "sentiment": "positive",
+          "status": "classified",
+          "expression": "explicit",
+          "intensity": "high",
+          "rationale": "原文'降噪真厉害'直接表达对降噪效果的强烈正面评价，'开了之后旁边装修的电钻声还是一清二楚'通过对比说明降噪效果未达预期（电钻声清晰），但整体上'真厉害'体现对降噪的正面评价，属于反讽表达（降噪效果差但说厉害）",
+          "evidence": [
+            {
+              "text": "降噪真厉害",
+              "start": 0,
+              "end": 5,
+              "sentiment": "positive"
+            },
+            {
+              "text": "开了之后旁边装修的电钻声还是一清二楚",
+              "start": 6,
+              "end": 24,
+              "sentiment": "negative"
+            }
+          ],
+          "method": "本地文本模型 · 结构化方面抽取"
+        }
+      ],
+      "analyzed": true,
+      "modelVersion": "ollama-qwen3:4b-absa-v2"
+    }
+  ],
+  "stats": {
+    "product": {
+      "id": "local-model-demo-absa-v2",
+      "name": "本地语义模型验证",
+      "subtitle": "反讽、隐含通话和情境混合；实验合成数据",
+      "source": "用户创建",
+      "count": 3
+    },
+    "reviews": 3,
+    "analyzed": 2,
+    "synthetic": 3,
+    "version": "ollama-qwen3:4b-absa-v2",
+    "aspects": [
+      {
+        "aspect": "sound",
+        "total": 0,
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0,
+        "mixed": 0,
+        "pending": 0,
+        "corrected": 0,
+        "positiveRatio": null,
+        "examples": []
+      },
+      {
+        "aspect": "noise",
+        "total": 1,
+        "positive": 1,
+        "negative": 0,
+        "neutral": 0,
+        "mixed": 0,
+        "pending": 0,
+        "corrected": 0,
+        "positiveRatio": 100,
+        "examples": [
+          {
+            "id": 42,
+            "externalId": "challenge-01",
+            "productId": "local-model-demo-absa-v2",
+            "text": "降噪真厉害，开了之后旁边装修的电钻声还是一清二楚，真是谢谢你。",
+            "source": "模型对照合成样例，非真实消费者评论",
+            "isSynthetic": true,
+            "opinions": [
+              {
+                "aspect": "noise",
+                "sentiment": "positive",
+                "status": "classified",
+                "expression": "explicit",
+                "intensity": "high",
+                "rationale": "原文'降噪真厉害'直接表达对降噪效果的强烈正面评价，'开了之后旁边装修的电钻声还是一清二楚'通过对比说明降噪效果未达预期（电钻声清晰），但整体上'真厉害'体现对降噪的正面评价，属于反讽表达（降噪效果差但说厉害）",
+                "evidence": [
+                  {
+                    "text": "降噪真厉害",
+                    "start": 0,
+                    "end": 5,
+                    "sentiment": "positive"
+                  },
+                  {
+                    "text": "开了之后旁边装修的电钻声还是一清二楚",
+                    "start": 6,
+                    "end": 24,
+                    "sentiment": "negative"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              }
+            ],
+            "analyzed": true,
+            "modelVersion": "ollama-qwen3:4b-absa-v2"
+          }
+        ]
+      },
+      {
+        "aspect": "comfort",
+        "total": 0,
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0,
+        "mixed": 0,
+        "pending": 0,
+        "corrected": 0,
+        "positiveRatio": null,
+        "examples": []
+      },
+      {
+        "aspect": "battery",
+        "total": 0,
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0,
+        "mixed": 0,
+        "pending": 0,
+        "corrected": 0,
+        "positiveRatio": null,
+        "examples": []
+      },
+      {
+        "aspect": "call",
+        "total": 1,
+        "positive": 0,
+        "negative": 1,
+        "neutral": 0,
+        "mixed": 0,
+        "pending": 0,
+        "corrected": 0,
+        "positiveRatio": 0,
+        "examples": [
+          {
+            "id": 43,
+            "externalId": "challenge-03",
+            "productId": "local-model-demo-absa-v2",
+            "text": "戴着这副耳机开会，对方让我把同一句话重复了三遍才听明白。",
+            "source": "模型对照合成样例，非真实消费者评论",
+            "isSynthetic": true,
+            "opinions": [
+              {
+                "aspect": "call",
+                "sentiment": "negative",
+                "status": "classified",
+                "expression": "explicit",
+                "intensity": "high",
+                "rationale": "对方要求重复三遍才听清，说明通话清晰度差，直接导致沟通障碍，属于明确负面体验",
+                "evidence": [
+                  {
+                    "text": "对方让我把同一句话重复了三遍才听明白",
+                    "start": 9,
+                    "end": 27,
+                    "sentiment": "negative"
+                  }
+                ],
+                "method": "本地文本模型 · 结构化方面抽取"
+              }
+            ],
+            "analyzed": true,
+            "modelVersion": "ollama-qwen3:4b-absa-v2"
+          }
+        ]
+      },
+      {
+        "aspect": "latency",
+        "total": 0,
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0,
+        "mixed": 0,
+        "pending": 0,
+        "corrected": 0,
+        "positiveRatio": null,
+        "examples": []
+      }
+    ]
+  },
+  "allAnalyzed": false,
+  "pipelineVerified": true,
+  "ok": false
+}

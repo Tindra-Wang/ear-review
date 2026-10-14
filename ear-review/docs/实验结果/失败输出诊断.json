@@ -1,0 +1,21 @@
+{
+  "text": "刚收到耳机两天，存在严重质量问题，现在两个问题：1.手机搜索不到耳机蓝牙，2.经过反复开关机蓝牙耳机，手机蓝牙反复开关，重新搜索到蓝牙耳机，连接后只有一个耳机有声音，多次尝试都无法正常工作，这个耳机太不好用了",
+  "model": "qwen3:4b",
+  "data": {
+    "model": "qwen3:4b",
+    "created_at": "2026-10-13T13:50:00.3940713Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"opinions\": [\n  {\n    \"aspect\": \"sound\",\n    \"sentiment\": \"negative\",\n    \"status\": \"classified\",\n    \"expression\": \"explicit\",\n    \"intensity\": \"high\",\n    \"rationale\": \"原文明确提到'连接后只有一个耳机有声音，多次尝试都无法正常工作'，表明音质问题导致无法正常播放声音，属于音质方面的严重故障\",\n    \"evidence\": [\n      {\n        \"text\": \"连接后只有一个耳机有声音，多次尝试都无法正常工作\",\n        \"sentiment\": \"negative\"\n      }\n    ]\n  },\n  {\n    \"aspect\": \"noise\",\n    \"sentiment\": \"neutral\",\n    \"status\": \"review\",\n    \"expression\": \"uncertain\",\n    \"intensity\": \"low\",\n    \"rationale\": \"原文未提及任何关于降噪的描述，无法判断降噪表现\",\n    \"evidence\": [\n      {\n        \"text\": \"\",\n        \"sentiment\": \"neutral\"\n      }\n    ]\n  },\n  {\n    \"aspect\": \"comfort\",\n    \"sentiment\": \"neutral\",\n    \"status\": \"review\",\n    \"expression\": \"uncertain\",\n    \"intensity\": \"low\",\n    \"rationale\": \"原文未提及任何关于佩戴舒适度的描述，无法判断舒适度表现\",\n    \"evidence\": [\n      {\n        \"text\": \"\",\n        \"sentiment\": \"neutral\"\n      }\n    ]\n  },\n  {\n    \"aspect\": \"battery\",\n    \"sentiment\": \"neutral\",\n    \"status\": \"review\",\n    \"expression\": \"uncertain\",\n    \"intensity\": \"low\",\n    \"rationale\": \"原文未提及任何关于电池续航的描述，无法判断电池表现\",\n    \"evidence\": [\n      {\n        \"text\": \"\",\n        \"sentiment\": \"neutral\"\n      }\n    ]\n  },\n  {\n    \"aspect\": \"call\",\n    \"sentiment\": \"neutral\",\n    \"status\": \"review\",\n    \"expression\": \"uncertain\",\n    \"intensity\": \"low\",\n    \"rationale\": \"原文未提及任何关于通话功能的描述，无法判断通话表现\",\n    \"evidence\": [\n      {\n        \"text\": \"\",\n        \"sentiment\": \"neutral\"\n      }\n    ]\n  },\n  {\n    \"aspect\": \"latency\",\n    \"sentiment\": \"neutral\",\n    \"status\": \"review\",\n    \"expression\": \"uncertain\",\n    \"intensity\": \"low\",\n    \"rationale\": \"原文未提及任何关于游戏延迟的描述，无法判断延迟表现\",\n    \"evidence\": [\n      {\n        \"text\": \"\",\n        \"sentiment\": \"neutral\"\n      }\n    ]\n  }\n] }"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 7635219200,
+    "load_duration": 7271600,
+    "prompt_eval_count": 501,
+    "prompt_eval_cached_count": 500,
+    "prompt_eval_duration": 24546000,
+    "eval_count": 579,
+    "eval_duration": 5962411000
+  }
+}
