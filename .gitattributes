@@ -8,3 +8,4 @@
 *.bat text eol=crlf
 *.cmd text eol=crlf
 *.png binary
+ear-review/docs/*.html linguist-generated=true
